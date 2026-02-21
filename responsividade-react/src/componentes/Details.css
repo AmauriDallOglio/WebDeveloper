@@ -1,0 +1,19 @@
+.details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.details {
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+
+.image-card {
+  flex-basis: 100%;
+}

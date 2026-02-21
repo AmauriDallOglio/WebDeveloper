@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ============================
+   ESTILO BASE (DESKTOP)
+   ============================ */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px repeat(3, auto);
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main-section-content main-section-content main-section-content"
+    "sidebar content-1 content-2 content-3"
+    "sidebar footer footer footer";
+}
+
+ 
+
+
+.main-section-content {
+  grid-area: main-section-content;
+  background-color: lightsalmon;
+  padding: 30px;
+  text-align: center;
+}
+
+.content-1 {
+  grid-area: content-1;
+  background-color: paleturquoise;
+}
+
+.content-2 {
+  grid-area: content-2;
+  background-color: papayawhip;
+}
+
+.content-3 {
+  grid-area: content-3;
+  background-color: plum;
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightpink;
+  padding: 20px;
+}
+
+
+
+   
+
+h3 {
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* ============================
+   BREAKPOINT PARA CELULAR
+   ============================ */
+
+   
+@media (max-width: 600px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main-section-content"
+      "content-1"
+      "content-2"
+      "content-3"
+      "footer";
+  }
+
+ 
+}
+
+/* ============================
+   BREAKPOINT PARA TABLET
+   ============================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar sidebar"
+      "main-section-content content-1"
+      "content-2 content-3"
+      "footer footer";
+ 
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 600px;
+  }
+
+  .image-card {
+    flex-basis: 45%;
+  }
+}
+
+ 
