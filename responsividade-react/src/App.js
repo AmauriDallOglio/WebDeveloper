@@ -8,6 +8,19 @@ import Gallery from "./componentes/Galeria";
 import Cliente from "./paginas/cliente/ClienteGrid";
 import "./App.css";
 
+
+/* ============================
+npx create-react-app responsividade-react
+cd responsividade
+npm start
+
+npm install react-router-dom
+
+npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
+
+   ============================ */
+
+
 function App() {
   return (
     <Router>
