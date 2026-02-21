@@ -1,0 +1,151 @@
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(180deg, #4facfe, #00f2fe);
+  padding: 20px;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre ícone e texto */
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.sidebar a img {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+
+/* ============================
+   ESTILO BASE (DESKTOP)
+   ============================ */
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(180deg, #4facfe, #00f2fe);
+  padding: 20px;
+  color: #fff;
+  min-height: 100vh; /* ocupa toda a altura */
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+
+/* ============================
+   BREAKPOINT PARA TABLET
+   ============================ */
+@media (max-width: 1024px) {
+  .sidebar {
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* quebra linha se tiver muitos itens */
+    gap: 15px;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+  }
+
+  .sidebar a {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================
+   BREAKPOINT PARA CELULAR
+   ============================ */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column; /* menu vertical */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar a {
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%; /* ocupa toda a largura */
+    text-align: center;
+    border-radius: 0;
+  }
+}
