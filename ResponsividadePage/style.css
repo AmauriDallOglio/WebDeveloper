@@ -1,45 +1,45 @@
-body{
+/* ============================
+   ESTILO BASE (DESKTOP)
+   ============================ */
+/* Layout padrão para telas grandes (desktop).
+   Aqui usamos 4 colunas e várias áreas definidas com grid-template-areas. */
+body {
     margin: 0;
     display: grid;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px repeat(3, 300px);
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+    grid-template-rows: 100px repeat(3, 300px); /* altura fixa para header e seções */
     grid-template-areas: 
         "header header header header"
         "navbar main-content main-content main-content"
         "navbar content-1 content-2 content-3"
-        "navbar footer footer footer"
-    
-    ;
-
+        "navbar footer footer footer";
 }
 
-header, nav, section, footer{
-    padding:  20px;
+/* Áreas do Grid */
+header, nav, section, footer {
+    padding: 20px;
 }
 
-header{
+header {
     background-color: lightblue;
-
     grid-area: header;
 }
 
-
-nav{
+nav {
     background-color: lightgreen;
     grid-area: navbar;
 }
 
-ul{
+ul {
     margin: 0;
     padding: 0;
 }
 
-li{
+li {
     list-style: none;
     margin-bottom: 8px;
 }
@@ -48,26 +48,99 @@ li a {
     color: black;
 }
 
-.main-section-content{
+.main-section-content {
     background-color: lightsalmon;
     grid-area: main-content;
 }
 
-.content-1{
+.content-1 {
     background-color: paleturquoise;
     grid-area: content-1;
 }
 
-.content-2{
+.content-2 {
     background-color: papayawhip;
     grid-area: content-2;
 }
-.content-3{
+
+.content-3 {
     background-color: plum;
     grid-area: content-3;
 }
 
-footer{
+footer {
     background-color: lightpink;
     grid-area: footer;
+}
+
+/* ============================
+   BREAKPOINT PARA CELULAR
+   ============================ */
+/* Até 600px: layout em uma única coluna.
+   Tudo fica empilhado verticalmente. */
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr; /* apenas uma coluna */
+        grid-template-rows: auto;   /* altura automática */
+        grid-template-areas:
+            "header"
+            "navbar"
+            "main-content"
+            "content-1"
+            "content-2"
+            "content-3"
+            "footer";
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* menu vertical */
+        align-items: stretch;
+    }
+}
+
+/* ============================
+   BREAKPOINT PARA TABLET
+   ============================ */
+/* Entre 601px e 1024px: layout em duas colunas.
+   O main fica maior e o aside (conteúdos) menor. */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        grid-template-columns: 2fr 1fr; /* duas colunas: main maior */
+        grid-template-areas:
+            "header header"
+            "navbar navbar"
+            "main-content content-1"
+            "content-2 content-3"
+            "footer footer";
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row; /* menu horizontal */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================
+   BREAKPOINT PARA DESKTOP
+   ============================ */
+/* A partir de 1025px: layout completo em 4 colunas.
+   Mantém o design original. */
+@media (min-width: 1025px) {
+    body {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "header header header header"
+            "navbar main-content main-content main-content"
+            "navbar content-1 content-2 content-3"
+            "navbar footer footer footer";
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* menu lateral vertical */
+        align-items: flex-start;
+    }
 }
