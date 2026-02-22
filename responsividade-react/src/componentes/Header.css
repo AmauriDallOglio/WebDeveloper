@@ -2,41 +2,7 @@
 
 
 
-
-/* Navegação */
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-
- .header {
-  background: #111828;
-  color: #fff;
-  border-radius: 15px; /* bordas arredondadas no container */
-  padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
-  margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Esquerda */
+/* Texto Esquerda */
 .header-left h2 {
   margin: 0;
   font-size: 1.2rem;
@@ -47,30 +13,12 @@
   color: #bbb;
 }
 
-/* Centro: busca */
-.header-center {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  max-width: 400px;
-  margin: 0 20px;
-  position: relative;
-}
- 
-/* Direita: ícones */
+
+/*  ícones */
 .header-right {
   display: flex;
   gap: 20px;
 }
-.icon {
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.icon:hover {
-  color: #4facfe;
-}
-
 
 .header-left {
   display: flex;
@@ -78,13 +26,9 @@
   gap: 10px;
 }
 
-.header-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* deixa redondo */
-  object-fit: cover;  /* ajusta a imagem sem distorcer */
-}
-
+  .header {
+    background: #111828;
+  }
 
 
 
@@ -94,37 +38,33 @@
 @media (max-width: 600px) {
   header {
     grid-area: header;
-    background: linear-gradient(90deg, #00f2fe, yellow); 
     color: #fff;
-    padding: 20px 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px; /* bordas arredondadas no container */
+    padding: 15px 5px 5px 15px; /* top, right, bottom, left espaço interno */
+    margin: 0px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
+
+
   .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
     flex-direction: column;
     text-align: center;
-  }
-  .logo h1 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-
  
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
   }
-  .nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+ 
+  
+  .header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* deixa redondo */
+    object-fit: cover;  /* ajusta a imagem sem distorcer */
   }
-  .nav a {
-    font-size: 1rem;
-    padding: 8px;
-  } 
-  .nav a:hover {
-  color: green;
-}
-
+ 
+ 
 }
 
 /* ============================
@@ -138,6 +78,15 @@
     padding: 20px 40px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
+
+   .header {
+    background: linear-gradient(90deg, Green, #00f2fe);
+  color: #fff;
+  border-radius: 15px; /* bordas arredondadas no container */
+  padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
+  margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
+}
+
   .logo h1 {
     font-size: 1.5rem;
       margin: 0;
@@ -156,9 +105,18 @@
     margin: auto;
     flex-wrap: wrap; /* permite quebrar linha quando necessário */
   }
+
   .nav a:hover {
-  color: violet;
-}
+    color: violet;
+  }
+
+  .header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* deixa redondo */
+    object-fit: cover;  /* ajusta a imagem sem distorcer */
+  }
+
 
  
 }
@@ -170,28 +128,34 @@
 @media (min-width: 1025px) {
   header {
     grid-area: header;
-    background: linear-gradient(270deg, #030712, #030712);
+ 
     color: #fff;
     padding: 20px 40px;
- 
+    border-radius: 15px; /* bordas arredondadas no container */
+    padding: 15px 15px 0px 15px; /* top, right, bottom, left espaço interno */
+    margin: 10px 12px 10px 20px; /* top, right, bottom, left  espaço externo */
   }
+
+  
+
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1550px;
     margin: auto;
     flex-wrap: wrap; /* permite quebrar linha quando necessário */
   }
   
- .logo h1 {
-  font-size: 1.8rem;
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-.nav a:hover {
-  color: rgb(45, 0, 193);
-}
+ 
+
+ 
+  .header-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* deixa redondo */
+    object-fit: cover;  /* ajusta a imagem sem distorcer */
+  }
+
 
 }

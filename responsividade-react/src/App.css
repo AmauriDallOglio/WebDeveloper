@@ -21,9 +21,10 @@ h3 {
       "header"
       "sidebar"
       "details-body"
- 
       "footer";
+    background: linear-gradient(90deg, #010712, #010712);
   }
+  
 
 }
 
@@ -37,8 +38,8 @@ h3 {
       "header header"
       "sidebar sidebar"
       "details-body details-body"
- 
       "footer footer";
+    background: linear-gradient(90deg, Green, #00f2fe);
   }
 
 }

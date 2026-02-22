@@ -1,10 +1,4 @@
  
-.footer {
-  
-  color: #fff;
-  padding: 40px 20px;
-}
-
 
 .footer-section h2,
 .footer-section h3 {
@@ -25,31 +19,22 @@
 
 
 
-
 /* ============================
    CELULAR
    ============================ */
 @media (max-width: 600px) {
   footer {
     grid-area: footer;
-    background: linear-gradient(90deg, #00f2fe, yellow); 
+    background: linear-gradient(270deg, #111828, #111828);
+    text-align: center;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 20px 20px 20px 20px; /* top, right, bottom, left espaço interno */
+    margin: 5px 2px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
   .footer-container {
     flex-direction: column;
     text-align: center;
-  }
-
-  .footer-section {
-    margin: 20px 0;
-  }
-
-  .social-links {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .social-links a:hover {
-    color: #bbb; 
   }
 
   .footer-section a {
@@ -129,9 +114,9 @@
 
   .footer-section {
     flex: 1;  /* três colunas lado a lado */
-    min-width: 250px;
-    
+    min-width: 250px;  
   }
+
   .social-links {
     display: flex;
     gap: 15px;

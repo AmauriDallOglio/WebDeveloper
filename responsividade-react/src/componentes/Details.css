@@ -1,68 +1,39 @@
-/* 
-.content-1 {
-  grid-area: content-1;
-  background-color: paleturquoise;
-}
 
-.content-2 {
-  grid-area: content-2;
-  background-color: papayawhip;
-}
-
-.content-3 {
-  grid-area: content-3;
-  background-color: plum;
-}
-
-
-*/
-
-
-.details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  background-color: #192033;
-  padding: 16px;
-  border-radius: 10px;
-  flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
-  color: #e1e7e8;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-
+:root { --cor-letra-celular: #000000; /* define a cor principal */ }
+:root { --cor-letra-desktop: #e1e7e8; /* define a cor principal */ }
 
 /* ============================
    CELULAR
    ============================ */
 @media (max-width: 600px) {
-    .details {
-            display: flex;
-      gap: 20px;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .card {
-        font-size: 0.9rem;
-    }
-    .image-card {
-        flex-basis: 100%; /* uma coluna */
-    }
     .details-body  {
       grid-area: details-body;
- 
-       background: linear-gradient(90deg, #00f2fe, yellow); 
-      padding: 10px;
+      background: linear-gradient(270deg, #111828, #111828);
       text-align: center;
+      border-radius: 10px; /* bordas arredondadas no container */
+      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+ 
     }
+
+    .details {
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+
+    }
+ 
+    .card {
+
+      padding: 5px 5px 5px 5px; /* top, right, bottom, left espaço interno */
+      border-radius: 10px;
+      flex: 1 1 auto; /* ocupa espaço flexível, mínimo de altura */
+      color: var(--cor-letra-desktop); 
+      font-size: 0.9rem;
+      background-color: #192033;
+    }
+
+ 
 }
 
 /* ============================
@@ -75,13 +46,26 @@
       gap: 20px;
       flex-direction: column;
       align-items: center;
+      
     }
     .card {
         max-width: 600px;
     }
+
+    .card {
+      background-color: #192033;
+      padding: 16px;
+      border-radius: 10px;
+      flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
+      color: var(--cor-letra-desktop); /* usa a variável */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
     .image-card {
         flex-basis: 45%; /* duas colunas */
     }
+
     .details-body  {
       grid-area: details-body;
       background: linear-gradient(90deg, Green, #00f2fe);
@@ -95,28 +79,34 @@
    ============================ */
   @media (min-width: 1025px) 
   {
- 
-    .details {
-        display: flex;
-        gap: 20px;
-  
-    }
-
-    .details-body {
+     .details-body {
       grid-area: details-body;
       background: linear-gradient(270deg, #111828, #111828);
       text-align: center;
       border-radius: 30px; /* bordas arredondadas no container */
-      padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
-      margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
+      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      margin: 10px 12px 10px 20px; /* top, right, bottom, left  espaço externo */
     }
- 
+    
+    .details {
+      display: flex;
+      gap: 10px;
+      border-radius: 10px; /* bordas arredondadas no container */
+    }
 
     .card {
       background-color: #192033;
       padding: 16px;
       border-radius: 10px;
-      flex: 1;
-      color: #e1e7e8;
+      color: var(--cor-letra-desktop); 
+      flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
     }
+
+    .card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+
 }
