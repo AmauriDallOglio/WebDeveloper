@@ -3,7 +3,7 @@
    ESTILOS GERAIS
    ============================ */
 
-:root { --cor-letra-celular: #000000; /* define a cor principal */ }
+ 
 :root { --cor-letra-gelo: #e1e7e8; /* define a cor principal */ }
 :root { --cor-letra-branca: #ffffff; /* define a cor principal */ }
 
@@ -72,7 +72,7 @@
     text-align: left;
     border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-    margin: 10px 5px 10px 5px; /* top, right, bottom, left  espaço externo */
+    margin: 10px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
   .sidebar ul {
@@ -115,21 +115,31 @@
 @media (min-width: 601px) and (max-width: 1024px) {
 
   .sidebar {
-    width: 220px;
-    background: linear-gradient(90deg, Green, #00f2fe);
+    grid-area: sidebar;
+    width: auto;       /* largura fixa no desktop */
+    max-width: auto;   /* garante que não passe disso */
+
+    background: linear-gradient(270deg, #111828, #111828);
+
     color: var(--cor-letra-branca); 
-    min-height: auto;
-    padding: 20px;
+    min-height: auto; /* ocupa toda a altura */
+    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+ 
+    text-align: left;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
+    margin: 10px 5px 10px 5px; /* top, right, bottom, left  espaço externo */
   }
+  
   .menu li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   .sidebar-header {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .sidebar-logo {

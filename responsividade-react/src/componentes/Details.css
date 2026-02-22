@@ -1,11 +1,11 @@
 
-:root { --cor-letra-celular: #000000; /* define a cor principal */ }
-:root { --cor-letra-desktop: #e1e7e8; /* define a cor principal */ }
-
+ 
+ 
 /* ============================
    CELULAR
    ============================ */
-@media (max-width: 600px) {
+@media (max-width: 600px) 
+{
     .details-body  {
       grid-area: details-body;
       background: linear-gradient(270deg, #111828, #111828);
@@ -28,50 +28,40 @@
       padding: 5px 5px 5px 5px; /* top, right, bottom, left espaço interno */
       border-radius: 10px;
       flex: 1 1 auto; /* ocupa espaço flexível, mínimo de altura */
-      color: var(--cor-letra-desktop); 
+      color: #e1e7e8;
       font-size: 0.9rem;
       background-color: #192033;
     }
-
- 
 }
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) {
- 
+@media (min-width: 601px) and (max-width: 1024px) 
+{
+     .details-body  {
+      grid-area: details-body;
+      background: linear-gradient(270deg, #111828, #111828);
+      text-align: center;
+      border-radius: 10px; /* bordas arredondadas no container */
+      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+    }
     .details {
       display: flex;
       gap: 20px;
       flex-direction: column;
-      align-items: center;
-      
-    }
-    .card {
-        max-width: 600px;
     }
 
     .card {
       background-color: #192033;
       padding: 16px;
       border-radius: 10px;
-      flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
-      color: var(--cor-letra-desktop); /* usa a variável */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
+      flex: 1 1 auto; /* ocupa espaço flexível, mínimo 300px */
+      color: #e1e7e8;
+ 
     }
 
-    .image-card {
-        flex-basis: 45%; /* duas colunas */
-    }
-
-    .details-body  {
-      grid-area: details-body;
-      background: linear-gradient(90deg, Green, #00f2fe);
-      padding: 10px;
-      text-align: center;
-    }
 }
 
 /* ============================
@@ -98,8 +88,9 @@
       background-color: #192033;
       padding: 16px;
       border-radius: 10px;
-      color: var(--cor-letra-desktop); 
+      color: #e1e7e8; 
       flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
+      
     }
 
     .card:hover {
@@ -107,6 +98,5 @@
       box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
       transition: transform 0.2s ease;
     }
-
 
 }

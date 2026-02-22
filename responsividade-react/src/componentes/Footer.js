@@ -14,12 +14,12 @@ function Footer() {
         {/* Coluna 2: Links de navegação */}
         <div className="footer-section">
           <h3>Navegação</h3>
-          <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
+            <div className="social-links">
+              <a href="#">Início</a>
+              <a href="#">Sobre</a>
+              <a href="#">Serviços</a>
+              <a href="#">Contato</a>
+            </div>
         </div>
 
         {/* Coluna 3: Redes sociais */}
@@ -31,6 +31,7 @@ function Footer() {
             <a href="#">LinkedIn</a>
           </div>
         </div>
+        
       </div>
     </footer>
   );

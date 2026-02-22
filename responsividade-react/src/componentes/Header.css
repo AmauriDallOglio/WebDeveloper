@@ -73,42 +73,26 @@
 @media (min-width: 601px) and (max-width: 1024px) {
   header {
     grid-area: header;
-    background: linear-gradient(90deg, Green, #00f2fe);
     color: #fff;
-    padding: 20px 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px; /* bordas arredondadas no container */
+    padding: 15px 5px 5px 15px; /* top, right, bottom, left espaço interno */
+    margin: 0px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
-   .header {
-    background: linear-gradient(90deg, Green, #00f2fe);
-  color: #fff;
-  border-radius: 15px; /* bordas arredondadas no container */
-  padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
-  margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
-}
+ 
 
-  .logo h1 {
-    font-size: 1.5rem;
-      margin: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-  }
-
-  .nav ul {
-    gap: 15px;
-  }
+ 
+ 
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1024px;
     margin: auto;
     flex-wrap: wrap; /* permite quebrar linha quando necessário */
   }
 
-  .nav a:hover {
-    color: violet;
-  }
+ 
 
   .header-avatar {
     width: 40px;

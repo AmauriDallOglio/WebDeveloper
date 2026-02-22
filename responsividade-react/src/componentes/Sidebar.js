@@ -30,6 +30,7 @@ function Sidebar() {
           <li><Link to="/usuarios"><Icon icon="material-symbols-light:account-box-outline" width="24" height="24" /> Usuários</Link></li>
         </ul>
       </div>
+      
     </aside>
   );
 }

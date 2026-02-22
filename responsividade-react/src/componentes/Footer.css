@@ -32,6 +32,18 @@
     margin: 5px 2px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 15px;
+    color: #fff;
+  }
+
+  .social-links a:hover {
+    color: #bbb; 
+  }
+
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -54,17 +66,13 @@
 @media (min-width: 601px) and (max-width: 1024px) {
   footer {
     grid-area: footer;
-    background: linear-gradient(90deg, Green, #00f2fe);
-  }
-
-  .footer-container {
-    justify-content: center;
+    background: linear-gradient(270deg, #111828, #111828);
     text-align: center;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
+    margin: 5px 2px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
-
-  .footer-section {
-    flex: 1 1 45%; /* duas colunas por linha */
-  }
+ 
  
   .social-links {
         justify-content: center;
@@ -73,9 +81,12 @@
     gap: 15px;
     color: #fff;
   }
+
+  
   .social-links a:hover {
     color: #bbb; 
   }
+
   .footer-section a {
     color: #e1e7e8;
     text-decoration: none;
@@ -86,45 +97,51 @@
     color: #bbb;
   }
 }
-
+ 
 /* ============================
    DESKTOP
    ============================ */
 @media (min-width: 1025px) {
   footer {
     grid-area: footer;
-   
     background: linear-gradient(270deg, #111828, #111828);
     text-align: center;
-    border-radius: 30px; /* bordas arredondadas no container */
-    padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
-    margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
-     
+    border-radius: 30px;
+    padding: 10px 10px 10px 20px; /* top, right, bottom, left espaço interno */
+    margin: 10px 12px 10px 20px; /* top, right, bottom, left  espaço externo */
   }
 
   .footer-container {
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
     max-width: 1200px;
     margin: auto;
-    gap: 20px; /* espaço entre seções */
+    text-align: left;
   }
 
   .footer-section {
-    flex: 1;  /* três colunas lado a lado */
-    min-width: 250px;  
+    color: #e1e7e8;
   }
 
   .social-links {
-    display: flex;
-    gap: 15px;
-     color: #e1e7e8;
+    display: flex;          /* coloca os links lado a lado */
+    flex-direction: column;    /* garante que fiquem na horizontal */
+    gap: 15px;              /* espaço entre os links */
+    color: #e1e7e8;
   }
+
+  .social-links a {
+    color: #e1e7e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
   .social-links a:hover {
-    color: #bbb; 
+    color: #bbb;
   }
+
+  
   .footer-section a {
     color: #e1e7e8;
     text-decoration: none;
@@ -135,8 +152,10 @@
     color: #bbb;
   }
 
-  h2 {
-         color: #fff;
+  h2, h3 {
+    color: #fff;
   }
-
 }
+
+
+ 
