@@ -1,28 +1,9 @@
-header {
-  grid-area: header;
-  background-color: lightblue;
-   background: linear-gradient(90deg, #4facfe, #00f2fe); /* gradiente moderno */
-  color: #fff;
-  padding: 20px 40px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* sombra leve */
-  text-align: center;
-}
- 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-}
 
-.logo h1 {
-  font-size: 1.8rem;
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 
+
+
+
+/* Navegação */
 .nav ul {
   list-style: none;
   display: flex;
@@ -38,20 +19,179 @@ header {
   transition: color 0.3s ease;
 }
 
-.nav a:hover {
-  color: #ffe082; /* destaque ao passar o mouse */
+
+ .header {
+  background: #111828;
+  color: #fff;
+  border-radius: 15px; /* bordas arredondadas no container */
+  padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
+  margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Esquerda */
+.header-left h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.header-left p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Centro: busca */
+.header-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 20px;
+  position: relative;
+}
+ 
+/* Direita: ícones */
+.header-right {
+  display: flex;
+  gap: 20px;
+}
+.icon {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.icon:hover {
+  color: #4facfe;
+}
+
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* deixa redondo */
+  object-fit: cover;  /* ajusta a imagem sem distorcer */
+}
+
+
+
+
+/* ============================
+   CELULAR
+   ============================ */
+@media (max-width: 600px) {
+  header {
+    grid-area: header;
+    background: linear-gradient(90deg, #00f2fe, yellow); 
+    color: #fff;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
   .header-container {
     flex-direction: column;
     text-align: center;
   }
+  .logo h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 
+ 
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  }
   .nav ul {
     flex-direction: column;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
   }
+  .nav a {
+    font-size: 1rem;
+    padding: 8px;
+  } 
+  .nav a:hover {
+  color: green;
+}
+
+}
+
+/* ============================
+   TABLET
+   ============================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header {
+    grid-area: header;
+    background: linear-gradient(90deg, Green, #00f2fe);
+    color: #fff;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .logo h1 {
+    font-size: 1.5rem;
+      margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  }
+
+  .nav ul {
+    gap: 15px;
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* permite quebrar linha quando necessário */
+  }
+  .nav a:hover {
+  color: violet;
+}
+
+ 
+}
+
+
+/* ============================
+   DESKTOP
+   ============================ */
+@media (min-width: 1025px) {
+  header {
+    grid-area: header;
+    background: linear-gradient(270deg, #030712, #030712);
+    color: #fff;
+    padding: 20px 40px;
+ 
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* permite quebrar linha quando necessário */
+  }
+  
+ .logo h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.nav a:hover {
+  color: rgb(45, 0, 193);
+}
+
 }

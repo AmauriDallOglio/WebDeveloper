@@ -1,11 +1,40 @@
 import React, { useState } from "react";
-import { clientes } from "../../integracao/clienteDados";
-import "./ClienteGrid.css";  // Estilos específicos para a página de clientes
+import { DataGrid } from "@mui/x-data-grid";
+import { clientes } from "../../integracao/clienteDados"; // caminho ajustado
+import "./ClienteGrid.css";  // estilos específicos
+ 
 
-function Cliente() {
+ 
+ 
+
+
+function ClienteGrid() {
   const [filter, setFilter] = useState("");
 
-  const filteredData = clientes.filter(cliente =>
+  // Definição das colunas
+  const columns = [
+    { field: "codigo", headerName: "Código", width: 100 },
+    { field: "nome", headerName: "Nome", width: 200 },
+    { field: "idade", headerName: "Idade", width: 100 },
+    { field: "dataNascimento", headerName: "Data Nasc.", width: 150 },
+    { field: "sexo", headerName: "Sexo", width: 120 },
+    { field: "peso", headerName: "Peso (kg)", width: 120 },
+    { field: "altura", headerName: "Altura (m)", width: 120 },
+    {
+      field: "endereco",
+      headerName: "Endereço",
+      width: 300,
+      valueGetter: (params) => {
+        const e = params.row?.endereco;
+        return e
+          ? `${e.rua}, ${e.numero} - ${e.cidade}/${e.estado}`
+          : "Endereço não informado";
+      }
+    }
+  ];
+
+  // Aplica filtro simples por nome
+  const filteredData = (clientes || []).filter(cliente =>
     cliente.nome.toLowerCase().includes(filter.toLowerCase())
   );
 
@@ -19,26 +48,17 @@ function Cliente() {
         onChange={(e) => setFilter(e.target.value)}
       />
 
-      <div className="grid">
-        {filteredData.map((cliente) => (
-          <div key={cliente.guid} className="card">
-            <h3>{cliente.nome}</h3>
-            <p><strong>Código:</strong> {cliente.codigo}</p>
-            <p><strong>Idade:</strong> {cliente.idade}</p>
-            <p><strong>Data Nasc.:</strong> {cliente.dataNascimento}</p>
-            <p><strong>Sexo:</strong> {cliente.sexo}</p>
-            <p><strong>Peso:</strong> {cliente.peso} kg</p>
-            <p><strong>Altura:</strong> {cliente.altura} m</p>
-            <hr />
-            <p><strong>Endereço:</strong></p>
-            <p>{cliente.endereco.rua}, {cliente.endereco.numero}</p>
-            <p>{cliente.endereco.bairro} - {cliente.endereco.cidade}/{cliente.endereco.estado}</p>
-            <p>CEP: {cliente.endereco.cep}</p>
-          </div>
-        ))}
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          rows={filteredData}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5, 10]}
+          getRowId={(row) => row.guid} // usa guid como ID único
+        />
       </div>
     </div>
   );
 }
 
-export default Cliente;   // <-- precisa ser default
+export default ClienteGrid;

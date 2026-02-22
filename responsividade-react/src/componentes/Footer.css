@@ -1,67 +1,42 @@
+ 
 .footer {
-   background: linear-gradient(90deg, #00f2fe, #4facfe); /* gradiente moderno */
+  
   color: #fff;
   padding: 40px 20px;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-  margin: 10px;
-}
 
 .footer-section h2,
 .footer-section h3 {
   margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section li {
   margin-bottom: 8px;
 }
 
-.footer-section a {
-  color: #bbb;
-  text-decoration: none;
-}
 
-.footer-section a:hover {
-  color: #fff;
-}
 
-.social-links a {
-  margin-right: 15px;
-  color: #bbb;
-}
 
-.social-links a:hover {
-  color: #fff;
-}
-
-footer {
-  grid-area: footer;
-  background-color: lightpink;
-  padding: 20px;
-}
 
 /* ============================
-   BREAKPOINT PARA CELULAR
+   CELULAR
    ============================ */
 @media (max-width: 600px) {
+  footer {
+    grid-area: footer;
+    background: linear-gradient(90deg, #00f2fe, yellow); 
+  }
+
   .footer-container {
-    flex-direction: column; /* empilha tudo */
+    flex-direction: column;
     text-align: center;
   }
 
@@ -69,38 +44,114 @@ footer {
     margin: 20px 0;
   }
 
-  .social-links a {
-    display: inline-block;
-    margin: 5px;
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .social-links a:hover {
+    color: #bbb; 
+  }
+
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #bbb;
   }
 }
 
 /* ============================
-   BREAKPOINT PARA TABLET
+   TABLET
    ============================ */
 @media (min-width: 601px) and (max-width: 1024px) {
+  footer {
+    grid-area: footer;
+    background: linear-gradient(90deg, Green, #00f2fe);
+  }
+
   .footer-container {
-    flex-direction: row; /* mantém lado a lado */
-    flex-wrap: wrap;     /* quebra linha se precisar */
+    justify-content: center;
     text-align: center;
   }
 
   .footer-section {
     flex: 1 1 45%; /* duas colunas por linha */
-    margin: 15px;
+  }
+ 
+  .social-links {
+        justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 15px;
+    color: #fff;
+  }
+  .social-links a:hover {
+    color: #bbb; 
+  }
+  .footer-section a {
+    color: #e1e7e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #bbb;
   }
 }
 
 /* ============================
-   BREAKPOINT PARA DESKTOP
+   DESKTOP
    ============================ */
 @media (min-width: 1025px) {
+  footer {
+    grid-area: footer;
+   
+    background: linear-gradient(270deg, #111828, #111828);
+    text-align: center;
+    border-radius: 30px; /* bordas arredondadas no container */
+    padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
+    margin: 10px 20px 10px 20px; /* top, right, bottom, left  espaço externo */
+     
+  }
+
   .footer-container {
-    flex-direction: row; /* três colunas lado a lado */
     text-align: left;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* espaço entre seções */
   }
 
   .footer-section {
-    flex: 1; /* cada seção ocupa espaço proporcional */
+    flex: 1;  /* três colunas lado a lado */
+    min-width: 250px;
+    
   }
+  .social-links {
+    display: flex;
+    gap: 15px;
+     color: #e1e7e8;
+  }
+  .social-links a:hover {
+    color: #bbb; 
+  }
+  .footer-section a {
+    color: #e1e7e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #bbb;
+  }
+
+  h2 {
+         color: #fff;
+  }
+
 }
