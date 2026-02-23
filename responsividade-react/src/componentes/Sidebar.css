@@ -7,6 +7,10 @@
 :root { --cor-letra-gelo: #e1e7e8; /* define a cor principal */ }
 :root { --cor-letra-branca: #ffffff; /* define a cor principal */ }
 
+
+
+ 
+
 /* Categoria */
 .menu-category {
   margin-bottom: 25px;
@@ -36,21 +40,25 @@
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid silver;
+  border-radius: 10px;
+  border: 1px solid #192033;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .menu a:hover {
-  background: linear-gradient(270deg, #272729, #242427);
+  background: linear-gradient(270deg, #4f6fc0, #192033);
   color: var(--cor-letra-branca); 
 }
 
 .menu .active a {
-  background: linear-gradient(270deg, #405669, #16284a);
-  color: var(--cor-letra-branca); 
+  background: linear-gradient(270deg, #16254a, #192033);
+  color: var(--cor-letra-branca);
 }
 
+.menu a.active {
+  background: linear-gradient(270deg, #16254a, #192033);
+  color: var(--cor-letra-branca);
+}
 
 
 
@@ -71,8 +79,8 @@
  
     text-align: left;
     border-radius: 10px; /* bordas arredondadas no container */
-    padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-    margin: 10px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+    padding: 10px 0px 5px 15px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
   .sidebar ul {
@@ -128,7 +136,7 @@
     text-align: left;
     border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-    margin: 10px 5px 10px 5px; /* top, right, bottom, left  espaço externo */
+    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
   
   .menu li {
@@ -177,7 +185,7 @@
       text-align: left;
       border-radius: 10px; /* bordas arredondadas no container */
       padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-      margin: 10px 0px 10px 5px; /* top, right, bottom, left  espaço externo */
+      margin: 5px 0px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
  
   

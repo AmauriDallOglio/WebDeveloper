@@ -11,7 +11,7 @@
       background: linear-gradient(270deg, #111828, #111828);
       text-align: center;
       border-radius: 10px; /* bordas arredondadas no container */
-      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
       margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
  
     }
@@ -31,7 +31,14 @@
       color: #e1e7e8;
       font-size: 0.9rem;
       background-color: #192033;
+       /* Limita o texto */
+      white-space: nowrap;        /* impede quebra de linha */
+      overflow: hidden;           /* esconde o excesso */
+      text-overflow: ellipsis;    /* adiciona "..." no final */
     }
+
+ 
+
 }
 
 /* ============================
@@ -44,7 +51,7 @@
       background: linear-gradient(270deg, #111828, #111828);
       text-align: center;
       border-radius: 10px; /* bordas arredondadas no container */
-      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      padding: 10px 0px 0px 0px; /* top, right, bottom, left espaço interno */
       margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
     }
     .details {
@@ -73,9 +80,9 @@
       grid-area: details-body;
       background: linear-gradient(270deg, #111828, #111828);
       text-align: center;
-      border-radius: 30px; /* bordas arredondadas no container */
+      border-radius: 10px; /* bordas arredondadas no container */
       padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 10px 12px 10px 20px; /* top, right, bottom, left  espaço externo */
+      margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
     }
     
     .details {
@@ -90,8 +97,9 @@
       border-radius: 10px;
       color: #e1e7e8; 
       flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
-      
     }
+
+ 
 
     .card:hover {
       transform: translateY(-1px);

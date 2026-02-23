@@ -1,5 +1,6 @@
-import React from "react";
+ import React from "react";
 import "./Footer.css";
+import { Icon } from "@iconify/react";
 
 function Footer() {
   return (
@@ -11,30 +12,36 @@ function Footer() {
           <p>© {new Date().getFullYear()} Todos os direitos reservados.</p>
         </div>
 
-        {/* Coluna 2: Links de navegação */}
-        <div className="footer-section">
-          <h3>Navegação</h3>
-            <div className="social-links">
-              <a href="#">Início</a>
-              <a href="#">Sobre</a>
-              <a href="#">Serviços</a>
-              <a href="#">Contato</a>
-            </div>
-        </div>
-
+ 
         {/* Coluna 3: Redes sociais */}
-        <div className="footer-section">
-          <h3>Redes sociais</h3>
-          <div className="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-          </div>
-        </div>
+<div className="footer-section">
+  <h3>Redes sociais</h3>
+  <div className="social-links">
+    <div className="social-item">
+      <a href="#"><Icon icon="mdi:facebook" width="28" height="28" /></a>
+      <p>Facebook</p>
+    </div>
+    <div className="social-item">
+      <a href="#"><Icon icon="mdi:instagram" width="28" height="28" /></a>
+      <p>Instagram</p>
+    </div>
+    <div className="social-item">
+      <a href="#"><Icon icon="mdi:linkedin" width="28" height="28" /></a>
+      <p>LinkedIn</p>
+    </div>
+    <div className="social-item">
+      <a href="#"><Icon icon="mdi:whatsapp" width="28" height="28" /></a>
+      <p>WhatsApp</p>
+    </div>
+  </div>
+</div>
+
         
       </div>
     </footer>
   );
 }
 
-export default Footer;
+export default Footer; 
+
+

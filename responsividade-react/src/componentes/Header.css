@@ -10,21 +10,9 @@
 .header-left p {
   margin: 0;
   font-size: 0.9rem;
-  color: #bbb;
+ 
 }
 
-
-/*  ícones */
-.header-right {
-  display: flex;
-  gap: 20px;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
   .header {
     background: #111828;
@@ -38,10 +26,12 @@
 @media (max-width: 600px) {
   header {
     grid-area: header;
-    color: #fff;
-    border-radius: 15px; /* bordas arredondadas no container */
-    padding: 15px 5px 5px 15px; /* top, right, bottom, left espaço interno */
-    margin: 0px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+    color: #ffffff;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 10px 0px 5px 0px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 0px 5px; /* top, right, bottom, left  espaço externo */
+ 
+     /* border-radius: 0 0 10px 10px;  só arredonda embaixo */
   }
 
 
@@ -53,7 +43,6 @@
     margin: auto;
     flex-direction: column;
     text-align: center;
- 
   }
  
   
@@ -64,6 +53,22 @@
     object-fit: cover;  /* ajusta a imagem sem distorcer */
   }
  
+  
+  /*  ícones */
+  .header-right {
+    display: flex;
+    gap: 40px;
+    padding: 15px 0px 5px 0px; /* top, right, bottom, left espaço interno */
+ 
+  }
+
+  .header-left {
+    display: flex;
+    align-items: self-start;
+    gap: 30px;
+    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+  }
+
  
 }
 
@@ -73,10 +78,10 @@
 @media (min-width: 601px) and (max-width: 1024px) {
   header {
     grid-area: header;
-    color: #fff;
-    border-radius: 15px; /* bordas arredondadas no container */
-    padding: 15px 5px 5px 15px; /* top, right, bottom, left espaço interno */
-    margin: 0px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+    color: #ffffff;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 5px 15px 15px 15px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
 
  
@@ -102,6 +107,20 @@
   }
 
 
+  /*  ícones */
+  .header-right {
+    display: flex;
+    gap: 40px;
+    padding: 20px 0px 5px 0px; /* top, right, bottom, left espaço interno */
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+  }
+
  
 }
 
@@ -112,12 +131,11 @@
 @media (min-width: 1025px) {
   header {
     grid-area: header;
- 
-    color: #fff;
+    color: #ffffff;
     padding: 20px 40px;
     border-radius: 15px; /* bordas arredondadas no container */
-    padding: 15px 15px 0px 15px; /* top, right, bottom, left espaço interno */
-    margin: 10px 12px 10px 20px; /* top, right, bottom, left  espaço externo */
+    padding: 18px 15px 0px 15px; /* top, right, bottom, left espaço interno */
+    margin: 5px 10px 5px 20px; /* top, right, bottom, left  espaço externo */
   }
 
   
@@ -139,6 +157,21 @@
     height: 50px;
     border-radius: 50%; /* deixa redondo */
     object-fit: cover;  /* ajusta a imagem sem distorcer */
+  }
+
+  
+  /*  ícones */
+  .header-right {
+    display: flex;
+    gap: 40px;
+    padding: 7px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
   }
 
 
