@@ -10,6 +10,7 @@ import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
+import ClienteCadastro from "./paginas/cliente/ClienteCadastro";
 
 
 /* ============================
@@ -61,6 +62,7 @@ function App() {
                 }
               />
               <Route path="/clientes" element={<Cliente />} />
+                            <Route path="/contato" element={<ClienteCadastro />} />
             </Routes>
           </main>
 

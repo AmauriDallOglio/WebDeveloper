@@ -3,6 +3,7 @@ import "./Sidebar.css";
 import { Icon } from "@iconify/react";
 import logo from "../imagem/sidebar/logo.webp";
 import { NavLink } from "react-router-dom"; // troque Link por NavLink
+import FormularioContato from "../paginas/cliente/ClienteCadastro"; // importe o formulário
 
 function Sidebar() {
   return (
@@ -12,7 +13,7 @@ function Sidebar() {
       {/* Bloco da imagem e legenda */}
       <div className="sidebar-header">
         <img src={logo} alt="Logo da empresa" className="sidebar-logo" />
-        <p className="sidebar-caption">MP ENGENHARIA</p>
+        <p className="sidebar-caption">MP PROJETOS</p>
       </div>
 
       {/* Categoria: Principal */}
@@ -29,6 +30,15 @@ function Sidebar() {
               <Icon icon="material-symbols-light:person-outline" width="24" height="24" /> Clientes
             </NavLink>
           </li>
+
+          <li>
+            <NavLink to="/contato" className={({ isActive }) => (isActive ? "active" : "")}>
+              <Icon icon="mdi:email-outline" width="24" height="24" /> Contato
+            </NavLink>
+          </li>
+
+
+
         </ul>
       </div>
 
