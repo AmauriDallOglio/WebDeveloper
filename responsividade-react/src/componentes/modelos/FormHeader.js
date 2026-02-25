@@ -1,10 +1,11 @@
 // src/componentes/modelos/FormHeader.js
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import "./FormHeader.css";
 
 function FormHeader({ titulo }) {
   return (
-    <Box sx={{ mb: 2 }}>
+    <Box className="form-header-box" >
       <Typography variant="h5">{titulo}</Typography>
     </Box>
   );

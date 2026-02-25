@@ -1,0 +1,8 @@
+.form-header-box{
+ 
+    text-align: center;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 20px 0px 20px 0px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+
+}

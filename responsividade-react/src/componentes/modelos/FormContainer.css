@@ -1,26 +1,10 @@
-.form-buttons {
-  display: flex;
-  justify-content: space-between; /* empurra um para cada extremo */
-  margin-top: 20px;
-}
- 
 
-.form-buttons > * {
-  flex: 1;
-}
 
-.form-buttons > *:first-child {
-  margin-right: 10px;
-}
-
-.form-buttons > *:last-child {
-  margin-left: 10px;
-}
 
 
 /* CELULAR */
 @media (max-width: 600px) {
-  .form-container {
+  .form-container-paper{
  
     background: linear-gradient(270deg, #111828, #111828);
     text-align: center;
@@ -28,11 +12,17 @@
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
     margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
   }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 colunas iguais */
+    gap: 16px; /* espaçamento entre os campos */
+  }
 }
 
 /* TABLET */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .form-container {
+  .form-container-paper{
   
     background: linear-gradient(270deg, #111828, #111828);
     text-align: center;
@@ -40,18 +30,32 @@
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
     margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
   }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    gap: 16px; /* espaçamento entre os campos */
+  }
+
 }
 
 /* DESKTOP */
 @media (min-width: 1025px) {
-  .form-container {
+  .form-container-paper{
  
-    background: linear-gradient(270deg, #111828, #111828);
+   background: linear-gradient(270deg, #111828, #111828);
 
     text-align: center;
     border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
     margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
-
   }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
+    gap: 16px; /* espaçamento entre os campos */
+  }
+
+ 
 }

@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import FormHeader from "../../componentes/modelos/FormHeader";
 import FormContainer from "../../componentes/modelos/FormContainer";
-import FormInputs from "../../componentes/modelos/FormInputs";
 import FormButtons from "../../componentes/modelos/FormButtons";
 
+// importa os três tipos de input
+import InputString from "../../componentes/modelos/InputString";
+import InputNumeroInteiro from "../../componentes/modelos/InputNumeroInteiro";
+import InputNumeroDecimal from "../../componentes/modelos/InputNumeroDecimal";
+
 function ClienteCadastro() {
+  const [codigo, setCodigo] = useState("");
   const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  const [idade, setIdade] = useState("");
+  const [salario, setSalario] = useState("");
 
+  const [erroCodigo, setErroCodigo] = useState("");
   const [erroNome, setErroNome] = useState(true);
-  const [erroEmail, setErroEmail] = useState(true);
-  const [erroMensagem, setErroMensagem] = useState(true);
+  const [erroIdade, setErroIdade] = useState(true);
+  const [erroSalario, setErroSalario] = useState(true);
 
-  const isFormValid = !erroNome && !erroEmail && !erroMensagem;
+  const isFormValid = !erroCodigo &&  !erroNome && !erroIdade && !erroSalario;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,12 +27,14 @@ function ClienteCadastro() {
   };
 
   const handleCancel = () => {
+    setCodigo("");
     setNome("");
-    setEmail("");
-    setMensagem("");
+    setIdade("");
+    setSalario("");
+    setErroCodigo(true);
     setErroNome(true);
-    setErroEmail(true);
-    setErroMensagem(true);
+    setErroIdade(true);
+    setErroSalario(true);
   };
 
   return (
@@ -34,23 +42,61 @@ function ClienteCadastro() {
       <FormHeader titulo="Formulário de cadastro de cliente" />
 
       <FormContainer>
-        <form onSubmit={handleSubmit}>
-          <FormInputs
-            nome={nome}
-            setNome={setNome}
-            erroNome={erroNome}
-            setErroNome={setErroNome}
-            email={email}
-            setEmail={setEmail}
-            erroEmail={erroEmail}
-            setErroEmail={setErroEmail}
-            mensagem={mensagem}
-            setMensagem={setMensagem}
-            erroMensagem={erroMensagem}
-            setErroMensagem={setErroMensagem}
+        <form onSubmit={handleSubmit}  className="form-grid">
+          
+          {/* Input String */}
+          <InputString
+            label="Codigo"
+            value={codigo}
+            onChange={(e) => setNome(e.target.value)}
+            onBlur={() => setErroNome(codigo.trim() === "")}
+            error={erroCodigo}
+            helperText={erroCodigo ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:person-outline"
           />
 
-          <FormButtons onCancel={handleCancel} isFormValid={isFormValid} />
+          {/* Input String */}
+          <InputString
+            label="Nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            onBlur={() => setErroNome(nome.trim() === "")}
+            error={erroNome}
+            helperText={erroNome ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:person-outline"
+          />
+
+          {/* Input Número Inteiro */}
+          <InputNumeroInteiro
+            label="Idade"
+            value={idade}
+            onChange={(e) => setIdade(e.target.value)}
+            onBlur={() => setErroIdade(idade.trim() === "")}
+            error={erroIdade}
+            helperText={erroIdade ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:calendar-month-outline"
+          />
+
+          {/* Input Número Decimal */}
+          <InputNumeroDecimal
+            label="Salário"
+            value={salario}
+            onChange={(e) => setSalario(e.target.value)}
+            onBlur={() => setErroSalario(salario.trim() === "")}
+            error={erroSalario}
+            helperText={erroSalario ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:attach-money"
+          />
+
+
+ 
+          {/* Botões ocupam a linha inteira */}
+          <div className="form-buttons">
+            <FormButtons onCancel={handleCancel} isFormValid={isFormValid} />
+          </div>
+
+
+
         </form>
       </FormContainer>
     </div>

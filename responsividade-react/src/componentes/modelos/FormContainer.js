@@ -5,8 +5,8 @@ import "./FormContainer.css";
 
 function FormContainer({ children }) {
   return (
-    <Box sx={{ flex: 1, py: 4 }}>
-      <Paper elevation={3} className="form-container">
+    <Box >
+      <Paper className="form-container-paper">
         {children}
       </Paper>
     </Box>
