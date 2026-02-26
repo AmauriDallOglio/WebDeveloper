@@ -1,26 +1,24 @@
  
-  
-/* CELULAR */
-@media (max-width: 600px) {
- 
-  .form-buttons {
+   .form-buttons {
     grid-column: 1 / -1; /* ocupa todas as colunas da grid */
     display: flex;
     justify-content: space-between; /* coloca Cancelar à esquerda e Salvar à direita */
-    margin-top: 5px;
+    background: linear-gradient(270deg, #111828, #111828);
   }
 
+  
+ 
+  .form-buttons > *:last-child {
+    margin-left: 0%;
+  }
+
+/* CELULAR */
+@media (max-width: 600px) {
  
   .form-buttons > *:first-child {
-    margin-right: 40%; /* dá um espaço extra à direita do botão Cancelar */
+    margin-right: 47%; /* dá um espaço extra à direita do botão Cancelar */
   }
  
-   
-
-  .form-buttons > *:last-child {
-    margin-left: 5px; /* dá um pequeno espaço à esquerda do botão Salvar */
-  }
-
   .form-buttons > * {
     flex: 0 0 60%; /* cada botão ocupa 10% da largura */
   }
@@ -28,22 +26,14 @@
 }
 
 /* TABLET */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) 
+{
  
-    .form-buttons {
-    grid-column: 1 / -1; /* ocupa todas as colunas da grid */
-    display: flex;
-    justify-content: space-between; /* empurra Cancelar e Salvar para os extremos */
-    margin-top: 5px;
-  }
- 
+
   .form-buttons > *:first-child {
-    margin-right: 165%;
+    margin-right: 170%;
   }
  
-  .form-buttons > *:last-child {
-    margin-left: 5px;
-  }
 
   .form-buttons > * {
     flex: 0 0 40%; /* cada botão ocupa 10% da largura */
@@ -52,24 +42,13 @@
 }
 
 /* DESKTOP */
-@media (min-width: 1025px) {
-  .form-buttons {
-    grid-column: 1 / -1; /* ocupa todas as colunas da grid */
-    display: flex;
-    justify-content: space-between; /* empurra Cancelar e Salvar para os extremos */
-    margin-top: 10px;
-  }
-
+@media (min-width: 1025px) 
+{
  
-
   .form-buttons > *:first-child {
-    margin-right: 167%;
+    margin-right: 170%;
   }
  
-  .form-buttons > *:last-child {
-    margin-left: 5px;
-  }
-
   .form-buttons > * {
     flex: 0 0 40%; /* cada botão ocupa 10% da largura */
   }

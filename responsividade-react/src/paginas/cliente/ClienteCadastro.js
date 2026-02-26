@@ -38,11 +38,17 @@ function ClienteCadastro() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-      <FormHeader titulo="Formulário de cadastro de cliente" />
+    <div style={{ minHeight: "100vh"}}>
+
+      <FormHeader 
+        titulo="Cliente" 
+        subtitulo="Formulário de inserção" 
+        icon="material-symbols-light:person-outline" 
+      />
+
 
       <FormContainer>
-        <form onSubmit={handleSubmit}  className="form-grid">
+        <form onSubmit={handleSubmit}  className="form-container-grid">
           
           {/* Input String */}
           <InputString
