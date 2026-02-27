@@ -1,15 +1,15 @@
+ // src > componentes > masterPages > Sidebar.Js
+
 import React from "react";
 import "./Sidebar.css";
 import { Icon } from "@iconify/react";
-import logo from "../imagem/sidebar/logo.webp";
+import logo from "./imagem/sidebar/logo.webp";
 import { NavLink } from "react-router-dom"; // troque Link por NavLink
-import FormularioContato from "../paginas/cliente/ClienteCadastro"; // importe o formulário
 
 function Sidebar() {
   return (
     <aside className="sidebar">
  
-
       {/* Bloco da imagem e legenda */}
       <div className="sidebar-header">
         <img src={logo} alt="Logo da empresa" className="sidebar-logo" />
@@ -18,7 +18,7 @@ function Sidebar() {
 
       {/* Categoria: Principal */}
       <div className="menu-category">
-        <h3>Principal</h3>
+        <p className="sidebar-caption-menu">Principal</p>
         <ul className="menu">
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
@@ -44,7 +44,7 @@ function Sidebar() {
 
       {/* Categoria: Administração */}
       <div className="menu-category">
-        <h3>Administração</h3>
+        <p className="sidebar-caption-menu">Administração</p>
         <ul className="menu">
           <li>
             <NavLink to="/financeiro" className={({ isActive }) => (isActive ? "active" : "")}>

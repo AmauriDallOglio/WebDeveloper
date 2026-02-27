@@ -1,0 +1,162 @@
+/* Texto Esquerda */
+.header-left h2 {
+  margin: 0; /* remove o espaçamento padrão do navegador */
+  font-size: 1.2rem; /* define o tamanho da fonte do título */
+}
+
+.header-left p {
+  margin: 0; /* remove o espaçamento padrão do parágrafo */
+  font-size: 0.9rem; /* define tamanho menor para texto secundário */
+}
+
+.header {
+  background: linear-gradient(270deg, #111828, #111828); /* define fundo com gradiente escuro */
+}
+
+.header-caption-menu {
+   font-size: 1.2rem; /* define tamanho da fonte do texto do menu */
+}
+
+
+/* ============================
+   CELULAR
+   ============================ */
+@media (max-width: 600px) {
+
+  header {
+    grid-area: header; /* define a área do header no layout grid */
+ 
+    border-radius: 10px; /* arredonda os cantos do header */
+    padding: 10px 0px 5px 0px; /* espaço interno: cima direita baixo esquerda */
+    margin: 5px 5px 0px 5px; /* espaço externo ao redor do header */
+ 
+     /* border-radius: 0 0 10px 10px;  só arredonda embaixo */
+  }
+
+  .header-container {
+    display: flex; /* ativa layout flexível */
+    justify-content: space-between; /* distribui elementos com espaço entre eles */
+    align-items: center; /* alinha verticalmente no centro */
+    max-width: 600px; /* limita largura máxima */
+    margin: auto; /* centraliza horizontalmente */
+    flex-direction: column; /* empilha os elementos verticalmente */
+    text-align: center; /* centraliza o texto */
+  }
+ 
+  
+  .header-avatar {
+    width: 40px; /* largura do avatar */
+    height: 40px; /* altura do avatar */
+    border-radius: 50%; /* transforma em círculo */
+    object-fit: cover;  /* evita distorção da imagem */
+  }
+ 
+  
+  /*  ícones */
+  .header-right {
+    display: flex; /* usa layout flexível */
+    gap: 40px; /* espaço entre os ícones */
+    padding: 15px 0px 5px 0px; /* espaço interno */
+  }
+
+  .header-left {
+    display: flex; /* ativa flexbox */
+    align-items: self-start; /* alinha no topo */
+    gap: 30px; /* espaço entre avatar e texto */
+    padding: 5px 0px 0px 0px; /* espaço interno superior */
+  }
+
+}
+
+
+/* ============================
+   TABLET
+   ============================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  header {
+    grid-area: header; /* define área no layout grid */
+ 
+    border-radius: 10px; /* arredonda os cantos */
+    padding: 5px 15px 15px 15px; /* espaço interno */
+    margin: 5px 5px 5px 5px; /* espaço externo */
+  }
+
+  .header-container {
+    display: flex; /* ativa flexbox */
+    justify-content: space-between; /* separa esquerda e direita */
+    align-items: center; /* alinha verticalmente */
+    max-width: 1024px; /* largura máxima do tablet */
+    margin: auto; /* centraliza horizontalmente */
+    flex-wrap: wrap; /* permite quebrar linha se necessário */
+  }
+
+  .header-avatar {
+    width: 40px; /* largura do avatar */
+    height: 40px; /* altura do avatar */
+    border-radius: 50%; /* deixa circular */
+    object-fit: cover;  /* evita distorção */
+  }
+
+  /*  ícones */
+  .header-right {
+    display: flex; /* ativa flexbox */
+    gap: 40px; /* espaço entre ícones */
+    padding: 20px 0px 5px 0px; /* espaço interno */
+  }
+
+  .header-left {
+    display: flex; /* ativa flexbox */
+    align-items: center; /* alinha verticalmente */
+    gap: 15px; /* espaço entre avatar e texto */
+    padding: 5px 0px 0px 0px; /* espaço interno superior */
+  }
+
+}
+
+
+/* ============================
+   DESKTOP
+   ============================ */
+@media (min-width: 1025px) {
+
+  header {
+    grid-area: header; /* define área no grid */
+ 
+    padding: 20px 40px; /* espaço interno geral */
+    border-radius: 15px; /* cantos mais arredondados */
+    padding: 18px 15px 0px 15px; /* sobrescreve padding anterior */
+    margin: 5px 10px 5px 20px; /* espaço externo */
+  }
+
+  .header-container {
+    display: flex; /* ativa flexbox */
+    justify-content: space-between; /* separa elementos */
+    align-items: center; /* alinha verticalmente */
+    max-width: 1550px; /* largura máxima desktop */
+    margin: auto; /* centraliza */
+    flex-wrap: wrap; /* permite quebrar linha */
+  }
+  
+  .header-avatar {
+    width: 50px; /* avatar maior no desktop */
+    height: 50px; /* altura maior */
+    border-radius: 50%; /* mantém circular */
+    object-fit: cover;  /* evita distorção */
+  }
+
+  /*  ícones */
+  .header-right {
+    display: flex; /* ativa flexbox */
+    gap: 40px; /* espaço entre ícones */
+    padding: 7px 0px 0px 0px; /* espaço interno superior */
+  }
+
+  .header-left {
+    display: flex; /* ativa flexbox */
+    align-items: center; /* alinha verticalmente */
+    gap: 15px; /* espaço entre elementos */
+    padding: 0px 0px 0px 0px; /* sem espaço interno */
+  }
+
+}

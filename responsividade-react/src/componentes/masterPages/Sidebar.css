@@ -4,7 +4,12 @@
    ============================ */
 
  
- 
+.sidebar-caption-menu,
+.sidebar-caption{
+font-size: 1.2rem;
+
+}
+
  
 
 /* Categoria */
@@ -31,7 +36,7 @@
 
 .menu a {
   text-decoration: none;
-  color: var(--cor-letra-gelo); 
+  color: var(--g); 
   display: flex;
   align-items: center;
   gap: 10px;
@@ -105,11 +110,7 @@
   }
 
 
-  .sidebar-caption {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--cor-letra-branca); 
-  }
+ 
 
 }
 
@@ -153,11 +154,7 @@
   }
 
 
-  .sidebar-caption {
-    font-size: 1.2rem;
-    font-weight: bold;
  
-  }
 
 }
 
@@ -178,10 +175,10 @@
     width: 250px;       /* largura fixa no desktop */
 
 
-      text-align: left;
-      border-radius: 10px; /* bordas arredondadas no container */
-      padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-      margin: 5px 0px 5px 5px; /* top, right, bottom, left  espaço externo */
+    text-align: left;
+    border-radius: 10px; /* bordas arredondadas no container */
+    padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
+    margin: 5px 0px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
  
   
@@ -204,11 +201,6 @@
 
     
 
-  .sidebar-caption {
-    font-size: 1.2rem;
-    font-weight: bold;
-   
-  }
 
 }
 

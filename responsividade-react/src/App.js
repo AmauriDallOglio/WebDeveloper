@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./componentes/Header";
-import Sidebar from "./componentes/Sidebar";
-import Footer from "./componentes/Footer";
-import Details from "./componentes/Details";
+import Header from "./componentes/masterPages/Header";
+import Sidebar from "./componentes/masterPages/Sidebar";
+import Footer from "./componentes/masterPages/Footer";
+import Details from "./componentes/masterPages/Details";
 import Cliente from "./paginas/cliente/ClienteGrid";
 import "./App.css";
 

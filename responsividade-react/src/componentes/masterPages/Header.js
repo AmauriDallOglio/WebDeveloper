@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import avatar from "../imagem/header/usuario.jpg"; // imagem local do usuário
+import avatar from "./imagem/header/usuario.jpg";// imagem local do usuário
 import { Icon } from "@iconify/react"; // biblioteca de ícones
 
 function Header({ darkMode, setDarkMode }) {
@@ -12,7 +12,7 @@ function Header({ darkMode, setDarkMode }) {
         <div className="header-left">
           <img src={avatar} alt="Foto de perfil" className="header-avatar" />
           <div>
-            <h2>Olá! Amauri Dall'Oglio</h2>
+            <p className="header-caption-menu">Olá! Amauri Dall'Oglio</p>
             <p>Existem informações sobre o projeto</p>
           </div>
         </div>

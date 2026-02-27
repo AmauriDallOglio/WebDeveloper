@@ -28,7 +28,7 @@
       padding: 5px 5px 5px 5px; /* top, right, bottom, left espaço interno */
       border-radius: 10px;
       flex: 1 1 auto; /* ocupa espaço flexível, mínimo de altura */
-      color: #e1e7e8;
+
       font-size: 0.9rem;
       background-color: #192033;
        /* Limita o texto */
@@ -65,7 +65,7 @@
       padding: 16px;
       border-radius: 10px;
       flex: 1 1 auto; /* ocupa espaço flexível, mínimo 300px */
-      color: #e1e7e8;
+
  
     }
 
@@ -95,7 +95,7 @@
       background-color: #192033;
       padding: 16px;
       border-radius: 10px;
-      color: #e1e7e8; 
+
       flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
     }
 
