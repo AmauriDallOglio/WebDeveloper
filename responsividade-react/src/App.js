@@ -31,11 +31,23 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
-  const theme = createTheme({
-    palette: {
-      mode: darkMode ? "dark" : "light",
-    },
-  });
+  
+const theme = createTheme({
+  palette: {
+    mode: darkMode ? "dark" : "light",
+  },
+  typography: {
+    fontFamily: [
+      'Segoe UI',
+      'Roboto',
+      'Helvetica',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+});
+
+
 
   return (
     <ThemeProvider theme={theme}>

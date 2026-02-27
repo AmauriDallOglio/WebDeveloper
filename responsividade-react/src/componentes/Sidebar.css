@@ -4,11 +4,7 @@
    ============================ */
 
  
-:root { --cor-letra-gelo: #e1e7e8; /* define a cor principal */ }
-:root { --cor-letra-branca: #ffffff; /* define a cor principal */ }
-
-
-
+ 
  
 
 /* Categoria */
@@ -19,7 +15,7 @@
 .menu-category h3 {
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: var(--cor-letra-gelo); 
+  
   margin-bottom: 10px;
 }
 
@@ -47,17 +43,17 @@
 
 .menu a:hover {
   background: linear-gradient(270deg, #4f6fc0, #192033);
-  color: var(--cor-letra-branca); 
+ 
 }
 
 .menu .active a {
   background: linear-gradient(270deg, #16254a, #192033);
-  color: var(--cor-letra-branca);
+ 
 }
 
 .menu a.active {
   background: linear-gradient(270deg, #16254a, #192033);
-  color: var(--cor-letra-branca);
+ 
 }
 
 
@@ -73,7 +69,7 @@
 
     background: linear-gradient(270deg, #111828, #111828);
 
-    color: var(--cor-letra-branca); 
+ 
     min-height: auto; /* ocupa toda a altura */
     box-shadow: 2px 0 6px rgba(0,0,0,0.1);
  
@@ -129,7 +125,7 @@
 
     background: linear-gradient(270deg, #111828, #111828);
 
-    color: var(--cor-letra-branca); 
+ 
     min-height: auto; /* ocupa toda a altura */
     box-shadow: 2px 0 6px rgba(0,0,0,0.1);
  
@@ -160,7 +156,7 @@
   .sidebar-caption {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--cor-letra-branca); 
+ 
   }
 
 }
@@ -176,7 +172,7 @@
     /*background: linear-gradient(270deg, #4facfe, #00f2fe); */
     background: linear-gradient(270deg, #111828, #111828);
    
-    color: var(--cor-letra-branca); 
+ 
     min-height: 100vh; /* ocupa toda a altura */
     box-shadow: 2px 0 6px rgba(0,0,0,0.1);
     width: 250px;       /* largura fixa no desktop */
@@ -211,7 +207,7 @@
   .sidebar-caption {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--cor-letra-branca); 
+   
   }
 
 }

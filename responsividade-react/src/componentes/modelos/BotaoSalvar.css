@@ -1,0 +1,10 @@
+ .botao-salvar{
+  border: 1px solid #3b6a49; /* laranja */
+  color: #66bb6a;
+}
+
+.botao-salvar:hover {
+background-color: rgba(102, 187, 106, 0.1); /* verde com transparência */
+  border-color: #66bb6a ;
+  color: #66bb6a ;
+}

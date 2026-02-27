@@ -1,6 +1,7 @@
 // src/componentes/modelos/BotaoSalvar.js
 import React from "react";
 import { Button } from "@mui/material";
+import "./BotaoSalvar.css";
 
 function BotaoSalvar({ disabled }) {
   return (
@@ -10,6 +11,7 @@ function BotaoSalvar({ disabled }) {
       color="success"
       fullWidth
       disabled={disabled}
+      className="botao-salvar"
     >
       Salvar
     </Button>

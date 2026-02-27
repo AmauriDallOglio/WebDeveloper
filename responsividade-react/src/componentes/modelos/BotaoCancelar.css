@@ -1,0 +1,10 @@
+ .botao-cancelar {
+  border: 1px solid #886027; /* laranja */
+  color: #f5a369;
+}
+
+.botao-cancelar:hover {
+  background-color: rgba(255, 149, 73, 0.1); /* laranja com transparência */
+  border-color: #f5a369 ;
+  color: #f5a369 ;
+}

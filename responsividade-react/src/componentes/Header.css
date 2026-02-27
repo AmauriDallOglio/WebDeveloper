@@ -1,7 +1,4 @@
 
-
-
-
 /* Texto Esquerda */
 .header-left h2 {
   margin: 0;
@@ -10,14 +7,11 @@
 .header-left p {
   margin: 0;
   font-size: 0.9rem;
- 
 }
 
-
   .header {
-    background: #111828;
+    background: linear-gradient(270deg, #111828, #111828);
   }
-
 
 
 /* ============================
@@ -26,7 +20,7 @@
 @media (max-width: 600px) {
   header {
     grid-area: header;
-    color: #ffffff;
+ 
     border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 0px 5px 0px; /* top, right, bottom, left espaço interno */
     margin: 5px 5px 0px 5px; /* top, right, bottom, left  espaço externo */
@@ -78,7 +72,7 @@
 @media (min-width: 601px) and (max-width: 1024px) {
   header {
     grid-area: header;
-    color: #ffffff;
+ 
     border-radius: 10px; /* bordas arredondadas no container */
     padding: 5px 15px 15px 15px; /* top, right, bottom, left espaço interno */
     margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
@@ -131,7 +125,7 @@
 @media (min-width: 1025px) {
   header {
     grid-area: header;
-    color: #ffffff;
+ 
     padding: 20px 40px;
     border-radius: 15px; /* bordas arredondadas no container */
     padding: 18px 15px 0px 15px; /* top, right, bottom, left espaço interno */

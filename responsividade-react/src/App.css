@@ -1,14 +1,14 @@
 body {
-  margin: 0px;
-  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;  /* ajusta os espaços entre as letras */
 }
+
 
 h3 {
   text-transform: uppercase;
-  color: #e1e7e8;
+  
 }
 
-
+ 
  
 
 /* ============================
