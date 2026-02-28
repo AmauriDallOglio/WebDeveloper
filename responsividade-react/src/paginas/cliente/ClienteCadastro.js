@@ -38,7 +38,7 @@ function ClienteCadastro() {
   };
 
   return (
-    <div style={{ minHeight: "100vh"}}>
+    <div >
 
       <FormHeader 
         titulo="Cliente" 

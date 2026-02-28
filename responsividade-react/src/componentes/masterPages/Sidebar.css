@@ -50,15 +50,13 @@
 }
 
 .menu a:hover {
-  background: linear-gradient(270deg, #4f6fc0, #192033);
-}
-
-.menu .active a {
   background: linear-gradient(270deg, #16254a, #192033);
+    border: 1px solid #172e69;
 }
 
+ 
 .menu a.active {
-  background: linear-gradient(270deg, #16254a, #192033);
+  background: linear-gradient(90deg, #111828, #16254a);
 }
 
 .sidebar {
@@ -66,7 +64,7 @@
   background: linear-gradient(270deg, #111828, #111828);
   width: 250px;
   min-height: 100vh;
-  border-radius: 10px; /* bordas arredondadas no container */
+  border-radius: 5px; /* bordas arredondadas no container */
   box-shadow: 2px 0 6px rgba(0,0,0,0.2);
 }
 

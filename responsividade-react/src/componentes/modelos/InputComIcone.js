@@ -14,7 +14,7 @@ function InputComIcone({
   icon 
 }) {
   return (
-    <TextField
+     <TextField
       fullWidth
       label={label}
       type={type}
@@ -26,11 +26,17 @@ function InputComIcone({
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <Icon icon={icon} />
+            <Icon icon={icon} width="25" height="25" />
           </InputAdornment>
         ),
       }}
+      sx={{
+        "& .MuiInputBase-input": {
+          padding: "10px 8px", // diminui altura e largura internas
+        },
+      }}
     />
+
   );
 }
 

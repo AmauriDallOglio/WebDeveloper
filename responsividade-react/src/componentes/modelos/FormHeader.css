@@ -1,33 +1,27 @@
 .form-header-box {
   text-align: center;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  background: linear-gradient(90deg, #111828, #1f2937);
+  border-radius: 5px 5px 0 0; /* top-left top-right bottom-right bottom-left; */
+  padding: 5px 0px 5px 0px; /* top, right, bottom, left espaço interno */
+  margin: 0px 0px 5px 20px; /* top, right, bottom, left  espaço externo */
+  background: linear-gradient(90deg, #111828, #16254a);
  
 }
 
 .form-header-content {
   display: flex;
- 
   gap: 12px; /* espaço entre ícone e texto */
 }
 
-.form-header-icon {
  
-}
-
 .form-header-text {
   display: flex;
   flex-direction: column; /* título em cima, subtítulo embaixo */
   align-items: flex-start; /* alinha à esquerda do bloco */
 }
 
-.form-header-title {
-  font-weight: bold;
-}
+ 
 
 .form-header-subtitle {
-  font-size: 0.9rem;
+  font-size: 10px;
   opacity: 0.8;
 }

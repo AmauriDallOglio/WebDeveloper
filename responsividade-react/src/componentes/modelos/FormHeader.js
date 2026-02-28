@@ -13,7 +13,7 @@ function FormHeader({ titulo, subtitulo, icon }) {
             {titulo}
           </Typography>
           {subtitulo && (
-            <Typography variant="subtitle1" className="form-header-subtitle">
+            <Typography variant="subtitle2" className="form-header-subtitle">
               {subtitulo}
             </Typography>
           )}

@@ -1,16 +1,17 @@
 
  
- 
+.details-body  {
+  grid-area: details-body;
+  background: linear-gradient(270deg, #111828, #111828);
+  text-align: center;
+  border-radius: 5px; /* bordas arredondadas no container */
+}
 /* ============================
    CELULAR
    ============================ */
 @media (max-width: 600px) 
 {
     .details-body  {
-      grid-area: details-body;
-      background: linear-gradient(270deg, #111828, #111828);
-      text-align: center;
-      border-radius: 10px; /* bordas arredondadas no container */
       padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
       margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
  
@@ -47,10 +48,6 @@
 @media (min-width: 601px) and (max-width: 1024px) 
 {
      .details-body  {
-      grid-area: details-body;
-      background: linear-gradient(270deg, #111828, #111828);
-      text-align: center;
-      border-radius: 10px; /* bordas arredondadas no container */
       padding: 10px 0px 0px 0px; /* top, right, bottom, left espaço interno */
       margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
     }
@@ -77,10 +74,6 @@
   @media (min-width: 1025px) 
   {
      .details-body {
-      grid-area: details-body;
-      background: linear-gradient(270deg, #111828, #111828);
-      text-align: center;
-      border-radius: 10px; /* bordas arredondadas no container */
       padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
       margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
     }

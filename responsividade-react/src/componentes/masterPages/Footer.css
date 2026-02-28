@@ -1,44 +1,50 @@
 .footer-section h2,
-.footer-section h3 {
+.footer-section h3 
+{
   margin-bottom: 15px;
   font-size: 1.2rem;
 }
 
- .social-links {
+ .social-links 
+ {
   display: flex;
   justify-content: center;
   gap: 30px; /* espaço entre os ícones */
   flex-wrap: wrap;
 }
 
-.social-item {
+.social-item 
+{
   display: flex;
   flex-direction: column; /* ícone em cima, texto embaixo */
   align-items: center;    /* centraliza horizontalmente */
   color: #e1e7e8;
 }
 
-.social-item p {
+.social-item p 
+{
   margin-top: 5px;
   font-size: 0.9rem;
 }
 
-.social-item a {
+.social-item a 
+{
   color: #e1e7e8;
   transition: color 0.3s ease;
 }
 
-.social-item a:hover {
+.social-item a:hover 
+{
   color: #bbb;
 }
 
  
-.footer-caption {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+footer {
+  grid-area: footer;
+  background: linear-gradient(270deg, #111828, #111828);
+  text-align: center;
+  border-radius: 5px;
 }
-
 
 /* ============================
    CELULAR
@@ -46,12 +52,8 @@
 @media (max-width: 600px) 
 {
   footer {
-    grid-area: footer;
-    background: linear-gradient(270deg, #111828, #111828);
-    text-align: center;
-    border-radius: 10px; /* bordas arredondadas no container */
-    padding: 20px 20px 20px 20px; /* top, right, bottom, left espaço interno */
-    margin: 5px 2px 5px 5px; /* top, right, bottom, left  espaço externo */
+    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+    margin: 0px 5px 0px 5px; /* top, right, bottom, left  espaço externo */
   } 
 }
 
@@ -61,14 +63,9 @@
 @media (min-width: 601px) and (max-width: 1024px) 
 {
   footer {
-    grid-area: footer;
-    background: linear-gradient(270deg, #111828, #111828);
-    text-align: center;
-    border-radius: 10px; /* bordas arredondadas no container */
-    padding: 20px 15px 20px 15px; /* top, right, bottom, left espaço interno */
-    margin: 5px 2px 5px 5px; /* top, right, bottom, left  espaço externo */
+    padding: 5px 10px 0px 0px; /* top, right, bottom, left espaço interno */
+      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
-  
 }
  
 /* ============================
@@ -77,14 +74,8 @@
 @media (min-width: 1025px) 
 {
   footer {
-    grid-area: footer;
-    background: linear-gradient(270deg, #111828, #111828);
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px 10px 10px 20px; /* top, right, bottom, left espaço interno */
-    margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
+    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
+      margin: 5px 10px 5px 20px; /* top, right, bottom, left  espaço externo */
   }
-
- 
 }
 

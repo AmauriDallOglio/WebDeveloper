@@ -17,6 +17,11 @@
    font-size: 1.2rem; /* define tamanho da fonte do texto do menu */
 }
 
+  header {
+    grid-area: header; /* define área no grid */
+    border-radius: 5px; /* cantos mais arredondados */
+ 
+  }
 
 /* ============================
    CELULAR
@@ -24,9 +29,7 @@
 @media (max-width: 600px) {
 
   header {
-    grid-area: header; /* define a área do header no layout grid */
  
-    border-radius: 10px; /* arredonda os cantos do header */
     padding: 10px 0px 5px 0px; /* espaço interno: cima direita baixo esquerda */
     margin: 5px 5px 0px 5px; /* espaço externo ao redor do header */
  
@@ -73,11 +76,7 @@
    TABLET
    ============================ */
 @media (min-width: 601px) and (max-width: 1024px) {
-
   header {
-    grid-area: header; /* define área no layout grid */
- 
-    border-radius: 10px; /* arredonda os cantos */
     padding: 5px 15px 15px 15px; /* espaço interno */
     margin: 5px 5px 5px 5px; /* espaço externo */
   }
@@ -119,13 +118,8 @@
    DESKTOP
    ============================ */
 @media (min-width: 1025px) {
-
   header {
-    grid-area: header; /* define área no grid */
- 
-    padding: 20px 40px; /* espaço interno geral */
-    border-radius: 15px; /* cantos mais arredondados */
-    padding: 18px 15px 0px 15px; /* sobrescreve padding anterior */
+    padding: 10px 15px 0px 15px; /* sobrescreve padding anterior */
     margin: 5px 10px 5px 20px; /* espaço externo */
   }
 
@@ -156,7 +150,6 @@
     display: flex; /* ativa flexbox */
     align-items: center; /* alinha verticalmente */
     gap: 15px; /* espaço entre elementos */
-    padding: 0px 0px 0px 0px; /* sem espaço interno */
   }
 
 }
