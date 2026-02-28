@@ -14,7 +14,7 @@ function ClienteCadastro() {
   const [idade, setIdade] = useState("");
   const [salario, setSalario] = useState("");
 
-  const [erroCodigo, setErroCodigo] = useState("");
+  const [erroCodigo, setErroCodigo] = useState(true);
   const [erroNome, setErroNome] = useState(true);
   const [erroIdade, setErroIdade] = useState(true);
   const [erroSalario, setErroSalario] = useState(true);
@@ -54,8 +54,8 @@ function ClienteCadastro() {
           <InputString
             label="Codigo"
             value={codigo}
-            onChange={(e) => setNome(e.target.value)}
-            onBlur={() => setErroNome(codigo.trim() === "")}
+            onChange={(e) => setCodigo(e.target.value)}
+            onBlur={() => setErroCodigo(codigo.trim() === "")}
             error={erroCodigo}
             helperText={erroCodigo ? "Campo obrigatório" : ""}
             icon="material-symbols-light:person-outline"

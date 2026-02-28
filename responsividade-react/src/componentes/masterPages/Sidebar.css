@@ -1,16 +1,20 @@
-
 /* ============================
    ESTILOS GERAIS
    ============================ */
 
- 
-.sidebar-caption-menu,
-.sidebar-caption{
-font-size: 1.2rem;
-
+ .sidebar-caption{
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
- 
+.sidebar-caption-menu {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+
 
 /* Categoria */
 .menu-category {
@@ -20,7 +24,6 @@ font-size: 1.2rem;
 .menu-category h3 {
   font-size: 0.9rem;
   text-transform: uppercase;
-  
   margin-bottom: 10px;
 }
 
@@ -48,38 +51,41 @@ font-size: 1.2rem;
 
 .menu a:hover {
   background: linear-gradient(270deg, #4f6fc0, #192033);
- 
 }
 
 .menu .active a {
   background: linear-gradient(270deg, #16254a, #192033);
- 
 }
 
 .menu a.active {
   background: linear-gradient(270deg, #16254a, #192033);
- 
 }
 
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(270deg, #111828, #111828);
+  width: 250px;
+  min-height: 100vh;
+  border-radius: 10px; /* bordas arredondadas no container */
+  box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+}
 
 
 /* ============================
    CELULAR
    ============================ */
-@media (max-width: 600px) {
+@media (max-width: 600px) 
+{
  .sidebar {
-    grid-area: sidebar;
     width: auto;       /* largura fixa no desktop */
     max-width: auto;   /* garante que não passe disso */
-
-    background: linear-gradient(270deg, #111828, #111828);
-
- 
     min-height: auto; /* ocupa toda a altura */
-    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
- 
     text-align: left;
-    border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 0px 5px 15px; /* top, right, bottom, left espaço interno */
     margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
@@ -95,7 +101,6 @@ font-size: 1.2rem;
     margin-bottom: 5px;
   }
 
-  
   .sidebar-logo {
     width: 60px;
     border-radius: 50%;
@@ -104,34 +109,21 @@ font-size: 1.2rem;
     
   .sidebar-header {
     display: inline-flex;
-    align-items: center;
     gap: 10px;
     margin-bottom: 0px;
   }
-
-
- 
-
 }
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) {
-
+@media (min-width: 601px) and (max-width: 1024px) 
+{
   .sidebar {
-    grid-area: sidebar;
     width: auto;       /* largura fixa no desktop */
     max-width: auto;   /* garante que não passe disso */
-
-    background: linear-gradient(270deg, #111828, #111828);
-
- 
     min-height: auto; /* ocupa toda a altura */
-    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
- 
     text-align: left;
-    border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
     margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
@@ -142,7 +134,6 @@ font-size: 1.2rem;
 
   .sidebar-header {
     display: inline-flex;
-    align-items: center;
     gap: 10px;
     margin-bottom: 0px;
   }
@@ -152,10 +143,6 @@ font-size: 1.2rem;
     border-radius: 50%;
     margin-bottom: 10px;
   }
-
-
- 
-
 }
 
 
@@ -166,21 +153,12 @@ font-size: 1.2rem;
 {
   .sidebar {
     grid-area: sidebar;
-    /*background: linear-gradient(270deg, #4facfe, #00f2fe); */
-    background: linear-gradient(270deg, #111828, #111828);
-   
- 
     min-height: 100vh; /* ocupa toda a altura */
-    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
     width: 250px;       /* largura fixa no desktop */
-
-
     text-align: left;
-    border-radius: 10px; /* bordas arredondadas no container */
     padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
     margin: 5px 0px 5px 5px; /* top, right, bottom, left  espaço externo */
   }
- 
   
   .sidebar-logo {
     width: 80px;
@@ -190,7 +168,6 @@ font-size: 1.2rem;
 
   .sidebar-header {
     display: inline-flex;
-    align-items: center;
     gap: 10px;
     margin-bottom: 20px;
   }
@@ -198,9 +175,6 @@ font-size: 1.2rem;
   .sidebar li {
     margin-bottom: 15px;
   }
-
-    
-
 
 }
 

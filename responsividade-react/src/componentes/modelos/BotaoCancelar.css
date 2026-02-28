@@ -1,10 +1,25 @@
+
  .botao-cancelar {
-  border: 1px solid #886027; /* laranja */
-  color: #f5a369;
+  width: 100%;                  /* ocupa toda a largura */
+  padding: 10px 16px;           /* espaçamento interno */
+  border: 1px solid #886027;    /* borda verde escura */
+  background-color: transparent;/* fundo transparente */
+  color: #f5a369;               /* texto verde */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;           /* cantos arredondados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase; /* força maiúsculas */
 }
 
 .botao-cancelar:hover {
   background-color: rgba(255, 149, 73, 0.1); /* laranja com transparência */
-  border-color: #f5a369 ;
-  color: #f5a369 ;
+  border: 1.5px solid #f5a369;    /* borda verde escura */
+  color: #f5a369;
+}
+
+.botao-salvar:disabled {
+  opacity: 1.;
+  cursor: not-allowed;
 }
