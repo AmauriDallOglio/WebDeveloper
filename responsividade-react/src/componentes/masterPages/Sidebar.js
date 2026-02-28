@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import "./Sidebar.css";
 import { Icon } from "@iconify/react";
 import logo from "./imagem/sidebar/logo.webp";
