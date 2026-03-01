@@ -60,7 +60,16 @@ const theme = createTheme({
 
           <Sidebar />
 
-          <main className="details-body">
+          <main className="details-body"
+          
+                style={{
+                  background: theme.palette.mode === "dark"
+                    ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
+                    : "linear-gradient(270deg, #f3f4f6, #e5e7eb)", // fundo claro
+                  color: theme.palette.mode === "dark" ? "#fff" : "#111",
+                }}
+
+            >
             <Routes>
               <Route
                 path="/"

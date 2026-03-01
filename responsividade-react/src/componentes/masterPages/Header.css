@@ -9,10 +9,7 @@
   font-size: 0.9rem; /* define tamanho menor para texto secundário */
 }
 
-.header {
-  background: linear-gradient(270deg, #111828, #111828); /* define fundo com gradiente escuro */
-}
-
+ 
 .header-caption-menu {
    font-size: 1.2rem; /* define tamanho da fonte do texto do menu */
 }
@@ -30,8 +27,8 @@
 
   header {
  
-    padding: 10px 0px 5px 0px; /* espaço interno: cima direita baixo esquerda */
-    margin: 5px 5px 0px 5px; /* espaço externo ao redor do header */
+    padding: 10px 0px 5px 0px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 0px 5px;   /* top, right, bottom, left  espaço externo */
  
      /* border-radius: 0 0 10px 10px;  só arredonda embaixo */
   }
@@ -77,8 +74,8 @@
    ============================ */
 @media (min-width: 601px) and (max-width: 1024px) {
   header {
-    padding: 5px 15px 15px 15px; /* espaço interno */
-    margin: 5px 5px 5px 5px; /* espaço externo */
+    padding: 5px 15px 15px 15px;   /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 5px 5px;  /* top, right, bottom, left  espaço externo */
   }
 
   .header-container {
@@ -119,8 +116,8 @@
    ============================ */
 @media (min-width: 1025px) {
   header {
-    padding: 10px 15px 0px 15px; /* sobrescreve padding anterior */
-    margin: 5px 10px 5px 20px; /* espaço externo */
+    padding: 10px 15px 0px 15px;   /* top, right, bottom, left espaço interno */
+    margin: 5px 10px 5px 20px;  /* top, right, bottom, left  espaço externo */
   }
 
   .header-container {

@@ -1,8 +1,17 @@
-/* ============================
-   ESTILOS GERAIS
-   ============================ */
+ 
+ 
 
- .sidebar-caption{
+
+.sidebar {
+  grid-area: sidebar;
+  width: 25px;
+  min-height: 100vh;
+  border-radius: 5px;
+}
+
+
+
+.sidebar-caption {
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -14,17 +23,9 @@
   margin-bottom: 10px;
 }
 
-
-
 /* Categoria */
 .menu-category {
   margin-bottom: 25px;
-}
-
-.menu-category h3 {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
 .menu {
@@ -39,7 +40,7 @@
 
 .menu a {
   text-decoration: none;
-  color: var(--g); 
+  color: inherit; /* herda cor do tema */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -49,24 +50,30 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.menu a:hover {
-  background: linear-gradient(270deg, #16254a, #192033);
-    border: 1px solid #172e69;
-}
-
  
-.menu a.active {
-  background: linear-gradient(90deg, #111828, #16254a);
+.sidebar.dark .menu a:hover {
+  background: linear-gradient(270deg, #16254a, #192033);
+  border: 1px solid #172e69;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background: linear-gradient(270deg, #111828, #111828);
-  width: 250px;
-  min-height: 100vh;
-  border-radius: 5px; /* bordas arredondadas no container */
-  box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+
+.sidebar.light .menu a:hover {
+  background: linear-gradient(270deg, #f3f4f6, #e5e7eb);
+  border: 1px solid #9ca3af;
+  color: #000;
 }
+
+
+.sidebar.dark .menu a.active {
+  background: linear-gradient(90deg, #111828, #16254a);
+  color: #fff;
+}
+
+.sidebar.light .menu a.active {
+  background: linear-gradient(90deg, #d1d5db, #9ca3af);
+  color: #000;
+}
+
 
 .sidebar-header {
   display: flex;
@@ -74,29 +81,23 @@
 }
 
 
+ 
+
 /* ============================
    CELULAR
    ============================ */
-@media (max-width: 600px) 
-{
- .sidebar {
-    width: auto;       /* largura fixa no desktop */
-    max-width: auto;   /* garante que não passe disso */
-    min-height: auto; /* ocupa toda a altura */
-    text-align: left;
-    padding: 10px 0px 5px 15px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
+@media (max-width: 600px) {
+  .sidebar {
+    width: auto;
+    min-height: auto;
+    padding: 10px 0 5px 15px;
+    margin: 5px;
   }
 
   .sidebar ul {
     display: flex;
-    flex-direction: row; /* menu vertical column */
-    align-items: center;
+    flex-direction: row;
     gap: 10px;
-  }
-
-  .menu li {
-    margin-bottom: 5px;
   }
 
   .sidebar-logo {
@@ -104,36 +105,17 @@
     border-radius: 50%;
     margin-bottom: 10px;
   }
-    
-  .sidebar-header {
-    display: inline-flex;
-    gap: 10px;
-    margin-bottom: 0px;
-  }
 }
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) 
-{
+@media (min-width: 601px) and (max-width: 1024px) {
   .sidebar {
-    width: auto;       /* largura fixa no desktop */
-    max-width: auto;   /* garante que não passe disso */
-    min-height: auto; /* ocupa toda a altura */
-    text-align: left;
-    padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
-  }
-  
-  .menu li {
-    margin-bottom: 10px;
-  }
-
-  .sidebar-header {
-    display: inline-flex;
-    gap: 10px;
-    margin-bottom: 0px;
+    width: auto;
+    min-height: auto;
+    padding: 10px;
+    margin: 5px;
   }
 
   .sidebar-logo {
@@ -144,35 +126,21 @@
 }
 
 
+
 /* ============================
    DESKTOP
    ============================ */
-@media (min-width: 1025px) 
-{
+@media (min-width: 1025px) {
   .sidebar {
-    grid-area: sidebar;
-    min-height: 100vh; /* ocupa toda a altura */
-    width: 250px;       /* largura fixa no desktop */
-    text-align: left;
-    padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-    margin: 5px 0px 5px 5px; /* top, right, bottom, left  espaço externo */
+    min-height: 100vh;
+    width: 250px;
+    padding: 10px;
+    margin: 5px 0 5px 5px;
   }
-  
+
   .sidebar-logo {
     width: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
   }
-
-  .sidebar-header {
-    display: inline-flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .sidebar li {
-    margin-bottom: 15px;
-  }
-
 }
-

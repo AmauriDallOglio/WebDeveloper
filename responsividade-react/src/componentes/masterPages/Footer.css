@@ -1,9 +1,4 @@
-.footer-section h2,
-.footer-section h3 
-{
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
+ 
 
  .social-links 
  {
@@ -13,35 +8,10 @@
   flex-wrap: wrap;
 }
 
-.social-item 
-{
-  display: flex;
-  flex-direction: column; /* ícone em cima, texto embaixo */
-  align-items: center;    /* centraliza horizontalmente */
-  color: #e1e7e8;
-}
-
-.social-item p 
-{
-  margin-top: 5px;
-  font-size: 0.9rem;
-}
-
-.social-item a 
-{
-  color: #e1e7e8;
-  transition: color 0.3s ease;
-}
-
-.social-item a:hover 
-{
-  color: #bbb;
-}
-
+ 
  
 footer {
   grid-area: footer;
-  background: linear-gradient(270deg, #111828, #111828);
   text-align: center;
   border-radius: 5px;
 }
