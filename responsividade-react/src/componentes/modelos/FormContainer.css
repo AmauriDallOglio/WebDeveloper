@@ -1,6 +1,4 @@
 .form-container-paper {
-  background: linear-gradient(270deg, #111828, #111828) !important; /* força o fundo */
- 
   text-align: center;
   border-radius: 10px; /* bordas arredondadas no container */
   padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
@@ -23,22 +21,15 @@
 /* TABLET */
 @media (min-width: 601px) and (max-width: 1024px) 
 {
- 
   .form-container-grid {
     grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
   }
-
 }
 
 /* DESKTOP */
 @media (min-width: 1025px)
 {
-
   .form-container-grid {
     grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
   }
-
- 
 }
-
-

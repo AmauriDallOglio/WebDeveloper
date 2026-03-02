@@ -2,7 +2,6 @@ body {
   letter-spacing: 0.5px;  /* ajusta os espaços entre as letras */
 }
  
-
 /* ============================
    CELULAR
    ============================ */
@@ -14,10 +13,7 @@ body {
       "sidebar"
       "details-body"
       "footer";
-    background: linear-gradient(90deg, #010712, #010712);
   }
-  
-
 }
 
 /* ============================
@@ -31,9 +27,7 @@ body {
       "sidebar sidebar"
       "details-body details-body"
       "footer footer";
-    background: linear-gradient(90deg, #010712, #010712);
   }
-
 }
 
 
@@ -51,7 +45,5 @@ body {
       "sidebar header header header"
       "sidebar details-body details-body details-body"
       "sidebar footer footer footer";
-    background: linear-gradient(90deg, #010712, #010712);
- 
   }
 }

@@ -1,21 +1,16 @@
- 
- 
-
-
-.sidebar {
+ .sidebar {
   grid-area: sidebar;
   width: 25px;
   min-height: 100vh;
   border-radius: 5px;
 }
 
-
-
 .sidebar-caption {
   font-size: 1.2rem;
   font-weight: 400;
 }
 
+/*  Categoria Legenda */
 .sidebar-caption-menu {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -46,42 +41,54 @@
   gap: 10px;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid #192033;
+  border: 1px solid #d3d3d3d3;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
- 
-.sidebar.dark .menu a:hover {
-  background: linear-gradient(270deg, #16254a, #192033);
-  border: 1px solid #172e69;
-}
-
-
-.sidebar.light .menu a:hover {
-  background: linear-gradient(270deg, #f3f4f6, #e5e7eb);
-  border: 1px solid #9ca3af;
-  color: #000;
-}
-
-
-.sidebar.dark .menu a.active {
-  background: linear-gradient(90deg, #111828, #16254a);
-  color: #fff;
-}
-
-.sidebar.light .menu a.active {
-  background: linear-gradient(90deg, #d1d5db, #9ca3af);
-  color: #000;
-}
-
 
 .sidebar-header {
   display: flex;
   align-items: center;
 }
 
+/* Tema escuro */
+.sidebar.dark .menu a {
+  border: 1px solid #0b183f;  /* Cor da borda do menu */
+}
 
+/* Passagem de seleção  */
+.sidebar.dark .menu a:hover {
+  background: #16254a;  
+  color: #fff;
+  border: 1px solid #183273;  
+}
  
+/* Selecionado  */
+.sidebar.dark .menu a.active {
+  background: linear-gradient(90deg, #111828, #16254a);
+  color: #e6e6e6;
+}
+
+
+
+/* Tema claro */
+.sidebar.light .menu a {
+  border: 1px solid #d7d8da;   /* Cor da borda do menu */
+}
+
+/* Passagem de seleção  */
+.sidebar.light .menu a:hover {
+  background: #b0b5be;  
+  color: #000000;
+  border: 1px solid #b5b6b9;  
+}
+
+/* Selecionado  */
+.sidebar.light .menu a.active {
+  background: linear-gradient(90deg, #e5e7eb, #b0b5be);
+  color: #000;
+}
+
+
 
 /* ============================
    CELULAR

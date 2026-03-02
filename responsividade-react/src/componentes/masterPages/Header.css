@@ -117,7 +117,7 @@
 @media (min-width: 1025px) {
   header {
     padding: 10px 15px 0px 15px;   /* top, right, bottom, left espaço interno */
-    margin: 5px 10px 5px 20px;  /* top, right, bottom, left  espaço externo */
+    margin: 5px 5px 0px 10px;  /* top, right, bottom, left  espaço externo */
   }
 
   .header-container {

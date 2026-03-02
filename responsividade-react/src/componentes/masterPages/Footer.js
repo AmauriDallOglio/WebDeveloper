@@ -15,7 +15,7 @@ function Footer({ darkMode }) {
       style={{
         background: theme.palette.mode === "dark"
           ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
-          : "linear-gradient(270deg, #f3f4f6, #e5e7eb)", // fundo claro
+          : "linear-gradient(270deg, #e5e7eb, #e5e7eb)", // fundo claro
         color: theme.palette.mode === "dark" ? "#fff" : "#000000",
       }}
       className="footer"

@@ -18,8 +18,8 @@ function Sidebar({ darkMode }) {
       style={{
         background:
           theme.palette.mode === "dark"
-            ? "linear-gradient(270deg, #111828, #111828)"
-            : "linear-gradient(270deg, #f6f3f3, #e5e7eb)",
+            ? "linear-gradient(90deg, #111828, #111828)"
+            : "linear-gradient(270deg, #e5e7eb, #e5e7eb)",
         color: theme.palette.mode === "dark" ? "#fff" : "#000",
       }}
 

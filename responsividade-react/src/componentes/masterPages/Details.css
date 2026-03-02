@@ -20,7 +20,7 @@
 }
 
 .details-body.light {
-  background: linear-gradient(270deg, #f3f4f6, #e5e7eb); /* claro */
+  background: linear-gradient(270deg, #e5e7eb, #e5e7eb); /* claro */
   color: #111;
 }
 
@@ -94,7 +94,7 @@
   {
      .details-body {
       padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
+      margin: 5px 5px 0px 11px; /* top, right, bottom, left  espaço externo */
     }
     
     .details {
