@@ -6,19 +6,18 @@ import { useTheme } from "@mui/material/styles";
 
 function FormHeader({ titulo, subtitulo, icon }) {
 
-    const theme = useTheme();
-  
-    // Estilos baseados no tema
-    const containerStyle = {
-      background: theme.palette.mode === "dark"
-        ? "linear-gradient(90deg, #111828, #16254a)" // fundo escuro
-        : "linear-gradient(90deg, #e5e7eb, #e5e7eb)", // fundo claro
-      color: theme.palette.mode === "dark" ? "#fff" : "#111",
-      //borderRadius: "5px",
-     // padding: "10px",
-    };
+  const theme = useTheme();
 
-    
+  // Estilos baseados no tema
+  const containerStyle = {
+    background: theme.palette.mode === "dark"
+      ? "linear-gradient(90deg, #111828, #16254a)" // fundo escuro
+      : "linear-gradient(90deg, #e5e7eb, #c7ccd5)", // fundo claro
+   
+    //borderRadius: "5px",
+    // padding: "10px",
+  };
+
   return (
     <Box className="form-header-box" style={containerStyle} >
       <Box className="form-header-content">

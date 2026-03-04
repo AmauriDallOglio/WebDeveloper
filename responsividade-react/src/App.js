@@ -28,24 +28,25 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
 
    
-function App() {
+function App() 
+{
   const [darkMode, setDarkMode] = useState(true);
 
   
-const theme = createTheme({
-  palette: {
-    mode: darkMode ? "dark" : "light",
-  },
-  typography: {
-    fontFamily: [
-      'Segoe UI',
-      'Roboto',
-      'Helvetica',
-      'Arial',
-      'sans-serif',
-    ].join(','),
-  },
-});
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+    },
+    typography: {
+      fontFamily: [
+        'Segoe UI',
+        'Roboto',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+      ].join(','),
+    },
+  });
 
 
 
@@ -61,15 +62,14 @@ const theme = createTheme({
           <Sidebar />
 
           <main className="details-body"
-          
-                style={{
-                  background: theme.palette.mode === "dark"
-                    ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
-                    : "linear-gradient(270deg, #f3f4f6, #e5e7eb)", // fundo claro
-                  color: theme.palette.mode === "dark" ? "#fff" : "#111",
-                }}
-
+              style={{
+                background: theme.palette.mode === "dark"
+                  ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
+                  : "linear-gradient(270deg, #e5e7eb, #e5e7eb)", // fundo claro
+                color: theme.palette.mode === "dark" ? "#fff" : "#111",
+              }}
             >
+            
             <Routes>
               <Route
                 path="/"

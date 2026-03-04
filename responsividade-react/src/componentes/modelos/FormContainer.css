@@ -1,8 +1,8 @@
 .form-container-paper {
   text-align: center;
   border-radius: 10px; /* bordas arredondadas no container */
-  padding: 10px 10px 10px 10px; /* top, right, bottom, left espaço interno */
-  margin: 5px 12px 5px 20px; /* top, right, bottom, left  espaço externo */
+  padding: 0px 10px 10px 10px; /* top, right, bottom, left espaço interno */
+  margin: 10px 10px 10px 10px; /* top, right, bottom, left  espaço externo */
 }
 
 .form-container-grid {

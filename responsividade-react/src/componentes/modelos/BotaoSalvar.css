@@ -1,24 +1,42 @@
 .botao-salvar {
-  width: 100%;                  /* ocupa toda a largura */
-  padding: 10px 16px;           /* espaçamento interno */
-  border: 1px solid #21833f;    /* borda verde escura */
-  background-color: transparent;/* fundo transparente */
-  color: #66bb6a;               /* texto verde */
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: 500;
-  border-radius: 4px;           /* cantos arredondados */
+  text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-transform: uppercase; /* força maiúsculas */
 }
 
-.botao-salvar:hover {
-  background-color: rgba(102, 187, 106, 0.1); /* verde translúcido */
-  border: 1.5px solid #00ff4c;    /* borda verde escura */
-  color: #66bb6a;
+/* Tema claro */
+.botao-salvar.light {
+  border: 1px solid #5ad260;   /* verde escuro */
+  background-color: transparent;
+  color: #469b4a;              /* verde médio */
 }
 
+.botao-salvar.light:hover {
+  background-color: rgba(102, 187, 106, 0.1);
+  border: 1.5px solid #00ff4c;
+  color: #00ff0d;
+}
+
+/* Tema escuro */
+.botao-salvar.dark {
+  border: 1px solid #66bb6a;   /* borda clara */
+  background-color: transparent;
+  color: #66bb6a;              /* mantém verde */
+}
+
+.botao-salvar.dark:hover {
+  background-color: rgba(102, 187, 106, 0.2);
+  border: 1.5px solid #00ff4c;
+  color: #00ff4c;
+}
+
+/* Estado desabilitado */
 .botao-salvar:disabled {
-  opacity: 1.;
+  opacity: 0.6;
   cursor: not-allowed;
 }

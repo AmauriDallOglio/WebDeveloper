@@ -15,9 +15,9 @@
 }
 
   header {
-    grid-area: header; /* define área no grid */
-    border-radius: 5px; /* cantos mais arredondados */
  
+ 
+    border-radius: 5px 5px 5px 5px;  /* só arredonda embaixo */
   }
 
 /* ============================
@@ -27,10 +27,10 @@
 
   header {
  
-    padding: 10px 0px 5px 0px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 0px 5px;   /* top, right, bottom, left  espaço externo */
+    padding: 10px 10px 5px 10px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 5px 5px;   /* top, right, bottom, left  espaço externo */
  
-     /* border-radius: 0 0 10px 10px;  só arredonda embaixo */
+ 
   }
 
   .header-container {
@@ -76,6 +76,7 @@
   header {
     padding: 5px 15px 15px 15px;   /* top, right, bottom, left espaço interno */
     margin: 5px 5px 5px 5px;  /* top, right, bottom, left  espaço externo */
+ 
   }
 
   .header-container {
@@ -116,8 +117,9 @@
    ============================ */
 @media (min-width: 1025px) {
   header {
-    padding: 10px 15px 0px 15px;   /* top, right, bottom, left espaço interno */
+    padding: 20px 15px 0px 15px;   /* top, right, bottom, left espaço interno */
     margin: 5px 5px 0px 10px;  /* top, right, bottom, left  espaço externo */
+ 
   }
 
   .header-container {

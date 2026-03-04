@@ -2,7 +2,7 @@
  
 .details-body  {
   grid-area: details-body;
-  background: linear-gradient(270deg, #111828, #111828);
+ 
   text-align: center;
   border-radius: 5px; /* bordas arredondadas no container */
 }
@@ -14,17 +14,7 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.details-body.dark {
-  background: linear-gradient(270deg, #111828, #16254a); /* escuro */
-  color: #fff;
-}
-
-.details-body.light {
-  background: linear-gradient(270deg, #e5e7eb, #e5e7eb); /* claro */
-  color: #111;
-}
-
-
+ 
 /* ============================
    CELULAR
    ============================ */

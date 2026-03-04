@@ -5,24 +5,28 @@ import "./FormContainer.css";
 import { useTheme } from "@mui/material/styles";
 
 
-function FormContainer({ children }) {
-
+function FormContainer({ children }) 
+{
   const theme = useTheme();
 
   // Estilos baseados no tema
   const containerStyle = {
     background: theme.palette.mode === "dark"
       ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
-      : "linear-gradient(270deg, #f3f4f6, #e5e7eb)", // fundo claro
-    color: theme.palette.mode === "dark" ? "#fff" : "#111828",
-    //borderRadius: "5px",
-   // padding: "10px",
+      : "linear-gradient(270deg, #e5e7eb, #e5e7eb)", // fundo claro
+      borderRadius: "0px",
+      padding: "2px",
   };
-
 
   return (
     <Box >
-      <Paper className="form-container-paper" style={containerStyle} >
+      <Paper 
+
+        className="form-container-paper"
+        style={containerStyle}
+        elevation={0} // remove sombra
+        square // remove bordas arredondadas extras
+      >
         {children}
       </Paper>
     </Box>
