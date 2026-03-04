@@ -1,4 +1,4 @@
- .sidebar {
+.sidebar {
   grid-area: sidebar;
   width: 25px;
   min-height: 100vh;
@@ -10,23 +10,70 @@
   font-weight: 400;
 }
 
-/*  Categoria Legenda */
+/* Categoria Legenda */
 .sidebar-caption-menu {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 10px;
+  color: #babdc1;
+  margin-bottom: 0;
 }
 
 /* Categoria */
 .menu-category {
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
+/* ── Botão que expande/colapsa o grupo ── */
+.sidebar-group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-group-toggle.dark:hover {
+  background: #16254a22;
+}
+
+.sidebar-group-toggle.light:hover {
+  background: #d1d5db55;
+}
+
+/* Animação do chevron */
+.sidebar-chevron {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* ── Menu collapsible ── */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  /* Estado colapsado */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Estado expandido */
+.menu.collapsible.open {
+  max-height: 500px; /* valor alto o suficiente para qualquer lista */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .menu li {
@@ -35,7 +82,7 @@
 
 .menu a {
   text-decoration: none;
-  color: inherit; /* herda cor do tema */
+  color: inherit;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,44 +97,37 @@
   align-items: center;
 }
 
-/* Tema escuro */
+/* ── Tema escuro ── */
 .sidebar.dark .menu a {
-  border: 1px solid #0b183f;  /* Cor da borda do menu */
+  border: 1px solid #0b183f;
 }
 
-/* Passagem de seleção  */
 .sidebar.dark .menu a:hover {
-  background: #16254a;  
+  background: #16254a;
   color: #fff;
-  border: 1px solid #183273;  
+  border: 1px solid #183273;
 }
- 
-/* Selecionado  */
+
 .sidebar.dark .menu a.active {
   background: linear-gradient(90deg, #111828, #16254a);
   color: #e6e6e6;
 }
 
-
-
-/* Tema claro */
+/* ── Tema claro ── */
 .sidebar.light .menu a {
-  border: 1px solid #d7d8da;   /* Cor da borda do menu */
+  border: 1px solid #d7d8da;
 }
 
-/* Passagem de seleção  */
 .sidebar.light .menu a:hover {
-  background: #b0b5be;  
+  background: #b0b5be;
   color: #000000;
-  border: 1px solid #b5b6b9;  
+  border: 1px solid #b5b6b9;
 }
 
-/* Selecionado  */
 .sidebar.light .menu a.active {
   background: linear-gradient(90deg, #e5e7eb, #b0b5be);
   color: #000;
 }
-
 
 
 /* ============================
@@ -131,8 +171,6 @@
     margin-bottom: 10px;
   }
 }
-
-
 
 /* ============================
    DESKTOP
