@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
 import avatar from "./imagem/header/usuario.jpg";
 import "./Header.css";
+import { Typography, Box } from "@mui/material";
 
 function Header({ darkMode, setDarkMode }) {
   const theme = useTheme();
@@ -20,8 +21,15 @@ function Header({ darkMode, setDarkMode }) {
         <div className="header-left">
           <img src={avatar} alt="Foto de perfil" className="header-avatar" />
           <div>
-            <p className="header-caption-menu">Olá! Amauri Dall'Oglio</p>
-            <p>Existem informações sobre o projeto</p>
+                      <Typography variant="h6" className="form-header-title">
+                        Olá! Amauri Dall'Oglio
+                      </Typography>
+                 
+                        <Typography variant="subtitle2" className="header-subtitle">
+                          Existem informações sobre o projeto
+                        </Typography>
+                     
+ 
           </div>
         </div>
 

@@ -14,11 +14,15 @@
    font-size: 1.2rem; /* define tamanho da fonte do texto do menu */
 }
 
-  header {
- 
- 
-    border-radius: 5px 5px 5px 5px;  /* só arredonda embaixo */
-  }
+.header-subtitle {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+
+header {
+  border-radius: 5px 5px 5px 5px;  /* só arredonda embaixo */
+}
 
 /* ============================
    CELULAR

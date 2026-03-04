@@ -13,15 +13,13 @@ function FormHeader({ titulo, subtitulo, icon }) {
     background: theme.palette.mode === "dark"
       ? "linear-gradient(90deg, #111828, #16254a)" // fundo escuro
       : "linear-gradient(90deg, #e5e7eb, #c7ccd5)", // fundo claro
-   
-    //borderRadius: "5px",
-    // padding: "10px",
+
   };
 
   return (
     <Box className="form-header-box" style={containerStyle} >
       <Box className="form-header-content">
-        {icon && <Icon icon={icon} width="60" height="60" className="form-header-icon" />}
+        {icon && <Icon icon={icon} width="60" height="60"   />}
         <Box className="form-header-text">
           <Typography variant="h5" className="form-header-title">
             {titulo}
