@@ -3,6 +3,7 @@
   width: 25px;
   min-height: 100vh;
   border-radius: 5px;
+
 }
 
 .sidebar-caption {
@@ -10,18 +11,62 @@
   font-weight: 400;
 }
 
+
+
+/* =====================================================
+   Categoria 
+   ===================================================== */
+
 /* Categoria Legenda */
 .sidebar-caption-menu {
   font-size: 1.0rem;
-  text-transform: uppercase;
+  text-transform: none;
   color: #babdc1;
   margin-bottom: 0;
+  
 }
 
 /* Categoria */
 .menu-category {
   margin-bottom: 0px;
 }
+
+
+/* =====================================================
+   Categoria selecioanda 
+   ===================================================== */
+
+ /* Ícone e fundo */
+.sidebar.dark .sidebar-group-toggle.active {
+  background: linear-gradient(90deg, #0d1526, #16254a);
+  color: #00d4ff;
+}
+
+/* Legenda */
+.sidebar.dark .sidebar-group-toggle.active .sidebar-caption-menu {
+  color: #00d4ff; /* azul */
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   Categoria selecioanda Tema claro
+   ===================================================== */
+
+.sidebar.light .sidebar-group-toggle.active {
+  background: linear-gradient(90deg,  #e5e7eb, #b0b5be);
+  color: #000000;
+}
+
+/* Legenda */
+.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
+  color: #08090a; /* azul claro */
+  font-weight: 400;
+}
+
+
+
+
 
 /* ── Botão que expande/colapsa o grupo ── */
 .sidebar-group-toggle {
@@ -35,6 +80,7 @@
   padding: 6px 4px;
   margin-bottom: 8px;
   border-radius: 6px;
+  color: rgb(255, 255, 255);
   transition: background 0.2s ease;
 }
 
@@ -102,15 +148,17 @@
   border: 1px solid #0b183f;
 }
 
+/* Altera a cor ícone e legenda passagem do mouse */
 .sidebar.dark .menu a:hover {
   background: #16254a;
-  color: #fff;
+  color: #00d4ff;
   border: 1px solid #183273;
 }
 
+/* Selecionado */
 .sidebar.dark .menu a.active {
-  background: linear-gradient(90deg, #111828, #16254a);
-  color: #e6e6e6;
+  background: linear-gradient(90deg, #0d1526, #16254a);
+  color: #00d4ff;
 }
 
 /* ── Tema claro ── */
@@ -118,6 +166,7 @@
   border: 1px solid #d7d8da;
 }
 
+/* Altera a cor ícone e legenda passagem do mouse */
 .sidebar.light .menu a:hover {
   background: #b0b5be;
   color: #000000;
@@ -187,5 +236,6 @@
     width: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
+    
   }
 }
