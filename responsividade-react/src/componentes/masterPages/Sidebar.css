@@ -98,7 +98,7 @@
 /* Houver - Altera a cor do fundo na passagem do mouse */
 .sidebar.light .sidebar-group-toggle:hover {
   background: #b0b5be;
-  border: 1px solid #000000;
+  border: 1px solid #b0b5be;
 }
 /* Houver - Altera a cor do fundo da legenda */
 .sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
@@ -113,6 +113,7 @@
 /* Selecionado - Altera a cor do fundo para selecionado */
 .sidebar.light .sidebar-group-toggle.active {
   background: linear-gradient(90deg,  #e5e7eb, #b0b5be);
+   border: 1px solid #dbdcde;
 }
 
 /* Selecionado - Altera a cor da legenda do selecionado */
@@ -263,24 +264,64 @@
    CELULAR
    ============================ */
 @media (max-width: 600px) {
-  .sidebar {
-    width: auto;
-    min-height: auto;
-    padding: 10px 0 5px 15px;
-    margin: 5px;
-  }
-
-  .sidebar ul {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
 
   .sidebar-logo {
     width: 60px;
     border-radius: 50%;
     margin-bottom: 10px;
   }
+
+  .sidebar {
+    width: auto;
+    min-height: auto;
+    padding: 10px 0px 5px 15px; /* top, right, bottom, left espaço interno */
+  }
+
+ 
+
+  /* Submenu vira horizontal */
+  .menu.collapsible.open {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    max-height: none;
+    opacity: 1;
+    transform: none;
+
+ 
+    padding: 10px 0px 15px 5px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 15px 5px; /* top, right, bottom, left  espaço externo */
+    
+  }
+
+  /* remove quebra de linha */
+  .menu li {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  /* links das telas */
+  .menu a {
+    white-space: nowrap;
+    padding: 8px 12px;
+  }
+
+  /* scroll suave */
+  .menu.collapsible.open::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .menu.collapsible.open::-webkit-scrollbar-thumb {
+    background: #435ca0;
+    border-radius: 4px;
+  }
+
+
 }
 
 /* ============================
@@ -299,6 +340,52 @@
     border-radius: 50%;
     margin-bottom: 10px;
   }
+
+  
+
+  /* Submenu vira horizontal */
+  .menu.collapsible.open {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    max-height: none;
+    opacity: 1;
+    transform: none;
+
+ 
+    padding: 10px 0px 15px 5px; /* top, right, bottom, left espaço interno */
+    margin: 5px 5px 15px 5px; /* top, right, bottom, left  espaço externo */
+    
+  }
+
+  /* remove quebra de linha */
+  .menu li {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  /* links das telas */
+  .menu a {
+    white-space: nowrap;
+    padding: 8px 12px;
+  }
+
+  /* scroll suave */
+  .menu.collapsible.open::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .menu.collapsible.open::-webkit-scrollbar-thumb {
+    background: #435ca0;
+    border-radius: 4px;
+  }
+
+  
 }
 
 /* ============================
