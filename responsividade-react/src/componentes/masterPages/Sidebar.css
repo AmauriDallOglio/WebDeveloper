@@ -29,41 +29,154 @@
 /* Categoria */
 .menu-category {
   margin-bottom: 0px;
+
 }
 
 
+
 /* =====================================================
-   Categoria selecioanda 
+   Categoria Tema escuro
    ===================================================== */
 
- /* Ícone e fundo */
-.sidebar.dark .sidebar-group-toggle.active {
-  background: linear-gradient(90deg, #0d1526, #16254a);
+/* Sem ação - Altera a cor do fundo da legenda */
+.sidebar.dark .sidebar-group-toggle .sidebar-caption-menu {
+  color: #ffffff;
+}
+/* Sem ação - Altera a cor do ícone menu expande ">" */
+.sidebar.dark .sidebar-group-toggle {
+  color: #ffffff;
+}
+
+
+/* Houver - Altera a cor do fundo na passagem do mouse */
+.sidebar.dark .sidebar-group-toggle:hover {
+  background: #0d1526;
+  border: 1px solid #435ca0;
+}
+/* Houver - Altera a cor do fundo da legenda */
+.sidebar.dark .sidebar-group-toggle:hover .sidebar-caption-menu {
+  color: #00d4ff;
+}
+/* Houver - Altera a cor do ícone menu expande ">" */
+.sidebar.dark .sidebar-group-toggle:hover {
   color: #00d4ff;
 }
 
-/* Legenda */
+
+/* Selecionado - Altera a cor do fundo para selecionado */
+.sidebar.dark .sidebar-group-toggle.active {
+  background: linear-gradient(90deg, #0d1526, #435ca0);
+}
+
+/*  Selecionado - Altera a cor da legenda ao selecionar */
 .sidebar.dark .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #00d4ff; /* azul */
   font-weight: 400;
+  color: #00d4ff;
+}
+/* Selecionado -  Altera a cor do ícone menu expande ">" */
+.sidebar.dark .sidebar-group-toggle.active {
+  color: #00d4ff;
+}
+
+ 
+
+
+/* =====================================================
+   Categoria Tema claro
+   ===================================================== */
+
+/* Sem ação - Altera a cor do fundo da legenda */
+.sidebar.light .sidebar-group-toggle .sidebar-caption-menu {
+  color: #000000;
+}
+/* Sem ação - Altera a cor do ícone menu expande ">" */
+.sidebar.light .sidebar-group-toggle {
+  color: #000000;
+}
+
+
+/* Houver - Altera a cor do fundo na passagem do mouse */
+.sidebar.light .sidebar-group-toggle:hover {
+  background: #b0b5be;
+  border: 1px solid #000000;
+}
+/* Houver - Altera a cor do fundo da legenda */
+.sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
+  color: #000000;
+}
+/* Houver - Altera a cor do ícone menu expande ">" */
+.sidebar.light .sidebar-group-toggle:hover {
+  color: #000000;
+}
+
+
+/* Selecionado - Altera a cor do fundo para selecionado */
+.sidebar.light .sidebar-group-toggle.active {
+  background: linear-gradient(90deg,  #e5e7eb, #b0b5be);
+}
+
+/* Selecionado - Altera a cor da legenda do selecionado */
+.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
+  color: #000000; /* azul claro */
+  font-weight: 400;
+}
+
+ 
+/* Selecionado - Altera a cor do ícone menu expande ">" */
+.sidebar.light .sidebar-group-toggle.active {
+  color: #000000;
+}
+
+
+
+
+
+
+/* =====================================================
+   SubCategoria tema escuro
+   ===================================================== */
+
+
+/* ── Tema escuro ── */
+.sidebar.dark .menu a {
+  border: 1px solid #0b183f;
+}
+
+/* Altera a cor ícone e legenda passagem do mouse */
+.sidebar.dark .menu a:hover {
+  background: #0d1526;
+  border: 1px solid #435ca0;
+}
+
+/* Selecionado */
+.sidebar.dark .menu a.active {
+  background: linear-gradient(90deg, #0d1526, #435ca0);
+  color: #00d4ff;
 }
 
 
 /* =====================================================
-   Categoria selecioanda Tema claro
+   SubCategoria tema claro
    ===================================================== */
 
-.sidebar.light .sidebar-group-toggle.active {
-  background: linear-gradient(90deg,  #e5e7eb, #b0b5be);
+
+/* ── Tema claro ── */
+.sidebar.light .menu a {
+  border: 1px solid #d7d8da;
+}
+
+
+/* Altera a cor ícone e legenda passagem do mouse */
+.sidebar.light .menu a:hover {
+  background: #b0b5be;
   color: #000000;
+  border: 1px solid #b5b6b9;
 }
 
-/* Legenda */
-.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #08090a; /* azul claro */
-  font-weight: 400;
+.sidebar.light .menu a.active {
+  background: linear-gradient(90deg, #e5e7eb, #b0b5be);
+  color: #000;
 }
-
 
 
 
@@ -143,40 +256,7 @@
   align-items: center;
 }
 
-/* ── Tema escuro ── */
-.sidebar.dark .menu a {
-  border: 1px solid #0b183f;
-}
 
-/* Altera a cor ícone e legenda passagem do mouse */
-.sidebar.dark .menu a:hover {
-  background: #16254a;
-  color: #00d4ff;
-  border: 1px solid #183273;
-}
-
-/* Selecionado */
-.sidebar.dark .menu a.active {
-  background: linear-gradient(90deg, #0d1526, #16254a);
-  color: #00d4ff;
-}
-
-/* ── Tema claro ── */
-.sidebar.light .menu a {
-  border: 1px solid #d7d8da;
-}
-
-/* Altera a cor ícone e legenda passagem do mouse */
-.sidebar.light .menu a:hover {
-  background: #b0b5be;
-  color: #000000;
-  border: 1px solid #b5b6b9;
-}
-
-.sidebar.light .menu a.active {
-  background: linear-gradient(90deg, #e5e7eb, #b0b5be);
-  color: #000;
-}
 
 
 /* ============================

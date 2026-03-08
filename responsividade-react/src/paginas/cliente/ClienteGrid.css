@@ -1,14 +1,319 @@
-.details {
-  padding: 20px;
+/* ============================
+   CONTAINER PRINCIPAL
+============================ */
+
+.cliente-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 40px;
+  height: 100%;
 }
 
-.details input {
-  padding: 10px;
+
+/* ============================
+   HEADER
+============================ */
+
+.cliente-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.cliente-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
+  border: 1px solid #00d4ff55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cliente-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* ============================
+   TOOLBAR
+============================ */
+
+.cliente-toolbar {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  align-items: center;
 }
 
- 
+
+/* BOTÕES */
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #2a3550;
+  border-radius: 8px;
+  color: #8899bb;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+/* ============================
+   PESQUISA
+============================ */
+
+.cliente-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.cliente-search input {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+
+
+/* ============================
+   GRID
+============================ */
+
+.cliente-grid {
+  flex: 1;
+  width: 100%;
+}
+
+.cliente-grid .MuiDataGrid-root {
+  border-radius: 12px;
+}
+
+
+/* ============================
+   DARK MODE
+============================ */
+
+.dark .cliente-title {
+  color: #00d4ff;
+}
+
+.dark .cliente-search {
+  background: #111827;
+  border: 1px solid #1e2d45;
+}
+
+.dark .cliente-search input {
+  color: #e8eeff;
+}
+
+.dark .MuiDataGrid-columnHeaders {
+  background: #0d1526;
+  border-bottom: 1px solid #1e2d45;
+}
+
+.dark .MuiDataGrid-row:hover {
+  background: #ffffff08;
+}
+
+.dark .MuiDataGrid-cell {
+  border-bottom: 1px solid #1a2640;
+}
+
+
+/* ============================
+   LIGHT MODE
+============================ */
+
+.light .cliente-title {
+  color: #1e293b;
+}
+
+.light .cliente-search {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.light .cliente-search input {
+  color: #111;
+}
+
+.light .MuiDataGrid-columnHeaders {
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.light .MuiDataGrid-row:hover {
+  background: #00000008;
+}
+
+.light .MuiDataGrid-cell {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+
+
+
+/* ============================
+   GRID BASE
+============================ */
+
+.cliente-datagrid {
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+}
+
+
+/* ============================
+   HEADER
+============================ */
+
+.cliente-datagrid .MuiDataGrid-columnHeaders {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+/* ============================
+   LINHAS
+============================ */
+
+.cliente-datagrid .MuiDataGrid-row {
+  transition: background 0.15s ease;
+}
+
+
+/* ============================
+   CELULAS
+============================ */
+
+.cliente-datagrid .MuiDataGrid-cell {
+  display: flex;
+  align-items: center;
+}
+
+
+/* ============================
+   CHECKBOX
+============================ */
+
+.cliente-datagrid .MuiCheckbox-root {
+  color: #00d4ff;
+}
+
+
+/* ============================
+   PAGINAÇÃO
+============================ */
+
+.cliente-datagrid .MuiTablePagination-root {
+  font-size: 13px;
+}
+
+
+
+/* =================================
+   DARK MODE
+================================= */
+
+.dark .cliente-datagrid {
+
+  background: #111827;
+  color: #c8d8f0;
+
+}
+
+.dark .cliente-datagrid .MuiDataGrid-columnHeaders {
+
+  background: #0d1526;
+  border-bottom: 1px solid #1e2d45;
+  color: #8899bb;
+
+}
+
+.dark .cliente-datagrid .MuiDataGrid-cell {
+
+  border-bottom: 1px solid #1a2640;
+
+}
+
+.dark .cliente-datagrid .MuiDataGrid-row:hover {
+
+  background: #ffffff08;
+
+}
+
+.dark .cliente-datagrid .MuiTablePagination-root {
+
+  color: #8899bb;
+
+}
+
+
+
+/* =================================
+   LIGHT MODE
+================================= */
+
+.light .cliente-datagrid {
+
+  background: #ffffff;
+  color: #334155;
+
+}
+
+.light .cliente-datagrid .MuiDataGrid-columnHeaders {
+
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+
+}
+
+.light .cliente-datagrid .MuiDataGrid-cell {
+
+  border-bottom: 1px solid #e5e7eb;
+
+}
+
+.light .cliente-datagrid .MuiDataGrid-row:hover {
+
+  background: #00000008;
+
+}
+
+.light .cliente-datagrid .MuiTablePagination-root {
+
+  color: #334155;
+
+}

@@ -39,11 +39,12 @@ function App()
     },
     typography: {
       fontFamily: [
+      
+        'sans-serif',
         'Segoe UI',
         'Roboto',
         'Helvetica',
         'Arial',
-        'sans-serif',
       ].join(','),
     },
   });
