@@ -3,6 +3,7 @@ import "./Details.css";
 import { useTheme } from "@mui/material/styles";
 
 function Details() {
+
   const theme = useTheme();
 
   const textos = [
@@ -11,31 +12,42 @@ function Details() {
     "Lorem Ipsum é simplesmente uma simulação de texto ainda mais longo..."
   ];
 
-  // Estilos baseados no tema
+  /* =====================================================
+     Estilos baseados no tema do App
+  ===================================================== */
+
   const containerStyle = {
-    background: theme.palette.mode === "dark"
-      ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
-      : "linear-gradient(270deg, #f3f4f6, #e5e7eb)", // fundo claro
-    color: theme.palette.mode === "dark" ? "#fff" : "#111",
-    //borderRadius: "5px",
-   // padding: "10px",
+    background: theme.palette.background.default,
+    color: theme.palette.text.primary
   };
 
   const cardStyle = {
-    background: theme.palette.mode === "dark" ? "#1f2937" : "#ffffff",
-    color: theme.palette.mode === "dark" ? "#e5e7eb" : "#111",
-   // border: "1px solid",
+    background: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+    border: `1px solid ${theme.palette.divider}`
   };
 
   return (
+
     <div className="details" style={containerStyle}>
+
       {textos.map((texto, index) => (
-        <div key={index} className="card" style={cardStyle} title={texto}>
+
+        <div
+          key={index}
+          className="card"
+          style={cardStyle}
+          title={texto}
+        >
           {texto}
         </div>
+
       ))}
+
     </div>
+
   );
+
 }
 
 export default Details;

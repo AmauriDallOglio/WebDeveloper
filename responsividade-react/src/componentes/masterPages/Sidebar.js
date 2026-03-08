@@ -6,9 +6,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
 function Sidebar() {
+
   const theme = useTheme();
   const location = useLocation();
-  const iconColor = theme.palette.mode === "dark" ? "#ffffff" : "#000000";
 
   const [expandedGroup, setExpandedGroup] = useState(null);
 
@@ -16,39 +16,62 @@ function Sidebar() {
     setExpandedGroup((prev) => (prev === groupId ? null : groupId));
   };
 
-  // Verifica se algum item do grupo está ativo
+  /* ============================
+     Verifica rota ativa
+  ============================ */
+
   const isPrincipalActive =
     ["/", "/clientes", "/contato"].includes(location.pathname);
+
   const isAdministracaoActive =
     ["/financeiro", "/usuarios"].includes(location.pathname);
 
   return (
+
     <aside
       className={`sidebar ${theme.palette.mode}`}
       style={{
-        background:
-          theme.palette.mode === "dark"
-            ? "linear-gradient(90deg, #111828, #111828)"
-            : "linear-gradient(270deg, #e5e7eb, #e5e7eb)",
-        color: theme.palette.mode === "dark" ? "#fff" : "#000",
+        background: theme.palette.background.paper,
+        color: theme.palette.text.primary
       }}
     >
-      {/* Cabeçalho */}
+
+      {/* ============================
+          Cabeçalho
+      ============================ */}
+
       <div className="sidebar-header">
-        <img src={logo} alt="Logo da empresa" className="sidebar-logo" />
-        <p className="sidebar-caption">MP PROJETOS</p>
+
+        <img
+          src={logo}
+          alt="Logo da empresa"
+          className="sidebar-logo"
+        />
+
+        <p className="sidebar-caption">
+          MP PROJETOS
+        </p>
+
       </div>
 
-      {/* Principal */}
+
+
+      {/* ============================
+          Principal
+      ============================ */}
+
       <div className="menu-category">
+
         <button
-          className={`sidebar-group-toggle ${theme.palette.mode} ${
-            isPrincipalActive ? "active" : ""
-          }`}
+          className={`sidebar-group-toggle ${theme.palette.mode} ${isPrincipalActive ? "active" : ""}`}
           onClick={() => toggleGroup("principal")}
           aria-expanded={expandedGroup === "principal"}
         >
-          <span className="sidebar-caption-menu">Principal</span>
+
+          <span className="sidebar-caption-menu">
+            Principal
+          </span>
+
           <Icon
             icon={
               expandedGroup === "principal"
@@ -60,45 +83,82 @@ function Sidebar() {
             color="currentColor"
             className="sidebar-chevron"
           />
+
         </button>
 
 
+
         <ul
-          className={`menu collapsible ${
-            expandedGroup === "principal" ? "open" : ""
-          }`}
+          className={`menu collapsible ${expandedGroup === "principal" ? "open" : ""}`}
         >
+
           <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-              <Icon icon="material-symbols-light:account-balance-outline" width="24" height="24" color="currentColor" />
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon
+                icon="material-symbols-light:account-balance-outline"
+                width="24"
+                height="24"
+                color="currentColor"
+              />
               Início
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/clientes" className={({ isActive }) => (isActive ? "active" : "")}>
-              <Icon icon="material-symbols-light:person-outline" width="24" height="24" color="currentColor" />
+            <NavLink
+              to="/clientes"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon
+                icon="material-symbols-light:person-outline"
+                width="24"
+                height="24"
+                color="currentColor"
+              />
               Clientes
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/contato" className={({ isActive }) => (isActive ? "active" : "")}>
-              <Icon icon="mdi:email-outline" width="24" height="24" color="currentColor" />
+            <NavLink
+              to="/contato"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon
+                icon="mdi:email-outline"
+                width="24"
+                height="24"
+                color="currentColor"
+              />
               Contato
             </NavLink>
           </li>
+
         </ul>
+
       </div>
 
-      {/* Administração */}
+
+
+      {/* ============================
+          Administração
+      ============================ */}
+
       <div className="menu-category">
+
         <button
-          className={`sidebar-group-toggle ${theme.palette.mode} ${
-            isAdministracaoActive ? "active" : ""
-          }`}
+          className={`sidebar-group-toggle ${theme.palette.mode} ${isAdministracaoActive ? "active" : ""}`}
           onClick={() => toggleGroup("administracao")}
           aria-expanded={expandedGroup === "administracao"}
         >
-          <span className="sidebar-caption-menu">Administração</span>
+
+          <span className="sidebar-caption-menu">
+            Administração
+          </span>
+
           <Icon
             icon={
               expandedGroup === "administracao"
@@ -110,28 +170,51 @@ function Sidebar() {
             color="currentColor"
             className="sidebar-chevron"
           />
+
         </button>
 
+
+
         <ul
-          className={`menu collapsible ${
-            expandedGroup === "administracao" ? "open" : ""
-          }`}
+          className={`menu collapsible ${expandedGroup === "administracao" ? "open" : ""}`}
         >
+
           <li>
-            <NavLink to="/financeiro" className={({ isActive }) => (isActive ? "active" : "")}>
-              <Icon icon="material-symbols-light:money-bag-outline" width="24" height="24" color="currentColor" />
+            <NavLink
+              to="/financeiro"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon
+                icon="material-symbols-light:money-bag-outline"
+                width="24"
+                height="24"
+                color="currentColor"
+              />
               Financeiro
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/usuarios" className={({ isActive }) => (isActive ? "active" : "")}>
-              <Icon icon="material-symbols-light:account-box-outline" width="24" height="24" color="currentColor" />
+            <NavLink
+              to="/usuarios"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon
+                icon="material-symbols-light:account-box-outline"
+                width="24"
+                height="24"
+                color="currentColor"
+              />
               Usuários
             </NavLink>
           </li>
+
         </ul>
+
       </div>
+
     </aside>
+
   );
 }
 

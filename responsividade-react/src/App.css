@@ -2,6 +2,18 @@ body {
   letter-spacing: 0.5px;  /* ajusta os espaços entre as letras */
 }
  
+
+/* =====================================================
+   CONFIGURAÇÃO GLOBAL
+===================================================== */
+
+body {
+  letter-spacing: 0.5px;
+  background: var(--mui-palette-background-default);
+  color: var(--mui-palette-text-primary);
+}
+
+
 /* ============================
    CELULAR
    ============================ */
