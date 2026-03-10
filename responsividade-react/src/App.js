@@ -47,16 +47,19 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
       background: {
         default: darkMode ? "#000000" : "#ffffff",   // fundo geral
-        paper: darkMode ? "#111828" : "#f1faff"      // header / sidebar / footer
+        paper: darkMode ? "#111828" : "#e4ecf2"      // header / sidebar / footer
       },
 
       primary: {
-        main: "#f2ff00"
+        main:  darkMode ? "#00d4ff" : "#ffe100",
       },
 
       text: {
-        primary: darkMode ? "#ffffff" : "#111827"
-      }
+        primary: darkMode ? "#ffffff" : "#000000",
+        secondary: darkMode ? "#ffffff" : "#446A9C"
+      },
+
+      divider: darkMode ? "#35547d" : "#d6e1f2"
     },
 
     typography: {
@@ -83,9 +86,14 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
           <Sidebar />
 
-          <main className="details-body" style={{ background: theme.palette.mode === "dark" ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro 
-             : "linear-gradient(270deg, #e5e7eb, #f1faff)", // fundo claro 
-             color: theme.palette.mode === "dark" ? "#fff" : "#111", }} >
+          <main className="details-body" 
+          
+                style={{ background: theme.palette.mode === "dark" ? 
+                        "linear-gradient(270deg, #111828, #111828)" // fundo escuro 
+                        : "linear-gradient(270deg, #e4ecf2, #e4ecf2)", // fundo claro 
+                        color: theme.palette.mode === "dark" ? "#fff" : "#111", }} >
+
+
 
             <Routes>
 

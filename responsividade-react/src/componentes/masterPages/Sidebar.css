@@ -19,8 +19,8 @@
 
 /* Categoria Legenda */
 .sidebar-caption-menu {
-  font-size: 1.0rem;
-  text-transform: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   color: #babdc1;
   margin-bottom: 0;
   
@@ -33,52 +33,94 @@
 }
 
 
-
 /* =====================================================
    Categoria Tema escuro
    ===================================================== */
 
-/* Sem ação - Altera a cor do fundo da legenda */
+/* Sem ação - legenda */
 .sidebar.dark .sidebar-group-toggle .sidebar-caption-menu {
-  color: #ffffff;
+  color: #dbeafe;
 }
-/* Sem ação - Altera a cor do ícone menu expande ">" */
+
+/* ícone expandir */
 .sidebar.dark .sidebar-group-toggle {
-  color: #ffffff;
+  color: #dbeafe;
 }
 
-
-/* Houver - Altera a cor do fundo na passagem do mouse */
+/* Hover categoria */
 .sidebar.dark .sidebar-group-toggle:hover {
-  background: #0d1526;
-  border: 1px solid #435ca0;
+  color: #00d4ff;
+  background: linear-gradient(135deg, #00d4ff55, #00d4ff55);
+  border: 1px solid #00d4ff;
 }
-/* Houver - Altera a cor do fundo da legenda */
+
+/* legenda hover */
 .sidebar.dark .sidebar-group-toggle:hover .sidebar-caption-menu {
   color: #00d4ff;
 }
-/* Houver - Altera a cor do ícone menu expande ">" */
+
+/* ícone hover */
 .sidebar.dark .sidebar-group-toggle:hover {
   color: #00d4ff;
 }
 
 
-/* Selecionado - Altera a cor do fundo para selecionado */
+/* Categoria selecionada */
+
 .sidebar.dark .sidebar-group-toggle.active {
-  background: linear-gradient(90deg, #0d1526, #435ca0);
+  color: #00d4ff;
 }
 
-/*  Selecionado - Altera a cor da legenda ao selecionar */
+/* legenda selecionada */
+
 .sidebar.dark .sidebar-group-toggle.active .sidebar-caption-menu {
   font-weight: 400;
   color: #00d4ff;
 }
-/* Selecionado -  Altera a cor do ícone menu expande ">" */
+
+/* ícone selecionado */
+
 .sidebar.dark .sidebar-group-toggle.active {
   color: #00d4ff;
 }
 
- 
+
+
+/* =====================================================
+   SubCategoria tema escuro
+   ===================================================== */
+
+
+/* Item menu */
+
+.sidebar.dark .menu a {
+  border: 1px solid #111828;
+  color: #e6f3ff;
+}
+
+
+/* Hover item */
+
+.sidebar.dark .menu a:hover {
+  color: #00d4ff;
+  background: linear-gradient(135deg, #00d4ff55, #00d4ff55);
+  border: 1px solid #00d4ff;
+}
+
+
+.sidebar.dark .menu a.active {
+  /*background: linear-gradient(90deg, #19243d, #2a4487); */
+  
+  color: #00d4ff;
+  background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
+  border: 1px solid #00d4ff55;
+  border-right: 3px solid #00d4ff;
+}
+
+
+
+
+
 
 
 /* =====================================================
@@ -87,7 +129,7 @@
 
 /* Sem ação - Altera a cor do fundo da legenda */
 .sidebar.light .sidebar-group-toggle .sidebar-caption-menu {
-  color: #000000;
+  color: #0a0a0a;
 }
 /* Sem ação - Altera a cor do ícone menu expande ">" */
 .sidebar.light .sidebar-group-toggle {
@@ -97,87 +139,81 @@
 
 /* Houver - Altera a cor do fundo na passagem do mouse */
 .sidebar.light .sidebar-group-toggle:hover {
-  background: #b0b5be;
-  border: 1px solid #b0b5be;
+  color: #0f172a;
+  background: #cfe0e8;
+  border: 1px solid #00d4ff;
 }
 /* Houver - Altera a cor do fundo da legenda */
 .sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
-  color: #000000;
+  color: #161c35;
 }
 /* Houver - Altera a cor do ícone menu expande ">" */
 .sidebar.light .sidebar-group-toggle:hover {
-  color: #000000;
+  color: #161c35;
 }
 
 
 /* Selecionado - Altera a cor do fundo para selecionado */
 .sidebar.light .sidebar-group-toggle.active {
-  background: linear-gradient(90deg,  #e5e7eb, #b0b5be);
-   border: 1px solid #dbdcde;
+ 
+  color: #0f172a;
+ 
 }
 
 /* Selecionado - Altera a cor da legenda do selecionado */
 .sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #000000; /* azul claro */
+  color: #161c35; /* azul claro */
   font-weight: 400;
 }
 
  
 /* Selecionado - Altera a cor do ícone menu expande ">" */
 .sidebar.light .sidebar-group-toggle.active {
-  color: #000000;
+  color: #161c35;
 }
 
-
-
-
-
-
-/* =====================================================
-   SubCategoria tema escuro
-   ===================================================== */
-
-
-/* ── Tema escuro ── */
-.sidebar.dark .menu a {
-  border: 1px solid #0b183f;
-}
-
-/* Altera a cor ícone e legenda passagem do mouse */
-.sidebar.dark .menu a:hover {
-  background: #0d1526;
-  border: 1px solid #435ca0;
-}
-
-/* Selecionado */
-.sidebar.dark .menu a.active {
-  background: linear-gradient(90deg, #0d1526, #435ca0);
-  color: #00d4ff;
-}
 
 
 /* =====================================================
    SubCategoria tema claro
    ===================================================== */
-
-
-/* ── Tema claro ── */
+ 
+ 
 .sidebar.light .menu a {
-  border: 1px solid #d7d8da;
+  border: 1px solid #e4ecf2;
+  background: #e4ecf2;
+  color: #000000;
 }
 
 
 /* Altera a cor ícone e legenda passagem do mouse */
+
 .sidebar.light .menu a:hover {
-  background: #b0b5be;
-  color: #000000;
-  border: 1px solid #b5b6b9;
+ 
+  color: #0f172a;
+  background: #cfe0e8;
+  border: 1px solid #00d4ff;
+
 }
 
+
+/* Item selecionado */
+
 .sidebar.light .menu a.active {
-  background: linear-gradient(90deg, #e5e7eb, #b0b5be);
-  color: #000;
+
+  color: #000000;
+
+  background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
+  border: 1px solid #00d4ff55;
+  border-right: 3px solid #00d4ff;
+
+ 
+
 }
+
+
+
+
 
 
 
@@ -198,14 +234,7 @@
   transition: background 0.2s ease;
 }
 
-.sidebar-group-toggle.dark:hover {
-  background: #16254a22;
-}
-
-.sidebar-group-toggle.light:hover {
-  background: #d1d5db55;
-}
-
+ 
 /* Animação do chevron */
 .sidebar-chevron {
   transition: transform 0.25s ease;
@@ -313,14 +342,26 @@
 
   /* scroll suave */
   .menu.collapsible.open::-webkit-scrollbar {
-    height: 4px;
+    height: 8px;
+  }
+ 
+  
+  /* trilho do scroll */
+  .menu.collapsible.open::-webkit-scrollbar-track {
+    background: transparent;
   }
 
+  /* barra do scroll */
   .menu.collapsible.open::-webkit-scrollbar-thumb {
-    background: #435ca0;
-    border-radius: 4px;
+    background: linear-gradient(90deg, #19243d, #2a4487);
+    border-radius: 6px;
+    transition: background 0.3s ease;
   }
 
+  /* hover na barra do scroll */
+  .menu.collapsible.open::-webkit-scrollbar-thumb:hover {
+    background: #2a4487;
+  }
 
 }
 
