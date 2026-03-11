@@ -51,7 +51,7 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
       },
 
       primary: {
-        main:  darkMode ? "#00d4ff" : "#ffe100",
+        main:  darkMode ? "#00d4ff" : "#00d4ff",
       },
 
       text: {

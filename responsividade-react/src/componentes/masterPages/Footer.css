@@ -1,51 +1,32 @@
- 
-
- .social-links 
- {
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 30px; /* espaço entre os ícones */
+  gap: 24px;
   flex-wrap: wrap;
 }
 
- 
- 
 footer {
   grid-area: footer;
   text-align: center;
-  border-radius: 5px;
-}
-
-/* ============================
-   CELULAR
-   ============================ */
-@media (max-width: 600px) 
-{
-  footer {
-    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-    margin: 0px 5px 0px 5px; /* top, right, bottom, left  espaço externo */
-  } 
+  border-radius: var(--radius-md);
+  padding: 10px 8px;
+  margin: 0;
 }
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) 
-{
+@media (min-width: 640px) {
   footer {
-    padding: 5px 10px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
-  }
-}
- 
-/* ============================
-   DESKTOP
-   ============================ */
-@media (min-width: 1025px) 
-{
-  footer {
-    padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 5px 5px 11px; /* top, right, bottom, left  espaço externo */
+    padding: 12px 10px;
   }
 }
 
+/* ============================
+   DESKTOP
+   ============================ */
+@media (min-width: 1024px) {
+  footer {
+    padding: 12px 14px;
+  }
+}

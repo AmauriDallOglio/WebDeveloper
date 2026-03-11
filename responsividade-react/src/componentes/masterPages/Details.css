@@ -1,112 +1,66 @@
-
- 
-.details-body  {
-  grid-area: details-body;
- 
-  text-align: center;
-  border-radius: 5px; /* bordas arredondadas no container */
-}
-
 .details-body {
   grid-area: details-body;
   text-align: center;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
+  padding: clamp(8px, 1.2vw, 16px);
+  margin: 0;
+  min-width: 0;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
- 
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  padding: clamp(10px, 1.2vw, 16px);
+  border-radius: var(--radius-md);
+  flex: 1 1 auto;
+}
+
 /* ============================
    CELULAR
    ============================ */
-@media (max-width: 600px) 
-{
-    .details-body  {
-      padding: 5px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
- 
-    }
-
-    .details {
-      display: flex;
-      gap: 5px;
-      flex-direction: column;
-
-    }
- 
-    .card {
-
-      padding: 5px 5px 5px 5px; /* top, right, bottom, left espaço interno */
-      border-radius: 10px;
-      flex: 1 1 auto; /* ocupa espaço flexível, mínimo de altura */
-
-      font-size: 0.9rem;
-  
-       /* Limita o texto */
-      white-space: nowrap;        /* impede quebra de linha */
-      overflow: hidden;           /* esconde o excesso */
-      text-overflow: ellipsis;    /* adiciona "..." no final */
-    }
-
- 
-
+@media (max-width: 639px) {
+  .card {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) 
-{
-     .details-body  {
-      padding: 10px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 5px 5px 5px; /* top, right, bottom, left  espaço externo */
-    }
-    .details {
-      display: flex;
-      gap: 20px;
-      flex-direction: column;
-    }
+@media (min-width: 640px) {
+  .details {
+    gap: 16px;
+  }
 
-    .card {
- 
-      padding: 16px;
-      border-radius: 10px;
-      flex: 1 1 auto; /* ocupa espaço flexível, mínimo 300px */
-
- 
-    }
-
+  .card {
+    flex: 1 1 260px;
+  }
 }
 
 /* ============================
    DESKTOP
    ============================ */
-  @media (min-width: 1025px) 
-  {
-     .details-body {
-      padding: 0px 0px 0px 0px; /* top, right, bottom, left espaço interno */
-      margin: 5px 5px 0px 11px; /* top, right, bottom, left  espaço externo */
-    }
-    
-    .details {
-      display: flex;
-      gap: 10px;
-      border-radius: 10px; /* bordas arredondadas no container */
-    }
+@media (min-width: 1024px) {
+  .details {
+    flex-direction: row;
+    gap: 16px;
+  }
 
-    .card {
- 
-      padding: 16px;
-      border-radius: 10px;
+  .card {
+    flex: 1 1 300px;
+  }
 
-      flex: 1 1 300px; /* ocupa espaço flexível, mínimo 300px */
-    }
-
- 
-
-    .card:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
-      transition: transform 0.2s ease;
-    }
-
+  .card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease;
+  }
 }

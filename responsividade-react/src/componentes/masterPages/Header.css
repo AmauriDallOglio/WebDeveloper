@@ -1,159 +1,90 @@
 /* Texto Esquerda */
 .header-left h2 {
-  margin: 0; /* remove o espaçamento padrão do navegador */
-  font-size: 1.2rem; /* define o tamanho da fonte do título */
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 .header-left p {
-  margin: 0; /* remove o espaçamento padrão do parágrafo */
-  font-size: 0.9rem; /* define tamanho menor para texto secundário */
+  margin: 0;
+  font-size: 0.9rem;
 }
 
- 
 .header-caption-menu {
-   font-size: 1.2rem; /* define tamanho da fonte do texto do menu */
+  font-size: 1.1rem;
 }
 
 .header-subtitle {
-  font-size: 10px;
+  font-size: 0.75rem;
   opacity: 0.8;
 }
 
-
 header {
-  border-radius: 5px 5px 5px 5px;  /* só arredonda embaixo */
-
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin: 0;
 }
 
-/* ============================
-   CELULAR
-   ============================ */
-@media (max-width: 600px) {
-
-  header {
- 
-    padding: 10px 10px 5px 10px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 5px 5px;   /* top, right, bottom, left  espaço externo */
- 
- 
-  }
-
-  .header-container {
-    display: flex; /* ativa layout flexível */
-    justify-content: space-between; /* distribui elementos com espaço entre eles */
-    align-items: center; /* alinha verticalmente no centro */
-    max-width: 600px; /* limita largura máxima */
-    margin: auto; /* centraliza horizontalmente */
-    flex-direction: column; /* empilha os elementos verticalmente */
-    text-align: center; /* centraliza o texto */
-  }
- 
-  
-  .header-avatar {
-    width: 40px; /* largura do avatar */
-    height: 40px; /* altura do avatar */
-    border-radius: 50%; /* transforma em círculo */
-    object-fit: cover;  /* evita distorção da imagem */
-  }
- 
-  
-  /*  ícones */
-  .header-right {
-    display: flex; /* usa layout flexível */
-    gap: 40px; /* espaço entre os ícones */
-    padding: 15px 0px 5px 0px; /* espaço interno */
-  }
-
-  .header-left {
-    display: flex; /* ativa flexbox */
-    align-items: self-start; /* alinha no topo */
-    gap: 30px; /* espaço entre avatar e texto */
-    padding: 5px 0px 0px 0px; /* espaço interno superior */
-  }
-
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
 }
 
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-right {
+  display: flex;
+  gap: 24px;
+  padding: 8px 0 0 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 /* ============================
    TABLET
    ============================ */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 640px) {
   header {
-    padding: 5px 15px 15px 15px;   /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 5px 5px;  /* top, right, bottom, left  espaço externo */
- 
+    padding: 14px 16px;
   }
 
   .header-container {
-    display: flex; /* ativa flexbox */
-    justify-content: space-between; /* separa esquerda e direita */
-    align-items: center; /* alinha verticalmente */
-    max-width: 1024px; /* largura máxima do tablet */
-    margin: auto; /* centraliza horizontalmente */
-    flex-wrap: wrap; /* permite quebrar linha se necessário */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
   }
 
-  .header-avatar {
-    width: 40px; /* largura do avatar */
-    height: 40px; /* altura do avatar */
-    border-radius: 50%; /* deixa circular */
-    object-fit: cover;  /* evita distorção */
-  }
-
-  /*  ícones */
   .header-right {
-    display: flex; /* ativa flexbox */
-    gap: 40px; /* espaço entre ícones */
-    padding: 20px 0px 5px 0px; /* espaço interno */
+    padding: 0;
   }
-
-  .header-left {
-    display: flex; /* ativa flexbox */
-    align-items: center; /* alinha verticalmente */
-    gap: 15px; /* espaço entre avatar e texto */
-    padding: 5px 0px 0px 0px; /* espaço interno superior */
-  }
-
 }
-
 
 /* ============================
    DESKTOP
    ============================ */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   header {
-    padding: 20px 15px 0px 15px;   /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 0px 10px;  /* top, right, bottom, left  espaço externo */
- 
+    padding: 16px 18px;
   }
 
-  .header-container {
-    display: flex; /* ativa flexbox */
-    justify-content: space-between; /* separa elementos */
-    align-items: center; /* alinha verticalmente */
-    max-width: 1550px; /* largura máxima desktop */
-    margin: auto; /* centraliza */
-    flex-wrap: wrap; /* permite quebrar linha */
-  }
-  
   .header-avatar {
-    width: 50px; /* avatar maior no desktop */
-    height: 50px; /* altura maior */
-    border-radius: 50%; /* mantém circular */
-    object-fit: cover;  /* evita distorção */
+    width: 48px;
+    height: 48px;
   }
 
-  /*  ícones */
   .header-right {
-    display: flex; /* ativa flexbox */
-    gap: 40px; /* espaço entre ícones */
-    padding: 7px 0px 0px 0px; /* espaço interno superior */
+    gap: 32px;
   }
-
-  .header-left {
-    display: flex; /* ativa flexbox */
-    align-items: center; /* alinha verticalmente */
-    gap: 15px; /* espaço entre elementos */
-  }
-
 }

@@ -1,105 +1,72 @@
 .sidebar {
   grid-area: sidebar;
-  width: 25px;
-  min-height: 100vh;
-  border-radius: 5px;
-
+  width: 100%;
+  min-height: auto;
+  border-radius: var(--radius-md);
+  padding: clamp(10px, 1.2vw, 14px);
+  margin: 0;
 }
 
 .sidebar-caption {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
 }
-
-
 
 /* =====================================================
-   Categoria 
+   Categoria
    ===================================================== */
 
-/* Categoria Legenda */
 .sidebar-caption-menu {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: #babdc1;
   margin-bottom: 0;
-  
 }
 
-/* Categoria */
 .menu-category {
-  margin-bottom: 0px;
-
+  margin-bottom: 0;
 }
-
 
 /* =====================================================
    Categoria Tema escuro
    ===================================================== */
 
-/* Sem ação - legenda */
 .sidebar.dark .sidebar-group-toggle .sidebar-caption-menu {
   color: #dbeafe;
 }
 
-/* ícone expandir */
 .sidebar.dark .sidebar-group-toggle {
   color: #dbeafe;
 }
 
-/* Hover categoria */
 .sidebar.dark .sidebar-group-toggle:hover {
   color: #00d4ff;
   background: linear-gradient(135deg, #00d4ff55, #00d4ff55);
   border: 1px solid #00d4ff;
 }
 
-/* legenda hover */
 .sidebar.dark .sidebar-group-toggle:hover .sidebar-caption-menu {
   color: #00d4ff;
 }
 
-/* ícone hover */
-.sidebar.dark .sidebar-group-toggle:hover {
-  color: #00d4ff;
-}
-
-
-/* Categoria selecionada */
-
 .sidebar.dark .sidebar-group-toggle.active {
   color: #00d4ff;
 }
-
-/* legenda selecionada */
 
 .sidebar.dark .sidebar-group-toggle.active .sidebar-caption-menu {
   font-weight: 400;
   color: #00d4ff;
 }
 
-/* ícone selecionado */
-
-.sidebar.dark .sidebar-group-toggle.active {
-  color: #00d4ff;
-}
-
-
-
 /* =====================================================
    SubCategoria tema escuro
    ===================================================== */
-
-
-/* Item menu */
 
 .sidebar.dark .menu a {
   border: 1px solid #111828;
   color: #e6f3ff;
 }
-
-
-/* Hover item */
 
 .sidebar.dark .menu a:hover {
   color: #00d4ff;
@@ -107,118 +74,71 @@
   border: 1px solid #00d4ff;
 }
 
-
 .sidebar.dark .menu a.active {
-  /*background: linear-gradient(90deg, #19243d, #2a4487); */
-  
   color: #00d4ff;
   background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
   border: 1px solid #00d4ff55;
   border-right: 3px solid #00d4ff;
 }
 
-
-
-
-
-
-
 /* =====================================================
    Categoria Tema claro
    ===================================================== */
 
-/* Sem ação - Altera a cor do fundo da legenda */
 .sidebar.light .sidebar-group-toggle .sidebar-caption-menu {
   color: #0a0a0a;
 }
-/* Sem ação - Altera a cor do ícone menu expande ">" */
+
 .sidebar.light .sidebar-group-toggle {
   color: #000000;
 }
 
-
-/* Houver - Altera a cor do fundo na passagem do mouse */
 .sidebar.light .sidebar-group-toggle:hover {
   color: #0f172a;
   background: #cfe0e8;
   border: 1px solid #00d4ff;
 }
-/* Houver - Altera a cor do fundo da legenda */
+
 .sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
   color: #161c35;
 }
-/* Houver - Altera a cor do ícone menu expande ">" */
-.sidebar.light .sidebar-group-toggle:hover {
-  color: #161c35;
-}
 
-
-/* Selecionado - Altera a cor do fundo para selecionado */
 .sidebar.light .sidebar-group-toggle.active {
- 
   color: #0f172a;
- 
 }
 
-/* Selecionado - Altera a cor da legenda do selecionado */
 .sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #161c35; /* azul claro */
+  color: #161c35;
   font-weight: 400;
 }
-
- 
-/* Selecionado - Altera a cor do ícone menu expande ">" */
-.sidebar.light .sidebar-group-toggle.active {
-  color: #161c35;
-}
-
-
 
 /* =====================================================
    SubCategoria tema claro
    ===================================================== */
- 
- 
+
 .sidebar.light .menu a {
   border: 1px solid #e4ecf2;
   background: #e4ecf2;
   color: #000000;
 }
 
-
-/* Altera a cor ícone e legenda passagem do mouse */
-
 .sidebar.light .menu a:hover {
- 
   color: #0f172a;
   background: #cfe0e8;
   border: 1px solid #00d4ff;
-
 }
 
-
-/* Item selecionado */
-
 .sidebar.light .menu a.active {
-
   color: #000000;
-
   background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
   border: 1px solid #00d4ff55;
   border-right: 3px solid #00d4ff;
-
- 
-
 }
 
+/* -----------------------------------------------------
+   Estrutura
+   ----------------------------------------------------- */
 
-
-
-
-
-
-
-/* ── Botão que expande/colapsa o grupo ── */
 .sidebar-group-toggle {
   display: flex;
   align-items: center;
@@ -227,27 +147,22 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px 4px;
+  padding: 8px 6px;
   margin-bottom: 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: rgb(255, 255, 255);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
- 
-/* Animação do chevron */
 .sidebar-chevron {
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
 
-/* ── Menu collapsible ── */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
-
-  /* Estado colapsado */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -258,12 +173,7 @@
     transform 0.25s ease;
 }
 
-/* Estado expandido */
-.menu.collapsible.open {
-  max-height: 500px; /* valor alto o suficiente para qualquer lista */
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 .menu li {
   margin-bottom: 10px;
@@ -275,7 +185,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid #d3d3d3d3;
   transition: background 0.3s ease, color 0.3s ease;
@@ -284,8 +194,48 @@
 .sidebar-header {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
+.sidebar-logo {
+  width: clamp(56px, 10vw, 80px);
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+
+  /* barra do scroll */
+.sidebar.dark .menu.collapsible.open::-webkit-scrollbar-thumb {
+  background:  linear-gradient(135deg, #00d4ff22, #00d4ff44);
+  border-radius: 6px;
+}
+
+  /* hover na barra do scroll */
+.sidebar.dark .menu.collapsible.open::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+  /* barra do scroll */
+.sidebar.light .menu.collapsible.open::-webkit-scrollbar-thumb {
+  background:  linear-gradient(135deg, #00d4ff22, #00d4ff44);
+  border-radius: 6px;
+}
+
+  /* hover na barra do scroll */
+.sidebar.light .menu.collapsible.open::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+  /* Ajusta o tamanho da barra */
+.menu.collapsible.open::-webkit-scrollbar {
+  height: 8px;
+}
+
+
+/* trilho do scroll */
+.menu.collapsible.open::-webkit-scrollbar-track {
+  background: transparent;
+}
 
 
 
@@ -293,77 +243,64 @@
    CELULAR
    ============================ */
 @media (max-width: 600px) {
-
-  .sidebar-logo {
-    width: 60px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-
   .sidebar {
-    width: auto;
+    width: 100%;
     min-height: auto;
-    padding: 10px 0px 5px 15px; /* top, right, bottom, left espaço interno */
+    overflow-x: hidden;
+    padding: 8px 10px;
   }
 
- 
-
-  /* Submenu vira horizontal */
-  .menu.collapsible.open {
-    display: flex;
-    flex-direction: row;
-
-    gap: 8px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    max-height: none;
-    opacity: 1;
-    transform: none;
-
- 
-    padding: 10px 0px 15px 5px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 15px 5px; /* top, right, bottom, left  espaço externo */
-    
+  .sidebar-group-toggle {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 6px;
   }
 
-  /* remove quebra de linha */
+  
   .menu li {
     margin-bottom: 0;
     flex-shrink: 0;
   }
 
-  /* links das telas */
   .menu a {
     white-space: nowrap;
-    padding: 8px 12px;
   }
 
-  /* scroll suave */
-  .menu.collapsible.open::-webkit-scrollbar {
-    height: 8px;
-  }
- 
-  
-  /* trilho do scroll */
-  .menu.collapsible.open::-webkit-scrollbar-track {
-    background: transparent;
+  .sidebar-logo {
+    width: 45px;
+    border-radius: 50%;
   }
 
-  /* barra do scroll */
-  .menu.collapsible.open::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #19243d, #2a4487);
-    border-radius: 6px;
-    transition: background 0.3s ease;
+  .sidebar-caption {
+    display: none;
   }
 
-  /* hover na barra do scroll */
-  .menu.collapsible.open::-webkit-scrollbar-thumb:hover {
-    background: #2a4487;
+
+  .menu.collapsible.open {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: nowrap;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    padding: 8px 0 10px 4px;
+    margin: 4px 0 10px 0;
   }
 
 }
+
+
+
+
+
+
+
 
 /* ============================
    TABLET
@@ -374,6 +311,7 @@
     min-height: auto;
     padding: 10px;
     margin: 5px;
+    overflow-x: hidden;
   }
 
   .sidebar-logo {
@@ -382,68 +320,50 @@
     margin-bottom: 10px;
   }
 
-  
-
-  /* Submenu vira horizontal */
-  .menu.collapsible.open {
-    display: flex;
-    flex-direction: row;
-
-    gap: 8px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    max-height: none;
-    opacity: 1;
-    transform: none;
-
- 
-    padding: 10px 0px 15px 5px; /* top, right, bottom, left espaço interno */
-    margin: 5px 5px 15px 5px; /* top, right, bottom, left  espaço externo */
-    
-  }
-
-  /* remove quebra de linha */
   .menu li {
     margin-bottom: 0;
     flex-shrink: 0;
   }
 
-  /* links das telas */
   .menu a {
     white-space: nowrap;
     padding: 8px 12px;
   }
 
-  /* scroll suave */
-  .menu.collapsible.open::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .menu.collapsible.open::-webkit-scrollbar-thumb {
-    background: #435ca0;
-    border-radius: 4px;
-  }
-
   
+  .menu.collapsible.open {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    padding: 10px 0 15px 5px;
+    margin: 5px 5px 15px 5px;
+  }
+
 }
+
 
 /* ============================
    DESKTOP
    ============================ */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .sidebar {
-    min-height: 100vh;
-    width: 250px;
-    padding: 10px;
-    margin: 5px 0 5px 5px;
+    min-height: 100dvh;
   }
 
-  .sidebar-logo {
-    width: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    
-  }
+  /* Abre as sub categorias no click do ícone */
+.menu.collapsible.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 }
