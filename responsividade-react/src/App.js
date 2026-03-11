@@ -46,7 +46,7 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
       mode: darkMode ? "dark" : "light",
 
       background: {
-        default: darkMode ? "#000000" : "#ffffff",   // fundo geral
+        default: darkMode ? "#000000" : "#eef3f4",   // fundo geral
         paper: darkMode ? "#111828" : "#e4ecf2"      // header / sidebar / footer
       },
 
@@ -59,7 +59,8 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
         secondary: darkMode ? "#ffffff" : "#446A9C"
       },
 
-      divider: darkMode ? "#35547d" : "#d6e1f2"
+      /* Borda do grid */
+      divider: darkMode ? "#ffffff" : "#d6e1f2"
     },
 
     typography: {

@@ -53,20 +53,22 @@ function Header({ darkMode, setDarkMode }) {
         </div>
 
         {/* Lado direito */}
-        <div className="header-right">
+        <div
+          className="header-right"
+          style={{ color: theme.palette.text.primary }}
+        >
 
-          <div
-            className="theme-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-            title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
-          >
+          <div className="theme-toggle"  
+               onClick={() => setDarkMode(!darkMode)}  
+               title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}  
+            >
             {darkMode
               ? (
                 <Icon
                   icon="material-symbols-light:light-mode-outline"
                   width="24"
                   height="24"
-                  color="currentColor"
+                  className="header-icon"
                 />
               )
               : (
@@ -74,24 +76,26 @@ function Header({ darkMode, setDarkMode }) {
                   icon="material-symbols-light:moon-stars-outline"
                   width="24"
                   height="24"
-                  color="currentColor"
+                  className="header-icon"
                 />
               )
             }
           </div>
 
           <Icon
+           
             icon="material-symbols-light:mail-outline"
             width="24"
             height="24"
-            color="currentColor"
+            className="header-icon"
           />
 
           <Icon
+            
             icon="material-symbols-light:door-open-outline"
             width="24"
             height="24"
-            color="currentColor"
+            className="header-icon"
           />
 
         </div>
