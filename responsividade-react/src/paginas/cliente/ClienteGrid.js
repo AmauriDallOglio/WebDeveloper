@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import { clientes } from "../../integracao/clienteDados";
 import "./ClienteGrid.css";
 
-function ClienteGrid() {
+function ClienteGrid({ localeText }) {
 
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
@@ -98,6 +98,7 @@ function ClienteGrid() {
             checkboxSelection
             disableSelectionOnClick
             className="cliente-datagrid"
+            localeText={localeText}
           />
 
         </div>

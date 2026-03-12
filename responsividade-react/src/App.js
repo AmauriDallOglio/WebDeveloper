@@ -12,11 +12,17 @@ import ClienteCadastro from "./paginas/cliente/ClienteCadastro";
 import "./App.css";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ptBR as corePtBR, enUS as coreEnUS } from "@mui/material/locale";
 import { CssBaseline } from "@mui/material";
+import { ptBR as dataGridPtBR, enUS as dataGridEnUS } from "@mui/x-data-grid/locales";
 
 function App() {
 
   const [darkMode, setDarkMode] = useState(true);
+  const [locale, setLocale] = useState("pt");
+  const dataGridLocaleText =
+    (locale === "pt" ? dataGridPtBR : dataGridEnUS).components.MuiDataGrid
+      .defaultProps.localeText;
 
 
 
@@ -41,38 +47,41 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
      Tema global do sistema
   ===================================================== */
 
-  const theme = createTheme({
-    palette: {
-      mode: darkMode ? "dark" : "light",
+  const theme = createTheme(
+    {
+      palette: {
+        mode: darkMode ? "dark" : "light",
 
-      background: {
-        default: darkMode ? "#000000" : "#b2bac0",   // fundo geral 
-        paper: darkMode ? "#111828" : "#dbdee5"      // header / sidebar / footer
+        background: {
+          default: darkMode ? "#000000" : "#b2bac0",   // fundo geral 
+          paper: darkMode ? "#111828" : "#dbdee5"      // header / sidebar / footer
+        },
+
+        primary: {
+          main:  darkMode ? "#00d4ff" : "#00d4ff",
+        },
+
+        text: {
+          primary: darkMode ? "#ffffff" : "#000000",
+          secondary: darkMode ? "#ffffff" : "#446A9C"
+        },
+
+        /* Borda do grid */
+        divider: darkMode ? "#ffffff" : "#d6e1f2"
       },
 
-      primary: {
-        main:  darkMode ? "#00d4ff" : "#00d4ff",
-      },
-
-      text: {
-        primary: darkMode ? "#ffffff" : "#000000",
-        secondary: darkMode ? "#ffffff" : "#446A9C"
-      },
-
-      /* Borda do grid */
-      divider: darkMode ? "#ffffff" : "#d6e1f2"
+      typography: {
+        fontFamily: [
+          "Segoe UI",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif"
+        ].join(",")
+      }
     },
-
-    typography: {
-      fontFamily: [
-        "Segoe UI",
-        "Roboto",
-        "Helvetica",
-        "Arial",
-        "sans-serif"
-      ].join(",")
-    }
-  });
+    locale === "pt" ? corePtBR : coreEnUS
+  );
 
   return (
 
@@ -83,7 +92,12 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
         <div className="app-grid">
 
-          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Header
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            locale={locale}
+            setLocale={setLocale}
+          />
 
           <Sidebar />
 
@@ -108,7 +122,10 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
                 }
               />
 
-              <Route path="/clientes" element={<Cliente />} />
+              <Route
+                path="/clientes"
+                element={<Cliente localeText={dataGridLocaleText} />}
+              />
 
               <Route path="/contato" element={<ClienteCadastro />} />
 

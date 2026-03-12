@@ -5,7 +5,7 @@ import avatar from "./imagem/header/usuario.jpg";
 import "./Header.css";
 import { Typography } from "@mui/material";
 
-function Header({ darkMode, setDarkMode }) {
+function Header({ darkMode, setDarkMode, locale, setLocale }) {
 
   const theme = useTheme();
 
@@ -57,6 +57,15 @@ function Header({ darkMode, setDarkMode }) {
           className="header-right"
           style={{ color: theme.palette.text.primary }}
         >
+
+          <button
+            type="button"
+            className="lang-toggle"
+            onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
+            title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+          >
+            {locale === "pt" ? "PT" : "EN"}
+          </button>
 
           <div className="theme-toggle"  
                onClick={() => setDarkMode(!darkMode)}  
