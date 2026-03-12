@@ -20,7 +20,6 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #babdc1;
   margin-bottom: 0;
 }
 
@@ -63,8 +62,10 @@
    SubCategoria tema escuro
    ===================================================== */
 
+ 
 .sidebar.dark .menu a {
-  border: 1px solid #111828;
+  border: 1px solid #111d37;
+ 
   color: #e6f3ff;
 }
 
@@ -85,32 +86,39 @@
    Categoria Tema claro
    ===================================================== */
 
+/* Legenda */
 .sidebar.light .sidebar-group-toggle .sidebar-caption-menu {
-  color: #0a0a0a;
+  color: #000000;
+}
+/* Legenda houver */
+.sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
+  color: #000000;
+}
+/* Legenda selecionado */
+.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
+  color: #00d4ff;
+  font-weight: 400;
 }
 
+
+/* ícone */
 .sidebar.light .sidebar-group-toggle {
   color: #000000;
 }
-
+/* ícone houver */
 .sidebar.light .sidebar-group-toggle:hover {
-  color: #0f172a;
+  color: #000000;
   background: #cfe0e8;
   border: 1px solid #00d4ff;
 }
-
-.sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
-  color: #161c35;
-}
-
+/* Icone categoria selecionado */
 .sidebar.light .sidebar-group-toggle.active {
-  color: #0f172a;
+  color: #00d4ff;
 }
 
-.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #161c35;
-  font-weight: 400;
-}
+
+
+
 
 /* =====================================================
    SubCategoria tema claro
@@ -118,7 +126,7 @@
 
 .sidebar.light .menu a {
   border: 1px solid #e4ecf2;
-  background: #e4ecf2;
+  background: #dbdee5;
   color: #000000;
 }
 

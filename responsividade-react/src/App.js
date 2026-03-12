@@ -46,8 +46,8 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
       mode: darkMode ? "dark" : "light",
 
       background: {
-        default: darkMode ? "#000000" : "#eef3f4",   // fundo geral
-        paper: darkMode ? "#111828" : "#e4ecf2"      // header / sidebar / footer
+        default: darkMode ? "#000000" : "#b2bac0",   // fundo geral 
+        paper: darkMode ? "#111828" : "#dbdee5"      // header / sidebar / footer
       },
 
       primary: {
@@ -91,7 +91,7 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
           
                 style={{ background: theme.palette.mode === "dark" ? 
                         "linear-gradient(270deg, #111828, #111828)" // fundo escuro 
-                        : "linear-gradient(270deg, #e4ecf2, #e4ecf2)", // fundo claro 
+                        : "linear-gradient(270deg, #dbdee5, #dbdee5)", // fundo claro 
                         color: theme.palette.mode === "dark" ? "#fff" : "#111", }} >
 
 

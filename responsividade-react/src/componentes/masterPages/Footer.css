@@ -5,6 +5,16 @@
   flex-wrap: wrap;
 }
 
+.social-item a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.social-item a:hover,
+.social-item a:focus-visible {
+  color: #00d4ff;
+}
+
 footer {
   grid-area: footer;
   text-align: center;
