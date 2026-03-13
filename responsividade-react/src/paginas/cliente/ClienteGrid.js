@@ -11,10 +11,16 @@ function ClienteGrid({ localeText }) {
   const isDark = theme.palette.mode === "dark";
 
   const [search, setSearch] = useState("");
-
   const filteredClientes = clientes.filter((c) =>
     c.nome.toLowerCase().includes(search.toLowerCase())
   );
+  const [rowSelectionModel, setRowSelectionModel] = useState({
+    type: "include",
+    ids: new Set()
+  });
+  const selectedCount = rowSelectionModel?.type === "exclude"
+    ? Math.max(filteredClientes.length - (rowSelectionModel?.ids?.size ?? 0), 0)
+    : (rowSelectionModel?.ids?.size ?? 0);
 
   const columns = [
     { field: "codigo", headerName: "Código", width: 100 },
@@ -57,12 +63,18 @@ function ClienteGrid({ localeText }) {
           INCLUIR
         </button>
 
-        <button className="btn-secondary">
+        <button
+          className={`btn-secondary ${selectedCount ? "is-delete" : ""}`}
+          disabled={selectedCount === 0}
+        >
           <Icon icon="mdi:delete-outline" width="16" />
           EXCLUIR
         </button>
 
-        <button className="btn-secondary">
+        <button
+          className={`btn-secondary ${selectedCount ? "is-copy" : ""}`}
+          disabled={selectedCount === 0}
+        >
           <Icon icon="mdi:content-copy" width="16" />
           COPIAR
         </button>
@@ -96,9 +108,13 @@ function ClienteGrid({ localeText }) {
             pageSize={10}
             rowsPerPageOptions={[10,25,50]}
             checkboxSelection
-            disableSelectionOnClick
+            disableRowSelectionOnClick
             className="cliente-datagrid"
             localeText={localeText}
+            rowSelectionModel={rowSelectionModel}
+            onRowSelectionModelChange={(newSelection) =>
+              setRowSelectionModel(newSelection)
+            }
           />
 
         </div>

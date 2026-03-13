@@ -4,10 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./componentes/masterPages/Header";
 import Sidebar from "./componentes/masterPages/Sidebar";
 import Footer from "./componentes/masterPages/Footer";
-import Details from "./componentes/masterPages/Details";
-
-import Cliente from "./paginas/cliente/ClienteGrid";
-import ClienteCadastro from "./paginas/cliente/ClienteCadastro";
+import { appRoutes } from "./rotas/menuRoutes";
 
 import "./App.css";
 
@@ -111,24 +108,20 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
 
             <Routes>
+              {appRoutes.map((route) => {
+                const element =
+                  typeof route.element === "function"
+                    ? route.element({ dataGridLocaleText })
+                    : route.element;
 
-              <Route
-                path="/"
-                element={
-                  <section>
-                    <h3>Saiba mais</h3>
-                    <Details />
-                  </section>
-                }
-              />
-
-              <Route
-                path="/clientes"
-                element={<Cliente localeText={dataGridLocaleText} />}
-              />
-
-              <Route path="/contato" element={<ClienteCadastro />} />
-
+                return (
+                  <Route
+                    key={route.key}
+                    path={route.path}
+                    element={element}
+                  />
+                );
+              })}
             </Routes>
 
           </main>

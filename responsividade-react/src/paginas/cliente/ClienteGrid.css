@@ -82,6 +82,21 @@
   cursor: pointer;
 }
 
+.btn-secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-secondary.is-delete:not(:disabled) {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.btn-secondary.is-copy:not(:disabled) {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
 
 /* ============================
    PESQUISA
@@ -220,6 +235,13 @@
 .cliente-datagrid .MuiDataGrid-cell {
   display: flex;
   align-items: center;
+}
+
+.cliente-datagrid .MuiDataGrid-cell:focus,
+.cliente-datagrid .MuiDataGrid-cell:focus-within,
+.cliente-datagrid .MuiDataGrid-columnHeader:focus,
+.cliente-datagrid .MuiDataGrid-columnHeader:focus-within {
+  outline: none;
 }
 
 
