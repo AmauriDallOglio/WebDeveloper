@@ -90,27 +90,35 @@
 .sidebar.light .sidebar-group-toggle .sidebar-caption-menu {
   color: #000000;
 }
-/* Legenda houver */
-.sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
-  color: #000000;
-}
-/* Legenda selecionado */
-.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
-  color: #00d4ff;
-  font-weight: 400;
-}
-
 
 /* ícone */
 .sidebar.light .sidebar-group-toggle {
   color: #000000;
 }
+
+
+
+/* Legenda houver */
+.sidebar.light .sidebar-group-toggle:hover .sidebar-caption-menu {
+  color: #000000;
+}
+
 /* ícone houver */
 .sidebar.light .sidebar-group-toggle:hover {
-  color: #000000;
+  color: #0f172a;
   background: #cfe0e8;
   border: 1px solid #00d4ff;
+  
 }
+
+
+/* Legenda selecionado */
+.sidebar.light .sidebar-group-toggle.active .sidebar-caption-menu {
+  color: #00d4ff;
+  font-weight: 400;
+  
+}
+
 /* Icone categoria selecionado */
 .sidebar.light .sidebar-group-toggle.active {
   color: #00d4ff;
@@ -125,8 +133,8 @@
    ===================================================== */
 
 .sidebar.light .menu a {
-  border: 1px solid #e4ecf2;
-  background: #dbdee5;
+  border: 1px solid #cfe0e8;
+  background: #ecf0f3;
   color: #000000;
 }
 
@@ -137,10 +145,10 @@
 }
 
 .sidebar.light .menu a.active {
-  color: #000000;
-  background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
-  border: 1px solid #00d4ff55;
-  border-right: 3px solid #00d4ff;
+  color: #ffffff;
+  background: linear-gradient(135deg, #446A9C, #00d4ff44); 
+  border: 1px solid #00d4ff;
+  border-right: 3px solid #16d0ff;
 }
 
 /* -----------------------------------------------------
