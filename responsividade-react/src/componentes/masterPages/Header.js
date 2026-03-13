@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
 import avatar from "./imagem/header/usuario.jpg";
@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 function Header({ darkMode, setDarkMode, locale, setLocale }) {
 
   const theme = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
 
@@ -57,55 +58,72 @@ function Header({ darkMode, setDarkMode, locale, setLocale }) {
           className="header-right"
           style={{ color: theme.palette.text.primary }}
         >
-
-          <button
-            type="button"
-            className="lang-toggle"
-            onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
-            title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
-          >
-            {locale === "pt" ? "PT" : "EN"}
-          </button>
-
-          <div className="theme-toggle"  
-               onClick={() => setDarkMode(!darkMode)}  
-               title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}  
+          <div className="header-menu-wrapper">
+            <button
+              type="button"
+              className="menu-toggle"
+              onClick={() => setMenuOpen(!menuOpen)}
+              title={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
+              aria-controls="header-menu"
             >
-            {darkMode
-              ? (
-                <Icon
-                  icon="material-symbols-light:light-mode-outline"
-                  width="24"
-                  height="24"
-                  className="header-icon"
-                />
-              )
-              : (
-                <Icon
-                  icon="material-symbols-light:moon-stars-outline"
-                  width="24"
-                  height="24"
-                  className="header-icon"
-                />
-              )
-            }
+              <Icon
+                icon="material-symbols-light:door-open-outline"
+                width="24"
+                height="24"
+                className="header-icon"
+              />
+            </button>
+
+            {menuOpen && (
+              <div id="header-menu" className="header-menu">
+                <button
+                  type="button"
+                  className="header-menu-item"
+                  title="Mensagens"
+                >
+                  <Icon
+                    icon="material-symbols-light:mail-outline"
+                    width="24"
+                    height="24"
+                    className="header-icon"
+                  />
+                </button>
+
+                <button
+                  type="button"
+                  className="header-menu-item theme-toggle"
+                  onClick={() => setDarkMode(!darkMode)}
+                  title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
+                >
+                  {darkMode ? (
+                    <Icon
+                      icon="material-symbols-light:light-mode-outline"
+                      width="24"
+                      height="24"
+                      className="header-icon"
+                    />
+                  ) : (
+                    <Icon
+                      icon="material-symbols-light:moon-stars-outline"
+                      width="24"
+                      height="24"
+                      className="header-icon"
+                    />
+                  )}
+                </button>
+
+                <button
+                  type="button"
+                  className="header-menu-item lang-toggle"
+                  onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
+                  title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+                >
+                  {locale === "pt" ? "PT" : "EN"}
+                </button>
+              </div>
+            )}
           </div>
-
-          <Icon
-           
-            icon="material-symbols-light:mail-outline"
-            width="24"
-            height="24"
-            className="header-icon"
-          />
-
-          <Icon
-            
-            icon="material-symbols-light:door-open-outline"
-            width="24"
-            height="24"
-            className="header-icon"
-          />
 
         </div>
 

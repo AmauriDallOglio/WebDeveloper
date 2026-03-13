@@ -51,6 +51,59 @@ header {
   padding: 8px 0 0 0;
 }
 
+
+/* Opções open menu*/
+.header-menu-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Opções open menu*/
+.menu-toggle {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Opções open menu*/
+.header-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+/* Opções open menu*/
+.header-menu-item {
+  background: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Opções open menu*/
+.header-menu-item:hover {
+  color: #00d4ff;
+  border-color: #00d4ff;
+  transform: translateY(-1px);
+}
+
+
+
 /* Ícone do idioma */
 .lang-toggle {
   border: 1px solid currentColor;
@@ -85,19 +138,6 @@ header {
 .header-icon:hover {
   color: #00d4ff;
   transform: translateY(-1px);
-}
-
-
-.header-right svg,
-.theme-toggle {
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-/* Hover */
-.header-right svg:hover,
-.theme-toggle:hover {
-  color: #00d4ff;
 }
 
 
