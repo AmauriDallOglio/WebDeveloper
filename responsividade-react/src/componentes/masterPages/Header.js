@@ -77,49 +77,60 @@ function Header({ darkMode, setDarkMode, locale, setLocale }) {
 
             {menuOpen && (
               <div id="header-menu" className="header-menu">
-                <button
-                  type="button"
-                  className="header-menu-item"
-                  title="Mensagens"
-                >
-                  <Icon
-                    icon="material-symbols-light:mail-outline"
-                    width="24"
-                    height="24"
-                    className="header-icon"
-                  />
-                </button>
-
-                <button
-                  type="button"
-                  className="header-menu-item theme-toggle"
-                  onClick={() => setDarkMode(!darkMode)}
-                  title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
-                >
-                  {darkMode ? (
+                <div className="header-menu-top">
+                  <button
+                    type="button"
+                    className="header-menu-item"
+                    title="Mensagens"
+                  >
                     <Icon
-                      icon="material-symbols-light:light-mode-outline"
+                      icon="material-symbols-light:mail-outline"
                       width="24"
                       height="24"
                       className="header-icon"
                     />
-                  ) : (
-                    <Icon
-                      icon="material-symbols-light:moon-stars-outline"
-                      width="24"
-                      height="24"
-                      className="header-icon"
-                    />
-                  )}
-                </button>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="header-menu-item theme-toggle"
+                    onClick={() => setDarkMode(!darkMode)}
+                    title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
+                  >
+                    {darkMode ? (
+                      <Icon
+                        icon="material-symbols-light:light-mode-outline"
+                        width="24"
+                        height="24"
+                        className="header-icon"
+                      />
+                    ) : (
+                      <Icon
+                        icon="material-symbols-light:moon-stars-outline"
+                        width="24"
+                        height="24"
+                        className="header-icon"
+                      />
+                    )}
+                  </button>
+
+                  <button
+                    type="button"
+                    className="header-menu-item lang-toggle"
+                    onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
+                    title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+                  >
+                    {locale === "pt" ? "PT" : "EN"}
+                  </button>
+                </div>
+
+                <div className="header-menu-separator" />
 
                 <button
                   type="button"
-                  className="header-menu-item lang-toggle"
-                  onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
-                  title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+                  className="header-menu-exit"
                 >
-                  {locale === "pt" ? "PT" : "EN"}
+                  Sair
                 </button>
               </div>
             )}
