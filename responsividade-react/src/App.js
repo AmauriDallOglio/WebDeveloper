@@ -5,6 +5,7 @@ import Header from "./componentes/masterPages/Header";
 import Sidebar from "./componentes/masterPages/Sidebar";
 import Footer from "./componentes/masterPages/Footer";
 import { appRoutes } from "./rotas/menuRoutes";
+import Login from "./paginas/login/Login";
 
 import "./App.css";
 
@@ -17,6 +18,10 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [locale, setLocale] = useState("pt");
+  /* Login */
+  const [isAuthenticated, setIsAuthenticated] = useState(() =>
+    Boolean(localStorage.getItem("authToken"))
+  );
   const dataGridLocaleText =
     (locale === "pt" ? dataGridPtBR : dataGridEnUS).components.MuiDataGrid
       .defaultProps.localeText;
@@ -79,6 +84,28 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
     },
     locale === "pt" ? corePtBR : coreEnUS
   );
+
+
+  /* Login */
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
+          <Routes>
+            <Route
+              path="*"
+              element={<Login onLoginSuccess={handleLoginSuccess} />}
+            />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    );
+  }
 
   return (
 
