@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
 import avatar from "./imagem/header/usuario.jpg";
 import "./Header.css";
 import { Typography } from "@mui/material";
 
-function Header({ darkMode, setDarkMode, locale, setLocale }) {
+function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificationMessage, onLogout }) {
 
   const theme = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const greetingMessage = (() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      return "Bom dia";
+    }
+    if (hour < 18) {
+      return "Boa tarde";
+    }
+    return "Boa noite";
+  })();
 
   return (
 
@@ -38,15 +48,15 @@ function Header({ darkMode, setDarkMode, locale, setLocale }) {
               className="form-header-title"
               sx={{ color: "text.primary" }}
             >
-              Olá! Amauri Dall'Oglio
+              Olá! {userName || "Usuário"}
             </Typography>
 
             <Typography
               variant="subtitle2"
               className="header-subtitle"
-              sx={{ color: "text.secondary" }}
+              sx={{ color: notificationMessage ? "#ef4444" : "text.secondary" }}
             >
-              Existem informações sobre o projeto
+              {notificationMessage || greetingMessage}
             </Typography>
 
           </div>
@@ -129,6 +139,7 @@ function Header({ darkMode, setDarkMode, locale, setLocale }) {
                 <button
                   type="button"
                   className="header-menu-exit"
+                  onClick={onLogout}
                 >
                   Sair
                 </button>

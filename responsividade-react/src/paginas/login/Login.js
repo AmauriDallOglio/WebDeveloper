@@ -1,15 +1,44 @@
 ﻿import React, { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import "./Login.css";
 
+const decodeJwtPayload = (token) => {
+  if (!token) {
+    return null;
+  }
+
+  try {
+    const base64Url = token.split(".")[1];
+    if (!base64Url) {
+      return null;
+    }
+
+    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split("")
+        .map((char) => `%${`00${char.charCodeAt(0).toString(16)}`.slice(-2)}`)
+        .join("")
+    );
+
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    return null;
+  }
+};
+
 function Login({ onLoginSuccess }) {
   const theme = useTheme();
+  const location = useLocation();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const unauthorizedMessage = location.state?.unauthorized
+    ? "Acesso não autorizado. Faça login para continuar."
+    : "";
 
   const canSubmit = useMemo(() => {
     return email.trim().length > 0 && senha.trim().length > 0 && !isLoading;
@@ -33,7 +62,7 @@ function Login({ onLoginSuccess }) {
         body: JSON.stringify({
           email,
           senha,
-          sistemaSolicitado : "SistemaAmauri"
+          sistemaSolicitado: "SistemaAmauri"
         })
       });
 
@@ -42,6 +71,9 @@ function Login({ onLoginSuccess }) {
       if (response.ok && data?.sucesso) {
         const token = data?.dados?.token ?? "";
         const refresh = data?.dados?.refresh ?? "";
+        const notification = data?.dados?.notificacao ?? "";
+        const payload = decodeJwtPayload(token);
+        const userName = payload?.Nome || payload?.name || payload?.Email || email;
 
         if (token) {
           localStorage.setItem("authToken", token);
@@ -51,8 +83,18 @@ function Login({ onLoginSuccess }) {
           localStorage.setItem("refreshToken", refresh);
         }
 
-        onLoginSuccess?.(data);
-        navigate("/");             
+        if (userName) {
+          localStorage.setItem("userName", userName);
+        }
+        if (notification) {
+          localStorage.setItem("notificationMessage", notification);
+        } else {
+          localStorage.removeItem("notificationMessage");
+        }
+
+        onLoginSuccess?.({ userName, notification, data });
+        const destination = location.state?.from || "/";
+        navigate(destination);
         return;
       }
 
@@ -117,6 +159,9 @@ function Login({ onLoginSuccess }) {
             />
           </label>
 
+          {unauthorizedMessage && !error && (
+            <p className="login-info">{unauthorizedMessage}</p>
+          )}
           {error && <p className="login-error">{error}</p>}
 
           <button

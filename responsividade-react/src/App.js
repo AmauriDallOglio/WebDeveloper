@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import Header from "./componentes/masterPages/Header";
 import Sidebar from "./componentes/masterPages/Sidebar";
@@ -14,6 +14,26 @@ import { ptBR as corePtBR, enUS as coreEnUS } from "@mui/material/locale";
 import { CssBaseline } from "@mui/material";
 import { ptBR as dataGridPtBR, enUS as dataGridEnUS } from "@mui/x-data-grid/locales";
 
+function UnauthenticatedRoutes({ onLoginSuccess }) {
+  const location = useLocation();
+
+  return (
+    <Routes>
+      <Route path="/login" element={<Login onLoginSuccess={onLoginSuccess} />} />
+      <Route
+        path="*"
+        element={
+          <Navigate
+            to="/login"
+            replace
+            state={{ from: location.pathname, unauthorized: true }}
+          />
+        }
+      />
+    </Routes>
+  );
+}
+
 function App() {
 
   const [darkMode, setDarkMode] = useState(true);
@@ -21,6 +41,12 @@ function App() {
   /* Login */
   const [isAuthenticated, setIsAuthenticated] = useState(() =>
     Boolean(localStorage.getItem("authToken"))
+  );
+  const [userName, setUserName] = useState(() =>
+    localStorage.getItem("userName") || ""
+  );
+  const [notificationMessage, setNotificationMessage] = useState(() =>
+    localStorage.getItem("notificationMessage") || ""
   );
   const dataGridLocaleText =
     (locale === "pt" ? dataGridPtBR : dataGridEnUS).components.MuiDataGrid
@@ -87,8 +113,25 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
 
   /* Login */
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = ({ userName: loggedUserName, notification } = {}) => {
     setIsAuthenticated(true);
+    if (loggedUserName) {
+      setUserName(loggedUserName);
+    }
+    if (notification) {
+      setNotificationMessage(notification);
+    } else {
+      setNotificationMessage("");
+    }
+  };
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("notificationMessage");
+    setIsAuthenticated(false);
+    setUserName("");
+    setNotificationMessage("");
   };
 
   if (!isAuthenticated) {
@@ -96,12 +139,7 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <Routes>
-            <Route
-              path="*"
-              element={<Login onLoginSuccess={handleLoginSuccess} />}
-            />
-          </Routes>
+          <UnauthenticatedRoutes onLoginSuccess={handleLoginSuccess} />
         </Router>
       </ThemeProvider>
     );
@@ -121,6 +159,9 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
             setDarkMode={setDarkMode}
             locale={locale}
             setLocale={setLocale}
+            userName={userName}
+            notificationMessage={notificationMessage}
+            onLogout={handleLogout}
           />
 
           <Sidebar />
