@@ -1,7 +1,10 @@
 ﻿import React, { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import { Icon } from "@iconify/react";
+import { IconButton, InputAdornment } from "@mui/material";
 import "./Login.css";
+import InputString from "../../componentes/modelos/InputString";
 
 const decodeJwtPayload = (token) => {
   if (!token) {
@@ -36,6 +39,9 @@ function Login({ onLoginSuccess }) {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [erroEmail, setErroEmail] = useState(false);
+  const [erroSenha, setErroSenha] = useState(false);
+  const [showSenha, setShowSenha] = useState(false);
   const unauthorizedMessage = location.state?.unauthorized
     ? "Acesso não autorizado. Faça login para continuar."
     : "";
@@ -86,6 +92,7 @@ function Login({ onLoginSuccess }) {
         if (userName) {
           localStorage.setItem("userName", userName);
         }
+
         if (notification) {
           localStorage.setItem("notificationMessage", notification);
         } else {
@@ -133,31 +140,59 @@ function Login({ onLoginSuccess }) {
         </div>
 
         <form className="login-form" onSubmit={handleSubmit}>
-          <label className="login-field">
-            <span>E-mail</span>
-            <input
-              type="email"
-              name="email"
-              autoComplete="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="voce@empresa.com"
-              required
-            />
-          </label>
+          <InputString
+            label="E-mail"
+            type="email"
+            value={email}
+            onChange={(event) => {
+              const nextValue = event.target.value;
+              setEmail(nextValue);
+              if (erroEmail && nextValue.trim() !== "") {
+                setErroEmail(false);
+              }
+            }}
+            onBlur={(event) => setErroEmail(event.target.value.trim() === "")}
+            error={erroEmail}
+            helperText={erroEmail ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:mail-outline-rounded"
+          />
 
-          <label className="login-field">
-            <span>Senha</span>
-            <input
-              type="password"
-              name="senha"
-              autoComplete="current-password"
-              value={senha}
-              onChange={(event) => setSenha(event.target.value)}
-              placeholder="Sua senha"
-              required
-            />
-          </label>
+          <InputString
+            label="Senha"
+            type={showSenha ? "text" : "password"}
+            value={senha}
+            onChange={(event) => {
+              const nextValue = event.target.value;
+              setSenha(nextValue);
+              if (erroSenha && nextValue.trim() !== "") {
+                setErroSenha(false);
+              }
+            }}
+            onBlur={(event) => setErroSenha(event.target.value.trim() === "")}
+            error={erroSenha}
+            helperText={erroSenha ? "Campo obrigatório" : ""}
+            icon="material-symbols-light:key-vertical-outline-rounded"
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={() => setShowSenha((prev) => !prev)}
+                  edge="end"
+                  aria-label={showSenha ? "Ocultar senha" : "Mostrar senha"}
+                  size="small"
+                >
+                  <Icon
+                    icon={
+                      showSenha
+                        ? "material-symbols-light:visibility-off-outline-rounded"
+                        : "material-symbols-light:visibility-outline-rounded"
+                    }
+                    width="22"
+                    height="22"
+                  />
+                </IconButton>
+              </InputAdornment>
+            }
+          />
 
           {unauthorizedMessage && !error && (
             <p className="login-info">{unauthorizedMessage}</p>

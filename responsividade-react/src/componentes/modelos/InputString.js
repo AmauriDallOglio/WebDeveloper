@@ -2,17 +2,18 @@
 import React from "react";
 import InputComIcone from "./InputComIcone";
 
-function InputString({ label, value, onChange, onBlur, error, helperText, icon }) {
+function InputString({ label, type = "text", value, onChange, onBlur, error, helperText, icon, endAdornment }) {
   return (
     <InputComIcone
       label={label}
-      type="text"
+      type={type}
       value={value}
       onChange={onChange}
       onBlur={onBlur}
       error={error}
       helperText={helperText}
       icon={icon}
+      endAdornment={endAdornment}
     />
   );
 }

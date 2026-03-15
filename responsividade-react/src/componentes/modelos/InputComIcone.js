@@ -11,7 +11,8 @@ function InputComIcone({
   onBlur, 
   error, 
   helperText, 
-  icon 
+  icon,
+  endAdornment
 }) {
   return (
      <TextField
@@ -24,11 +25,12 @@ function InputComIcone({
       error={error}
       helperText={helperText}
       InputProps={{
-        startAdornment: (
+        startAdornment: icon ? (
           <InputAdornment position="start">
             <Icon icon={icon} width="25" height="25" />
           </InputAdornment>
-        ),
+        ) : undefined,
+        endAdornment
       }}
       sx={{
         "& .MuiInputBase-input": {
