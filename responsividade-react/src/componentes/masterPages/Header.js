@@ -54,7 +54,7 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
             <Typography
               variant="subtitle2"
               className="header-subtitle"
-              sx={{ color: notificationMessage ? "#ef4444" : "text.secondary" }}
+              sx={{ color: notificationMessage ? "error.main" : "text.secondary" }}
             >
               {notificationMessage || greetingMessage}
             </Typography>

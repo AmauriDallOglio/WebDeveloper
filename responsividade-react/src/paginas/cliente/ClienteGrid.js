@@ -9,6 +9,7 @@ function ClienteGrid({ localeText }) {
 
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
+  const iconColor = theme.palette.primary.main;
 
   const [search, setSearch] = useState("");
   const filteredClientes = clientes.filter((c) =>
@@ -33,7 +34,7 @@ function ClienteGrid({ localeText }) {
       width: 80,
       sortable: false,
       renderCell: () => (
-        <Icon icon="mdi:pencil-outline" width="18" color="#00d4ff" />
+        <Icon icon="mdi:pencil-outline" width="18" color={iconColor} />
       )
     }
   ];
@@ -45,7 +46,7 @@ function ClienteGrid({ localeText }) {
       <div className="cliente-header">
 
         <div className="cliente-icon">
-          <Icon icon="mdi:account-outline" width="20" color="#00d4ff" />
+          <Icon icon="mdi:account-outline" width="20" color={iconColor} />
         </div>
 
         <h1 className="cliente-title">

@@ -12,7 +12,7 @@
 
 .social-item a:hover,
 .social-item a:focus-visible {
-  color: #00d4ff;
+  color: var(--cor-primaria);
 }
 
 footer {

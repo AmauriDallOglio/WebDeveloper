@@ -1,11 +1,12 @@
 ﻿import React, { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
 import { IconButton, InputAdornment } from "@mui/material";
 import "./Login.css";
 import InputString from "../../componentes/modelos/InputString";
+import PaletaCores from "../../estilos/PaletaCores";
 
+// Decodifica o payload do JWT para extrair dados do usuario (sem validar assinatura).
 const decodeJwtPayload = (token) => {
   if (!token) {
     return null;
@@ -32,7 +33,6 @@ const decodeJwtPayload = (token) => {
 };
 
 function Login({ onLoginSuccess }) {
-  const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -42,10 +42,12 @@ function Login({ onLoginSuccess }) {
   const [erroEmail, setErroEmail] = useState(false);
   const [erroSenha, setErroSenha] = useState(false);
   const [showSenha, setShowSenha] = useState(false);
+  // Mensagem vinda da rota anterior quando o usuario tentou acessar sem login.
   const unauthorizedMessage = location.state?.unauthorized
     ? "Acesso não autorizado. Faça login para continuar."
     : "";
 
+  // Habilita o botao apenas quando ha dados validos e nao esta carregando.
   const canSubmit = useMemo(() => {
     return email.trim().length > 0 && senha.trim().length > 0 && !isLoading;
   }, [email, senha, isLoading]);
@@ -60,6 +62,7 @@ function Login({ onLoginSuccess }) {
     setIsLoading(true);
 
     try {
+      // Envia credenciais para gerar token na API.
       const response = await fetch("http://localhost:5135/api/Token/GerarToken", {
         method: "POST",
         headers: {
@@ -81,6 +84,7 @@ function Login({ onLoginSuccess }) {
         const payload = decodeJwtPayload(token);
         const userName = payload?.Nome || payload?.name || payload?.Email || email;
 
+        // Persiste dados essenciais para manter a sessao do usuario.
         if (token) {
           localStorage.setItem("authToken", token);
         }
@@ -99,6 +103,7 @@ function Login({ onLoginSuccess }) {
           localStorage.removeItem("notificationMessage");
         }
 
+        // Permite que o componente pai reaja ao login bem-sucedido.
         onLoginSuccess?.({ userName, notification, data });
         const destination = location.state?.from || "/";
         navigate(destination);
@@ -117,18 +122,15 @@ function Login({ onLoginSuccess }) {
     <div
       className="login-page"
       style={{
-        background:
-          theme.palette.mode === "dark"
-            ? "radial-gradient(circle at top, #1b273a, #0a0f1b 60%)"
-            : "radial-gradient(circle at top, #ffffff, #e8edf3 60%)",
-        color: theme.palette.text.primary
+        background: PaletaCores.variaveis.gradienteLogin,
+        color: PaletaCores.variaveis.textoPrimario
       }}
     >
       <div
         className="login-card"
         style={{
-          background: theme.palette.background.paper,
-          borderColor: theme.palette.divider
+          background: PaletaCores.variaveis.fundoSuperficie,
+          borderColor: PaletaCores.variaveis.borda
         }}
       >
         <div className="login-header">

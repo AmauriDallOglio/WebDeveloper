@@ -2,18 +2,13 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import { Icon } from "@iconify/react";
 import "./FormHeader.css";
-import { useTheme } from "@mui/material/styles";
+import PaletaCores from "../../estilos/PaletaCores";
 
 function FormHeader({ titulo, subtitulo, icon }) {
 
-  const theme = useTheme();
-
   // Estilos baseados no tema
   const containerStyle = {
-    background: theme.palette.mode === "dark"
-      ? "linear-gradient(90deg, #111828, #16254a)" // fundo escuro
-      : "linear-gradient(90deg, #e5e7eb, #c7ccd5)", // fundo claro
-
+    background: PaletaCores.variaveis.gradienteFormHeader
   };
 
   return (

@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { ptBR as corePtBR, enUS as coreEnUS } from "@mui/material/locale";
 import { CssBaseline } from "@mui/material";
 import { ptBR as dataGridPtBR, enUS as dataGridEnUS } from "@mui/x-data-grid/locales";
+import PaletaCores from "./estilos/PaletaCores";
 
 function UnauthenticatedRoutes({ onLoginSuccess }) {
   const location = useLocation();
@@ -75,29 +76,12 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
      Tema global do sistema
   ===================================================== */
 
+  const modoTema = PaletaCores.obterModo(darkMode);
+  PaletaCores.aplicarTema(modoTema);
+
   const theme = createTheme(
     {
-      palette: {
-        mode: darkMode ? "dark" : "light",
-
-        background: {
-          default: darkMode ? "#000000" : "#b2bac0",   // fundo geral 
-          paper: darkMode ? "#111828" : "#ecf0f3"      // header / sidebar / footer
-        },
-
-        primary: {
-          main:  darkMode ? "#00d4ff" : "#00d4ff",
-        },
-
-        text: {
-          primary: darkMode ? "#ffffff" : "#000000",
-          secondary: darkMode ? "#ffffff" : "#446A9C"
-        },
-
-        /* Borda do grid */
-        divider: darkMode ? "#ffffff" : "#d6e1f2"
-      },
-
+      ...PaletaCores.criarTemaMui(modoTema),
       typography: {
         fontFamily: [
           "Segoe UI",
@@ -166,12 +150,13 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
           <Sidebar />
 
-          <main className="details-body" 
-          
-                style={{ background: theme.palette.mode === "dark" ? 
-                        "linear-gradient(270deg, #111828, #111828)" // fundo escuro 
-                        : "linear-gradient(270deg, #ecf0f3, #ecf0f3)", // fundo claro 
-                        color: theme.palette.mode === "dark" ? "#fff" : "#111", }} >
+          <main
+            className="details-body"
+            style={{
+              background: PaletaCores.variaveis.gradienteDetalhes,
+              color: PaletaCores.variaveis.textoDetalhes
+            }}
+          >
 
 
 

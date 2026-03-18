@@ -8,7 +8,7 @@ import InputString from "../../componentes/modelos/InputString";
 import InputNumeroInteiro from "../../componentes/modelos/InputNumeroInteiro";
 import InputNumeroDecimal from "../../componentes/modelos/InputNumeroDecimal";
 
-import { useTheme } from "@mui/material/styles";
+import PaletaCores from "../../estilos/PaletaCores";
 
 function ClienteCadastro() {
   const [codigo, setCodigo] = useState("");
@@ -23,13 +23,9 @@ function ClienteCadastro() {
 
   const isFormValid = !erroCodigo &&  !erroNome && !erroIdade && !erroSalario;
 
-  const theme = useTheme();
-
-    // Estilos baseados no tema
+  // Estilos baseados no tema
   const containerStyle = {
-    background: theme.palette.mode === "dark"
-      ? "linear-gradient(90deg, #111828, #111828)" // fundo escuro
-      : "linear-gradient(90deg, #e5e7eb, #e5e7eb)", // fundo claro
+    background: PaletaCores.variaveis.gradienteFormBody
   };
 
 

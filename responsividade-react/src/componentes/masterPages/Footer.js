@@ -7,7 +7,7 @@ import "./Footer.css";
 function Footer() {
 
   const theme = useTheme();
-  const iconColor = theme.palette.mode === "dark" ? "#ffffff" : "#000000";   // Define a cor dos ícones conforme o tema
+  const iconColor = theme.palette.text.primary;   // Define a cor dos icones conforme o tema
 
   return (
     <footer

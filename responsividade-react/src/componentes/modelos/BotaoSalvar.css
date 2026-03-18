@@ -11,28 +11,28 @@
 
 /* Tema claro */
 .botao-salvar.light {
-  border: 1px solid #5ad260;   /* verde escuro */
+  border: 1px solid var(--botao-salvar-borda-claro);   /* verde escuro */
   background-color: transparent;
-  color: #469b4a;              /* verde médio */
+  color: var(--botao-salvar-texto-claro);              /* verde medio */
 }
 
 .botao-salvar.light:hover {
-  background-color: rgba(102, 187, 106, 0.1);
-  border: 1.5px solid #00ff4c;
-  color: #00ff0d;
+  background-color: var(--botao-salvar-hover-fundo-claro);
+  border: 1.5px solid var(--botao-salvar-hover-borda-claro);
+  color: var(--botao-salvar-hover-texto-claro);
 }
 
 /* Tema escuro */
 .botao-salvar.dark {
-  border: 1px solid #66bb6a;   /* borda clara */
+  border: 1px solid var(--botao-salvar-borda-escuro);   /* borda clara */
   background-color: transparent;
-  color: #66bb6a;              /* mantém verde */
+  color: var(--botao-salvar-texto-escuro);              /* mantem verde */
 }
 
 .botao-salvar.dark:hover {
-  background-color: rgba(102, 187, 106, 0.2);
-  border: 1.5px solid #00ff4c;
-  color: #00ff4c;
+  background-color: var(--botao-salvar-hover-fundo-escuro);
+  border: 1.5px solid var(--botao-salvar-hover-borda-escuro);
+  color: var(--botao-salvar-hover-texto-escuro);
 }
 
 /* Estado desabilitado */

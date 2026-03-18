@@ -19,8 +19,8 @@
 body {
   margin: 0;
   letter-spacing: 0.3px;
-  background: var(--mui-palette-background-default);
-  color: var(--mui-palette-text-primary);
+  background: var(--cor-fundo-app);
+  color: var(--cor-texto-primario);
 }
 
 .app-grid {

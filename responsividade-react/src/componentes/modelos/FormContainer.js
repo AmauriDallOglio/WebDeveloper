@@ -2,20 +2,16 @@
 import React from "react";
 import { Box, Paper } from "@mui/material";
 import "./FormContainer.css";
-import { useTheme } from "@mui/material/styles";
+import PaletaCores from "../../estilos/PaletaCores";
 
 
 function FormContainer({ children }) 
 {
-  const theme = useTheme();
-
   // Estilos baseados no tema
   const containerStyle = {
-    background: theme.palette.mode === "dark"
-      ? "linear-gradient(270deg, #111828, #111828)" // fundo escuro
-      : "linear-gradient(270deg, #e5e7eb, #e5e7eb)", // fundo claro
-      borderRadius: "0px",
-      padding: "2px",
+    background: PaletaCores.variaveis.gradienteFormContainer,
+    borderRadius: "0px",
+    padding: "2px"
   };
 
   return (

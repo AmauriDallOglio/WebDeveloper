@@ -11,26 +11,26 @@
 
 /* Tema claro */
 .botao-cancelar.light {
-  border: 1px solid #f5be97;       /* borda laranja escura */
+  border: 1px solid var(--botao-cancelar-borda-claro);       /* borda laranja escura */
   background-color: transparent;
-  color: #f5a369;                  /* laranja */
+  color: var(--botao-cancelar-texto-claro);                  /* laranja */
 }
 
 .botao-cancelar.light:hover {
-  background-color: rgba(255, 149, 73, 0.1);
-  border: 1.5px solid #f5a369;
-  color: #ff8f3e;
+  background-color: var(--botao-cancelar-hover-fundo-claro);
+  border: 1.5px solid var(--botao-cancelar-hover-borda-claro);
+  color: var(--botao-cancelar-hover-texto-claro);
 }
 
 /* Tema escuro */
 .botao-cancelar.dark {
-  border: 1px solid #eab086;       /* borda clara */
+  border: 1px solid var(--botao-cancelar-borda-escuro);       /* borda clara */
   background-color: transparent;
-  color: #eab086;                  /* mantém laranja */
+  color: var(--botao-cancelar-texto-escuro);                  /* mantem laranja */
 }
 
 .botao-cancelar.dark:hover {
-  background-color: rgba(255, 149, 73, 0.2);
-  border: 1.5px solid #f5a369;
-  color: #f5a369;
+  background-color: var(--botao-cancelar-hover-fundo-escuro);
+  border: 1.5px solid var(--botao-cancelar-hover-borda-escuro);
+  color: var(--botao-cancelar-hover-texto-escuro);
 }
