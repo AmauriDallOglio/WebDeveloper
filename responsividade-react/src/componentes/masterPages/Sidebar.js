@@ -36,16 +36,26 @@ function Sidebar() {
 
   return (
     <aside className={`sidebar ${theme.palette.mode}`}>
+      
+      {/*
       <div className="sidebar-window-controls" aria-hidden="true">
         <span className="sidebar-window-dot red" />
         <span className="sidebar-window-dot yellow" />
         <span className="sidebar-window-dot green" />
       </div>
+       */}
 
-      <div className="sidebar-brand">
+
+
+      <div className=" sidebar-window-controls">
+          <div className="sidebar-avatar">
+          <img src={logo} alt="Logo da empresa" />
+        </div>
         <span>MP PROJETOS</span>
       </div>
 
+
+      {/*
       <div className="sidebar-profile">
         <div className="sidebar-avatar">
           <img src={logo} alt="Logo da empresa" />
@@ -62,6 +72,7 @@ function Sidebar() {
           <Icon icon="mdi:chevron-down" width="18" height="18" />
         </button>
       </div>
+             */}
 
       <div className="sidebar-divider" />
 
