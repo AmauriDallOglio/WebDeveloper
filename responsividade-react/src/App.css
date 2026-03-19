@@ -12,6 +12,31 @@
   --sidebar-width: clamp(220px, 22vw, 280px);
 }
 
+.glass-surface {
+  background: var(--sidebar-glass-bg);
+  border: 1px solid var(--sidebar-glass-border);
+  box-shadow: var(--sidebar-glass-shadow);
+  color: var(--sidebar-texto);
+  position: relative;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glass-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--sidebar-glass-highlight);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.glass-surface > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* =====================================================
    CONFIGURACAO GLOBAL
 ===================================================== */

@@ -1,5 +1,4 @@
 ﻿import React, { useState } from "react";
-import { useTheme } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
 import avatar from "./imagem/header/usuario.jpg";
 import "./Header.css";
@@ -7,7 +6,6 @@ import { Typography } from "@mui/material";
 
 function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificationMessage, onLogout }) {
 
-  const theme = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const greetingMessage = (() => {
     const hour = new Date().getHours();
@@ -22,13 +20,7 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
 
   return (
 
-    <header
-      className="header"
-      style={{
-        background: theme.palette.background.paper,
-        color: theme.palette.text.primary
-      }}
-    >
+    <header className="header glass-surface">
 
       <div className="header-container">
 
@@ -64,10 +56,7 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
         </div>
 
         {/* Lado direito */}
-        <div
-          className="header-right"
-          style={{ color: theme.palette.text.primary }}
-        >
+        <div className="header-right">
           <div className="header-menu-wrapper">
             <button
               type="button"

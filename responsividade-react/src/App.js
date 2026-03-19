@@ -150,13 +150,7 @@ npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
           <Sidebar />
 
-          <main
-            className="details-body"
-            style={{
-              background: PaletaCores.variaveis.gradienteDetalhes,
-              color: PaletaCores.variaveis.textoDetalhes
-            }}
-          >
+          <main className="details-body glass-surface">
 
 
 
