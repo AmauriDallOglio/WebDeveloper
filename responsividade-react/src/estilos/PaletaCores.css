@@ -66,6 +66,8 @@
   --header-menu-borda: rgba(0, 0, 0, 0.12);
   --header-menu-separador: rgba(0, 0, 0, 0.18);
 
+
+  
   /* Sidebar */
   --sidebar-texto: #000000;
   --sidebar-texto-secundario: #000000;
@@ -83,7 +85,7 @@
   --sidebar-borda-padrao: #d3d3d3d3;
   --sidebar-scrollbar-thumb: linear-gradient(135deg, #00d4ff22, #00d4ff44);
   --sidebar-scrollbar-thumb-hover: #00d4ff;
-  --sidebar-glass-bg: linear-gradient(
+    --sidebar-glass-bg: linear-gradient(
     150deg,
     rgba(255, 255, 255, 0.78),
     rgba(226, 235, 245, 0.6)
@@ -108,6 +110,8 @@
   --sidebar-item-active-text: #ffffff;
   --sidebar-item-active-border: rgba(0, 212, 255, 0.6);
   --sidebar-item-active-accent: #00d4ff;
+
+ 
 
   /* Cliente */
   --gradiente-cliente-icon: linear-gradient(135deg, #00d4ff22, #00d4ff44);
@@ -196,7 +200,7 @@
   --sidebar-texto-secundario: #e6f3ff;
   --sidebar-texto-hover: #00d4ff;
   --sidebar-fundo-hover: linear-gradient(135deg, #00d4ff55, #00d4ff55);
-  --sidebar-borda-hover: #00d4ff;
+  --sidebar-borda-hover: #111d37;
   --sidebar-menu-borda: #111d37;
   --sidebar-menu-fundo: transparent;
   --sidebar-menu-texto: #e6f3ff;
