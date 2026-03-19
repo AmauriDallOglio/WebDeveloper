@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import avatar from "./imagem/header/usuario.jpg";
 import "./Header.css";
@@ -7,6 +7,29 @@ import { Typography } from "@mui/material";
 function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificationMessage, onLogout }) {
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
+  const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (menuRef.current && menuRef.current.contains(target)) {
+        return;
+      }
+      if (toggleRef.current && toggleRef.current.contains(target)) {
+        return;
+      }
+      setMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [menuOpen]);
   const greetingMessage = (() => {
     const hour = new Date().getHours();
     if (hour < 12) {
@@ -19,7 +42,6 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
   })();
 
   return (
-
     <header className="header glass-surface">
 
       <div className="header-container">
@@ -61,7 +83,8 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
             <button
               type="button"
               className="menu-toggle"
-              onClick={() => setMenuOpen(!menuOpen)}
+              ref={toggleRef}
+              onClick={() => setMenuOpen((prev) => !prev)}
               title={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               aria-controls="header-menu"
@@ -75,64 +98,79 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
             </button>
 
             {menuOpen && (
-              <div id="header-menu" className="header-menu">
-                <div className="header-menu-top">
-                  <button
-                    type="button"
-                    className="header-menu-item"
-                    title="Mensagens"
-                  >
-                    <Icon
-                      icon="material-symbols-light:mail-outline"
-                      width="24"
-                      height="24"
-                      className="header-icon"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="header-menu-item theme-toggle"
-                    onClick={() => setDarkMode(!darkMode)}
-                    title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
-                  >
-                    {darkMode ? (
+              <div id="header-menu" className="header-menu" ref={menuRef}>
+                  <div className="header-menu-top">
+                    <button
+                      type="button"
+                      className="header-menu-item"
+                      title="Mensagens"
+                    >
                       <Icon
-                        icon="material-symbols-light:light-mode-outline"
+                        icon="material-symbols-light:mail-outline"
                         width="24"
                         height="24"
                         className="header-icon"
                       />
-                    ) : (
+                    </button>
+
+                    <button
+                      type="button"
+                      className="header-menu-item theme-toggle"
+                      onClick={() => setDarkMode(!darkMode)}
+                      title={`Alternar para ${darkMode ? "Claro" : "Escuro"}`}
+                    >
+                      {darkMode ? (
+                        <Icon
+                          icon="material-symbols-light:light-mode-outline"
+                          width="24"
+                          height="24"
+                          className="header-icon"
+                        />
+                      ) : (
+                        <Icon
+                          icon="material-symbols-light:moon-stars-outline"
+                          width="24"
+                          height="24"
+                          className="header-icon"
+                        />
+                      )}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="header-menu-item lang-toggle"
+                      onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
+                      title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+                    >
+                      {locale === "pt" ? "PT" : "EN"}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="header-menu-item header-menu-close"
+                      onClick={closeMenu}
+                      title="Fechar menu"
+                      aria-label="Fechar menu"
+                    >
                       <Icon
-                        icon="material-symbols-light:moon-stars-outline"
-                        width="24"
-                        height="24"
+                        icon="material-symbols-light:close"
+                        width="22"
+                        height="22"
                         className="header-icon"
                       />
-                    )}
-                  </button>
+                    </button>
+                  </div>
+
+                  <div className="header-menu-separator" />
 
                   <button
                     type="button"
-                    className="header-menu-item lang-toggle"
-                    onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
-                    title={locale === "pt" ? "Mudar para InglÃªs" : "Switch to Portuguese"}
+                    className="header-menu-exit"
+                    onClick={onLogout}
                   >
-                    {locale === "pt" ? "PT" : "EN"}
+                    Sair
                   </button>
                 </div>
-
-                <div className="header-menu-separator" />
-
-                <button
-                  type="button"
-                  className="header-menu-exit"
-                  onClick={onLogout}
-                >
-                  Sair
-                </button>
-              </div>
             )}
           </div>
 
@@ -141,7 +179,6 @@ function Header({ darkMode, setDarkMode, locale, setLocale, userName, notificati
       </div>
 
     </header>
-
   );
 }
 

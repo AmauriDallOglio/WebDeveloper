@@ -285,6 +285,25 @@
   background: var(--sidebar-item-active-accent);
 }
 
+@media (max-width: 600px) {
+  .sidebar {
+    border-radius: 16px;
+  }
+
+  .sidebar-profile {
+    grid-template-columns: auto 1fr;
+  }
+
+  .sidebar-section-label,
+  .menu-group-label {
+    letter-spacing: 0.18em;
+  }
+
+  .menu a {
+    padding: 9px 10px;
+  }
+}
+
 @media (max-width: 900px) {
   .sidebar {
     border-radius: 18px;
@@ -306,24 +325,7 @@
   }
 }
 
-@media (max-width: 600px) {
-  .sidebar {
-    border-radius: 16px;
-  }
 
-  .sidebar-profile {
-    grid-template-columns: auto 1fr;
-  }
-
-  .sidebar-section-label,
-  .menu-group-label {
-    letter-spacing: 0.18em;
-  }
-
-  .menu a {
-    padding: 9px 10px;
-  }
-}
 
 @media (min-width: 1024px) {
   .sidebar {
