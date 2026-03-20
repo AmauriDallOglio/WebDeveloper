@@ -19,7 +19,7 @@
   --cor-texto-invertido: #000000;
 
   --cor-fundo-app: #dce6ef;
-  --cor-fundo-superficie: #ecf0f3;
+  --cor-fundo-superficie: #ecf0f3; /* cor do fundo do login */
   --cor-fundo-sutil: #f1f5f9;
   --cor-fundo-profundo: #f1f5f9;
 
@@ -58,8 +58,11 @@
   --login-botao-bg: #16a34a;
   --login-botao-hover-bg: #15803d;
   --login-botao-texto: #ffffff;
-  --login-info-texto: #60a5fa;
+  --login-info-texto: #60a5fa; 
   --login-info-fundo: rgba(59, 130, 246, 0.15);
+
+ 
+  
 
   /* Header */
   --header-menu-fundo: rgba(0, 0, 0, 0.06);
@@ -85,28 +88,16 @@
   --sidebar-borda-padrao: #d3d3d3d3;
   --sidebar-scrollbar-thumb: linear-gradient(135deg, #00d4ff22, #00d4ff44);
   --sidebar-scrollbar-thumb-hover: #00d4ff;
-    --sidebar-glass-bg: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.78),
-    rgba(226, 235, 245, 0.6)
-  );
+  --sidebar-glass-bg: linear-gradient(   150deg,   rgba(255, 255, 255, 0.78),   rgba(226, 235, 245, 0.6) );
   --sidebar-glass-border: rgba(255, 255, 255, 0.7);
   --sidebar-glass-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
-  --sidebar-glass-highlight: radial-gradient(
-    circle at 0% 0%,
-    rgba(255, 255, 255, 0.7),
-    transparent 55%
-  );
+  --sidebar-glass-highlight: radial-gradient(  circle at 0% 0%,  rgba(255, 255, 255, 0.7), transparent 55% );
   --sidebar-profile-bg: rgba(255, 255, 255, 0.55);
   --sidebar-profile-border: rgba(255, 255, 255, 0.7);
   --sidebar-divider: rgba(255, 255, 255, 0.5);
   --sidebar-section-text: rgba(15, 23, 42, 0.55);
   --sidebar-item-hover-bg: rgba(255, 255, 255, 0.6);
-  --sidebar-item-active-bg: linear-gradient(
-    90deg,
-    rgba(68, 106, 156, 0.65),
-    rgba(0, 212, 255, 0.25)
-  );
+  --sidebar-item-active-bg: linear-gradient( 90deg, rgba(68, 106, 156, 0.65), rgba(0, 212, 255, 0.25) );
   --sidebar-item-active-text: #ffffff;
   --sidebar-item-active-border: rgba(0, 212, 255, 0.6);
   --sidebar-item-active-accent: #00d4ff;
@@ -179,13 +170,17 @@
   --cor-texto-destaque: #00d4ff;
   --cor-texto-invertido: #000000;
 
+  /* login */
+    --login-kicker: #00d4ff;
   --cor-fundo-app: #0e1120;
-  --cor-fundo-superficie: #131931; /* fundo menu footer header */
+  --cor-fundo-superficie: linear-gradient( 160deg, rgba(24, 35, 60, 0.78), rgba(10, 16, 30, 0.75) ); /* fundo login*/
   --cor-fundo-sutil: #111827;
   --cor-fundo-profundo: #260d0d;
+  --login-info-texto: #00d4ff; 
+  --login-info-fundo: linear-gradient( 160deg, rgba(24, 35, 60, 0.78), rgba(10, 16, 30, 0.75) ); /* fundo login*/
 
   --cor-borda: #ffffff;
-  --cor-borda-suave: #1e2d45;
+  --cor-borda-suave: #451e1e;
   --cor-borda-media: #1a2640;
 
   /* Gradientes globais */
@@ -209,28 +204,16 @@
   --gradiente-sidebar-ativo: linear-gradient(135deg, #00d4ff22, #00d4ff44);
   --sidebar-menu-ativo-borda: #00d4ff55;
   --sidebar-menu-ativo-borda-direita: #00d4ff;
-  --sidebar-glass-bg: linear-gradient(
-    160deg,
-    rgba(24, 35, 60, 0.78),
-    rgba(10, 16, 30, 0.75)
-  );
+  --sidebar-glass-bg: linear-gradient( 160deg,  rgba(24, 35, 60, 0.78), rgba(10, 16, 30, 0.75) );
   --sidebar-glass-border: rgba(255, 255, 255, 0.12);
   --sidebar-glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
-  --sidebar-glass-highlight: radial-gradient(
-    circle at 0% 0%,
-    rgba(255, 255, 255, 0.12),
-    transparent 55%
-  );
+  --sidebar-glass-highlight: radial-gradient(  circle at 0% 0%, rgba(255, 255, 255, 0.12),  transparent 55% );
   --sidebar-profile-bg: rgba(15, 23, 42, 0.55);
   --sidebar-profile-border: rgba(255, 255, 255, 0.12);
   --sidebar-divider: rgba(255, 255, 255, 0.12);
   --sidebar-section-text: rgba(230, 243, 255, 0.65);
   --sidebar-item-hover-bg: rgba(255, 255, 255, 0.08);
-  --sidebar-item-active-bg: linear-gradient(
-    90deg,
-    rgba(0, 212, 255, 0.35),
-    rgba(0, 212, 255, 0.12)
-  );
+  --sidebar-item-active-bg: linear-gradient(   90deg,  rgba(0, 212, 255, 0.35), rgba(0, 212, 255, 0.12) );
   --sidebar-item-active-text: #e6f3ff;
   --sidebar-item-active-border: rgba(0, 212, 255, 0.4);
   --sidebar-item-active-accent: #00d4ff;
