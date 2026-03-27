@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import logo from "./imagem/sidebar/logo.webp";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { menuGroups } from "../../rotas/menuRoutes";
+import { menuGroups } from "../rotas/menuRoutes";
 
 function Sidebar() {
   const theme = useTheme();

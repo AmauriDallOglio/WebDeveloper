@@ -1,6 +1,6 @@
 import React from "react";
 
-import Details from "../componentes/masterPages/Details";
+import Details from "../paginasMaster/Details";
 import Cliente from "../paginas/cliente/ClienteGrid";
 import ClienteCadastro from "../paginas/cliente/ClienteCadastro";
 import OllamaPesquisa from "../paginas/ollama/OllamaPesquisa";

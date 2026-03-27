@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-import Header from "./componentes/masterPages/Header";
-import Sidebar from "./componentes/masterPages/Sidebar";
-import Footer from "./componentes/masterPages/Footer";
+import Header from "./paginasMaster/Header";
+import Sidebar from "./paginasMaster/Sidebar";
+import Footer from "./paginasMaster/Footer";
 import { appRoutes } from "./rotas/menuRoutes";
 import Login from "./paginas/login/Login";
 
