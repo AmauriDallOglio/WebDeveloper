@@ -32,6 +32,104 @@ const decodeJwtPayload = (token) => {
   }
 };
 
+const normalizeText = (value) => (typeof value === "string" ? value.trim() : "");
+
+const buildNameFromParts = (first, last) => {
+  const parts = [normalizeText(first), normalizeText(last)].filter(Boolean);
+  return parts.join(" ");
+};
+
+const formatNameFromEmail = (emailAddress) => {
+  const normalized = normalizeText(emailAddress);
+  if (!normalized || !normalized.includes("@")) {
+    return "";
+  }
+
+  const localPart = normalized.split("@")[0];
+  const cleaned = localPart.replace(/[._-]+/g, " ").replace(/\d+/g, " ").trim();
+  if (!cleaned) {
+    return "";
+  }
+
+  return cleaned
+    .split(" ")
+    .filter(Boolean)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(" ");
+};
+
+const getNameFromPayload = (payload) => {
+  if (!payload || typeof payload !== "object") {
+    return "";
+  }
+
+  const fullNameFromParts = buildNameFromParts(
+    payload.given_name ||
+      payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"] ||
+      payload.Nome ||
+      payload.nome,
+    payload.family_name ||
+      payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"] ||
+      payload.Sobrenome ||
+      payload.sobrenome
+  );
+
+  if (fullNameFromParts) {
+    return fullNameFromParts;
+  }
+
+  const candidates = [
+    payload.name,
+    payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"],
+    payload.preferred_username,
+    payload.unique_name,
+    payload.Email,
+    payload.email
+  ];
+
+  for (const candidate of candidates) {
+    const normalized = normalizeText(candidate);
+    if (normalized && !normalized.includes("@")) {
+      return normalized;
+    }
+  }
+
+  return "";
+};
+
+const getEmailFromPayload = (payload) => {
+  if (!payload || typeof payload !== "object") {
+    return "";
+  }
+
+  const candidates = [
+    payload.email,
+    payload.Email,
+    payload.preferred_username,
+    payload.unique_name
+  ];
+
+  for (const candidate of candidates) {
+    const normalized = normalizeText(candidate);
+    if (normalized.includes("@")) {
+      return normalized;
+    }
+  }
+
+  return "";
+};
+
+const resolveUserName = (payload, fallbackEmail) => {
+  const nameFromPayload = getNameFromPayload(payload);
+  if (nameFromPayload) {
+    return nameFromPayload;
+  }
+
+  const emailCandidate = getEmailFromPayload(payload) || normalizeText(fallbackEmail);
+  const nameFromEmail = formatNameFromEmail(emailCandidate);
+  return nameFromEmail || emailCandidate;
+};
+
 function Login({ onLoginSuccess }) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -82,7 +180,7 @@ function Login({ onLoginSuccess }) {
         const refresh = data?.dados?.refresh ?? "";
         const notification = data?.dados?.notificacao ?? "";
         const payload = decodeJwtPayload(token);
-        const userName = payload?.Nome || payload?.name || payload?.Email || email;
+        const userName = resolveUserName(payload, email);
 
         // Persiste dados essenciais para manter a sessao do usuario.
         if (token) {

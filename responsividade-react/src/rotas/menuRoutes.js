@@ -3,6 +3,7 @@ import React from "react";
 import Details from "../componentes/masterPages/Details";
 import Cliente from "../paginas/cliente/ClienteGrid";
 import ClienteCadastro from "../paginas/cliente/ClienteCadastro";
+import OllamaPesquisa from "../paginas/ollama/OllamaPesquisa";
 
 function PaginaInicial() {
   return (
@@ -64,6 +65,18 @@ export const menuGroups = [
         routeKey: "usuarios"
       }
     ]
+  },
+  {
+    id: "inteligencia-artificial",
+    label: "Inteligência Artificial",
+    items: [
+      {
+        path: "/ollama",
+        label: "Ollama",
+        icon: "mdi:robot-outline",
+        routeKey: "ollama"
+      }
+    ]
   }
 ];
 
@@ -94,5 +107,12 @@ export const appRoutes = [
     key: "usuarios",
     path: "/usuarios",
     element: <EmConstrucao titulo="Usuários" />
+  },
+  {
+    key: "ollama",
+    path: "/ollama",
+    element: ({ dataGridLocaleText }) => (
+      <OllamaPesquisa localeText={dataGridLocaleText} />
+    )
   }
 ];

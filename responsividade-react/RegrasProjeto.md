@@ -145,3 +145,4 @@ Este documento consolida as regras e comportamentos implementados no projeto par
 ## Observações
 - O nome do usuário mostrado no header depende do payload do JWT.
 - O comportamento de saudação depende do horário local do navegador.
+

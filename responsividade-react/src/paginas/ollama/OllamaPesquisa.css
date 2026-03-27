@@ -1,0 +1,223 @@
+.ollama-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 40px;
+  height: 100%;
+}
+
+.ollama-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ollama-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ollama-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--gradiente-cliente-icon);
+  border: 1px solid var(--cliente-icon-borda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ollama-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.ollama-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: var(--cor-texto-muted);
+}
+
+.ollama-section {
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--cor-borda-media);
+  background: var(--gradiente-form-container);
+}
+
+.ollama-section.is-disabled {
+  opacity: 0.7;
+}
+
+.ollama-section-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cor-texto-destaque);
+  text-align: left;
+}
+
+.ollama-form-control .ollama-form-label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+}
+
+.ollama-radio-group {
+  width: 100%;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.ollama-radio-group .MuiFormControlLabel-root {
+  flex: 1;
+  justify-content: center;
+  margin: 0;
+}
+
+.ollama-textarea .MuiInputBase-root {
+  border-radius: 10px;
+  background: var(--cliente-grid-fundo);
+}
+
+.ollama-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ollama-search-button {
+  background: var(--cor-primaria);
+  color: #000000;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-transform: none;
+}
+
+.ollama-search-button:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.ollama-search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ollama-search-button.is-loading {
+  background: transparent;
+  border: 1px solid var(--cor-info);
+  color: var(--cor-info);
+  opacity: 1;
+}
+
+.ollama-search-button.is-loading:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.ollama-grid {
+  width: 100%;
+  height: 340px;
+}
+
+.ollama-grid.is-disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.ollama-datagrid {
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+}
+
+.ollama-datagrid .MuiDataGrid-columnHeaders {
+  font-weight: 600;
+}
+
+.ollama-datagrid .MuiDataGrid-cell:focus,
+.ollama-datagrid .MuiDataGrid-cell:focus-within,
+.ollama-datagrid .MuiDataGrid-columnHeader:focus,
+.ollama-datagrid .MuiDataGrid-columnHeader:focus-within {
+  outline: none;
+}
+
+.dark .ollama-title {
+  color: var(--cliente-titulo);
+}
+
+.dark .ollama-datagrid {
+  background: var(--cliente-grid-fundo);
+  color: var(--cliente-grid-texto);
+}
+
+.dark .ollama-datagrid .MuiDataGrid-columnHeaders {
+  background: var(--cliente-grid-header-fundo);
+  border-bottom: 1px solid var(--cliente-grid-header-borda);
+  color: var(--cliente-grid-header-texto);
+}
+
+.dark .ollama-datagrid .MuiDataGrid-cell {
+  border-bottom: 1px solid var(--cliente-grid-borda);
+}
+
+.dark .ollama-datagrid .MuiDataGrid-row:hover {
+  background: var(--cliente-grid-hover);
+}
+
+.light .ollama-title {
+  color: var(--cliente-titulo);
+}
+
+.light .ollama-datagrid {
+  background: var(--cliente-grid-fundo);
+  color: var(--cliente-grid-texto);
+}
+
+.light .ollama-datagrid .MuiDataGrid-columnHeaders {
+  background: var(--cliente-grid-header-fundo);
+  border-bottom: 1px solid var(--cliente-grid-header-borda);
+  color: var(--cliente-grid-header-texto);
+}
+
+.light .ollama-datagrid .MuiDataGrid-cell {
+  border-bottom: 1px solid var(--cliente-grid-borda);
+}
+
+.light .ollama-datagrid .MuiDataGrid-row:hover {
+  background: var(--cliente-grid-hover);
+}
+
+@media (max-width: 900px) {
+  .ollama-container {
+    padding: 24px 20px;
+  }
+
+  .ollama-radio-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ollama-radio-group .MuiFormControlLabel-root {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .ollama-actions {
+    width: 100%;
+  }
+
+  .ollama-search-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
