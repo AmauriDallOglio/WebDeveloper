@@ -3,6 +3,75 @@
 ## Objetivo
 Criar a tela de pesquisa do Ollama com quatro blocos (tipo, pergunta, resposta e histórico), adicionar o menu “Inteligência Artificial” com item “Ollama” e registrar as configurações necessárias para manutenção.
 
+
+# Projeto: responsividade-react
+
+## 1. Categoria e Item
+- Criar uma categoria chamada **Inteligência Artificial** com o item chamado **Ollama**.  
+- Ao clicar no item **Ollama**, abrirá a tela de pesquisa dividida em partes.
+
+---
+
+## 2. Primeira Parte – Seleção do tipo de pesquisa
+- Bloco de seleção com opções em **radio button**:  
+  - "Prompt"  
+  - "Prompt Generativo"  
+  - "Prompt Generativo Dados"  
+- Ao selecionar qualquer opção, habilita a segunda parte.
+
+---
+
+## 3. Segunda Parte – Bloco de Pergunta
+- Formada por um **input** para inserir a pergunta (pode aumentar conforme o tamanho do texto).  
+- Abaixo, botão **Pesquisar** na cor azul.  
+- Ao clicar no botão:  
+  - Label muda de "Pesquisar" para "Pesquisando".  
+  - Botão fica desabilitado.  
+  - Label em azul: "Pesquisando...".  
+  - Dispara as rotas conforme a seleção do radio da primeira parte:  
+
+### Rotas
+- **Prompt** → `GET /api/Ollama/Prompt`  
+  - Request: atributo *pergunta*  
+  - Response: Pergunta, Resposta, Tempo, Bool Sucesso  
+
+- **Prompt Generativo** → `GET /api/Ollama/PromptGenerativo`  
+  - Request: atributo *pergunta*  
+  - Response: Pergunta, Resposta, Tempo, Bool Sucesso  
+
+- **Prompt Generativo Dados** → `GET /api/Ollama/PromptGenerativoDados`  
+  - Request: atributo *pergunta*  
+  - Response: Pergunta, Resposta, Tempo, Bool Sucesso  
+
+---
+
+## 4. Terceira Parte – Bloco de Resposta
+- Mostra a resposta das rotas no atributo **Resposta** em componente de texto do React MUIA.  
+- Para cada pesquisa, deve limpar o bloco de resposta.  
+- Para cada mudança na primeira parte, deve limpar o bloco de pergunta e o bloco de resposta.
+
+---
+
+## 5. Quarta Parte – Grid de Histórico
+- Grid com colunas:  
+  - Pergunta  
+  - Resposta  
+  - Tempo  
+  - Sucesso (Sim ou Não)  
+
+### Comportamento
+- Ao clicar em uma linha:  
+  - A coluna **Pergunta** é mostrada no bloco de pergunta.  
+  - A coluna **Resposta** é mostrada no bloco de resposta.  
+
+- Importante:  
+  - Enquanto o botão **Pesquisar** estiver aguardando resposta:  
+    - Seleção da linha não deve carregar os blocos.  
+    - Grid fica desabilitado.  
+    - Radios ficam desabilitados para evitar mudança de tipo no meio da requisição.
+
+
+
 ## Arquivos principais
 - `src/rotas/menuRoutes.js`
 - `src/paginas/ollama/OllamaPesquisa.js`
@@ -24,3 +93,5 @@ Criar a tela de pesquisa do Ollama com quatro blocos (tipo, pergunta, resposta e
 - Base da API: se `REACT_APP_API_BASE_URL` estiver definida, ela será usada; caso contrário, o app usa URL relativa `/api` (proxy).
 - Caso mude o formato do response, ajuste a normalização dos campos em `OllamaPesquisa.js`.
 - Se o CORS voltar a ocorrer, revisar o proxy ou habilitar CORS no backend.
+
+

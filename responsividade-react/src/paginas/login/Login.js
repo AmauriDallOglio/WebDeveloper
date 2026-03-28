@@ -5,6 +5,7 @@ import { IconButton, InputAdornment } from "@mui/material";
 import "./Login.css";
 import InputString from "../../componentes/modelos/InputString";
 import PaletaCores from "../../estilos/PaletaCores";
+import { API_BASES, API_ENDPOINTS, buildApiUrl } from "../../api/config";
 
 // Decodifica o payload do JWT para extrair dados do usuario (sem validar assinatura).
 const decodeJwtPayload = (token) => {
@@ -161,17 +162,20 @@ function Login({ onLoginSuccess }) {
 
     try {
       // Envia credenciais para gerar token na API.
-      const response = await fetch("http://localhost:5135/api/Token/GerarToken", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email,
-          senha,
-          sistemaSolicitado: "SistemaAmauri"
-        })
-      });
+      const response = await fetch(
+        buildApiUrl(API_ENDPOINTS.login, API_BASES.auth),
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email,
+            senha,
+            sistemaSolicitado: "SistemaAmauri"
+          })
+        }
+      );
 
       const data = await response.json().catch(() => null);
 

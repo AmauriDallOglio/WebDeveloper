@@ -12,33 +12,25 @@ import {
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import "./OllamaPesquisa.css";
+import { API_BASES, API_ENDPOINTS, buildApiUrl } from "../../api/config";
 
 const TIPOS_PESQUISA = [
   {
     value: "prompt",
     label: "Prompt",
-    rota: "/api/Ollama/Prompt"
+    rota: API_ENDPOINTS.ollama.prompt
   },
   {
     value: "promptGenerativo",
     label: "Prompt Generativo",
-    rota: "/api/Ollama/PromptGenerativo"
+    rota: API_ENDPOINTS.ollama.promptGenerativo
   },
   {
     value: "promptGenerativoDados",
     label: "Prompt Generativo Dados",
-    rota: "/api/Ollama/PromptGenerativoDados"
+    rota: API_ENDPOINTS.ollama.promptGenerativoDados
   }
 ];
-
-const resolveBaseUrl = (rawBaseUrl) => {
-  if (!rawBaseUrl) {
-    return "";
-  }
-  return rawBaseUrl.endsWith("/") ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
-};
-
-const API_BASE_URL = resolveBaseUrl(process.env.REACT_APP_API_BASE_URL);
 
 const normalizarTexto = (valor) => {
   if (valor === null || valor === undefined) {
@@ -164,9 +156,8 @@ function OllamaPesquisa({ localeText }) {
       : {};
 
     try {
-      const url = `${API_BASE_URL}${tipoSelecionado.rota}?pergunta=${encodeURIComponent(
-        perguntaLimpa
-      )}`;
+      const baseUrl = buildApiUrl(tipoSelecionado.rota, API_BASES.ollama);
+      const url = `${baseUrl}?pergunta=${encodeURIComponent(perguntaLimpa)}`;
 
       const response = await fetch(url, {
         method: "GET",
