@@ -56,14 +56,16 @@ function App() {
 
 
 /* ============================
+Instalar o node 
+no projeto npm install
+
 npx create-react-app responsividade-react
-cd responsividade
+cd cd responsividade-react 
 npm start
+npm run build  
 
 npm install react-router-dom
-
 npm install @iconify/react
-
 npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
 
 ============================ */
